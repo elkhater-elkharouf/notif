@@ -1,0 +1,10 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8ƒßØ¥Ş1
+g
+java:S2095 "JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¿×óê8ÕóÙ¥Ş1
+g
+java:S2095$"JUse try-with-resources or close this "XWPFDocument" in a "finally" clause.(¼î±Š8ÕóÙ¥Ş1
+X	java:S125("<This block of commented-out lines of code should be removed.(ßÜ¢µ8§ßØ¥Ş1
+]	java:S125l"<This block of commented-out lines of code should be removed.(¿âÖçùÿÿÿÿ8­ßØ¥Ş1
+g
+java:S1128"KRemove this unused import 'org.springframework.core.io.FileSystemResource'.(°ü‘48õóÙ¥Ş1

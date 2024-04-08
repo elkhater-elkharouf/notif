@@ -1,0 +1,89 @@
+
+h	java:S112■"FDefine and throw a dedicated exception instead of using a generic one.(у№ЙЫ№    8Єнгнч1
+c	java:S112┘"FDefine and throw a dedicated exception instead of using a generic one.(─Б▓╓8єнгнч1
+M
+java:S3740╪"/Provide the parametrized type for this generic.(╝╦И╞8єнгнч1
+R
+java:S3740ч"/Provide the parametrized type for this generic.(╓ё╫ў√    8єнгнч1
+M
+java:S3740щ"/Provide the parametrized type for this generic.(ОгщС8єнгнч1
+L
+java:S3740ы"/Provide the parametrized type for this generic.(Д╩¤&8єнгнч1
+Y
+java:S4973j"<Strings and Boxed types should be compared using "equals()".(∙┴ф╣8Ўнгнч1
+^
+java:S4973m"<Strings and Boxed types should be compared using "equals()".(Є╞┌Є№    8Ўнгнч1
+Y
+java:S4973p"<Strings and Boxed types should be compared using "equals()".(арц▐8Ўнгнч1
+Y
+java:S4973p"<Strings and Boxed types should be compared using "equals()".(арц▐8Ўнгнч1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ЯЎ╘─     8ўнгнч1
+s
+java:S3655ш"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ё░┤╓     8Фогнч1
+j	java:S1006"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(╦Ё│С8Чогнч1
+]	java:S125>"<This block of commented-out lines of code should be removed.(╨ся▀¤    8Чогнч1
+L	java:S106S"+Replace this use of System.out by a logger.(к─б╤√    8Щогнч1
+b
+java:S4684i"@Replace this persistent entity with a simple POJO or DTO object.(В├ЁП№    8Ыогнч1
+B
+java:S3751О"Make this method non "private".(жъюы     8Юогнч1
+c
+java:S4684Щ"@Replace this persistent entity with a simple POJO or DTO object.(ЕЮ╘°¤    8Юогнч1
+B
+java:S3751╢"Make this method non "private".(жГ═х     8богнч1
+E
+java:S1125╗"'Remove the unnecessary boolean literal.(├з∙├8вогнч1
+^
+java:S4684╦"@Replace this persistent entity with a simple POJO or DTO object.(ПН║■8гогнч1
+u
+java:S2737√"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ЎЩ√Н8еогнч1
+T
+java:S6437р"6Revoke and change this password, as it is compromised.(┘эч╝8еогнч1
+k	java:S100├"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(╚╙№Ф8╜огнч1
+j	java:S100╟"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ю┴ЦO8╜огнч1
+]
+java:S4684╟"@Replace this persistent entity with a simple POJO or DTO object.(Ю┴ЦO8╜огнч1
+]
+java:S4684╥"@Replace this persistent entity with a simple POJO or DTO object.(ь▐└P8╛огнч1
+B
+java:S3751▐"Make this method non "private".(╙∙▓╒∙    8┐огнч1
+^
+java:S4684ф"@Replace this persistent entity with a simple POJO or DTO object.(┐╚│╩8┐огнч1
+=
+java:S3751ф"Make this method non "private".(┐╚│╩8┐огнч1
+c
+java:S4684ў"@Replace this persistent entity with a simple POJO or DTO object.(ппхП¤    8└огнч1
+B
+java:S3751Г"Make this method non "private".(Ч  Х№    8└огнч1
+c
+java:S4684Й"@Replace this persistent entity with a simple POJO or DTO object.(╙─з═°    8┴огнч1
+B
+java:S3751Й"Make this method non "private".(╙─з═°    8┴огнч1
+]
+java:S4684Р"@Replace this persistent entity with a simple POJO or DTO object.(╥П┬v8┴огнч1
+^
+java:S4684з"@Replace this persistent entity with a simple POJO or DTO object.(Н╚│Ъ8┬огнч1
+=
+java:S3751│"Make this method non "private".(Кд▄ъ8┬огнч1
+c
+java:S4684╣"@Replace this persistent entity with a simple POJO or DTO object.(¤╜Х╬■    8├огнч1
+B
+java:S3751╣"Make this method non "private".(¤╜Х╬■    8├огнч1
+c
+java:S4684┐"@Replace this persistent entity with a simple POJO or DTO object.(зсБЎ·    8├огнч1
+c
+java:S4684┼"@Replace this persistent entity with a simple POJO or DTO object.(ї╨лР∙    8├огнч1
+^
+java:S4684╬"@Replace this persistent entity with a simple POJO or DTO object.(Й√ы▀8─огнч1
+X
+java:S1854щ":Remove this useless assignment to local variable "result".(ОгщС8╞огнч1
+I
+java:S1452х"&Remove usage of generic wildcard type.(Кє∙И°    8╞огнч1
+I
+java:S1481щ"+Remove this unused "result" local variable.(ОгщС8╟огнч1
+d
+java:S1128"BRemove this unused import 'com.example.userservice.Model.UserDto'.(╧∙хч■    8╟огнч1
+s
+java:S1128"VRemove this unused import 'org.springframework.security.access.prepost.PostAuthorize'.(кд░╤8╟огнч1
+G
+java:S1128""*Remove this unused import 'java.sql.Blob'.(я┌╢у8╟огнч1

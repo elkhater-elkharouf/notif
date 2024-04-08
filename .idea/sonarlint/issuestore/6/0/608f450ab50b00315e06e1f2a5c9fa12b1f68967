@@ -1,0 +1,15 @@
+
+V	java:S125"<This block of commented-out lines of code should be removed.(Ø¦ş¶şÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(™İâÖùÿÿÿÿ
+n
+java:S1128"SRemove this unused import 'com.example.userservice.Services.User.EmailUserService'.(›ø½£øÿÿÿÿ
+^
+java:S1128"CRemove this unused import 'com.sun.mail.util.MailConnectException'.(Â±Æ†ûÿÿÿÿ
+n
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ
+o
+java:S1128"YRemove this unused import 'org.springframework.boot.context.event.ApplicationReadyEvent'.(Ğ‰“
+g
+java:S1128"LRemove this unused import 'org.springframework.context.event.EventListener'.(¦ñÛĞüÿÿÿÿ
+P
+java:S1128":Remove this unused import 'javax.mail.MessagingException'.(ÇîŞ

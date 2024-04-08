@@ -1,0 +1,39 @@
+
+h	java:S112Ğ"FDefine and throw a dedicated exception instead of using a generic one.(Ö¥‚—øÿÿÿÿ8Àß¸«ç1
+h	java:S112ö"FDefine and throw a dedicated exception instead of using a generic one.(Ö¥‚—øÿÿÿÿ8Àß¸«ç1
+n	java:S117ş"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍˆõË8Âß¸«ç1
+n	java:S117ş"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍˆõË8Âß¸«ç1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8Ëß¸«ç1
+`
+java:S2259¡"BA "NullPointerException" could be thrown; "user" is nullable here.(İóë…8Âà¸«ç1
+`
+java:S2259"BA "NullPointerException" could be thrown; "user" is nullable here.(í¿ŸÇ8Âà¸«ç1
+`
+java:S2259™"BA "NullPointerException" could be thrown; "user" is nullable here.(œ¤¸‘8Âà¸«ç1
+`
+java:S2259“"BA "NullPointerException" could be thrown; "user" is nullable here.(èÀ˜ë8Âà¸«ç1
+j
+java:S2259£"GA "NullPointerException" could be thrown; "privilege" is nullable here.(­ôøøÿÿÿÿÿ8Âà¸«ç1
+j
+java:S2259°"GA "NullPointerException" could be thrown; "privilege" is nullable here.(Ú¶ÒÉüÿÿÿÿ8Âà¸«ç1
+_
+java:S2259}"BA "NullPointerException" could be thrown; "user" is nullable here.(äß8Âà¸«ç1
+e
+java:S2259¯"BA "NullPointerException" could be thrown; "user" is nullable here.(ñöµ¡ûÿÿÿÿ8Âà¸«ç1
+`
+java:S2259£"BA "NullPointerException" could be thrown; "user" is nullable here.(şÔ†Ÿ8Âà¸«ç1
+b
+java:S2583‰"DChange this condition so that it does not always evaluate to "false"(ä¥µ8Âà¸«ç1
+E	java:S108G")Either remove or fill this block of code.(”ı¾8Êà¸«ç1
+]	java:S125t"<This block of commented-out lines of code should be removed.(éî°¨øÿÿÿÿ8Íà¸«ç1
+G	java:S106}"+Replace this use of System.out by a logger.(äß8Íà¸«ç1
+Y	java:S125Š"<This block of commented-out lines of code should be removed.(Ë•ÙĞ8Ïà¸«ç1
+Y	java:S125˜"<This block of commented-out lines of code should be removed.(ÚÃ®µ8Ùà¸«ç1
+q
+java:S1128	"TRemove this unnecessary import: same package classes are always implicitly imported.(öÔ†õ8Üà¸«ç1
+g
+java:S1128"KRemove this unused import 'org.springframework.core.io.FileSystemResource'.(°ü‘48Üà¸«ç1
+n
+java:S1128"LRemove this unused import 'org.springframework.web.multipart.MultipartFile'.(ôŸœÿÿÿÿÿ8Üà¸«ç1
+G
+java:S1128"*Remove this unused import 'java.sql.Blob'.(ïÚ¶ã8Üà¸«ç1

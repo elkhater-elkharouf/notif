@@ -1,0 +1,15 @@
+
+g	java:S1126"FDefine and throw a dedicated exception instead of using a generic one.(ŒëĞŒşÿÿÿÿ8ºå«¥Ş1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8¾å«¥Ş1
+L	java:S106&"+Replace this use of System.out by a logger.(ĞˆÍüÿÿÿÿ8Øå«¥Ş1
+W	java:S899(";Do something with the "boolean" value returned by "delete".( §Å¼8Ùå«¥Ş1
+k
+java:S4042("NUse "java.nio.file.Files#delete" here for better messages on error conditions.( §Å¼8Ùå«¥Ş1
+\	java:S899)";Do something with the "boolean" value returned by "delete".(£Â›Ûûÿÿÿÿ8Úå«¥Ş1
+p
+java:S4042)"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(£Â›Ûûÿÿÿÿ8Úå«¥Ş1
+X	java:S125."<This block of commented-out lines of code should be removed.(ã‚ ç8æå«¥Ş1
+X	java:S1253"<This block of commented-out lines of code should be removed.(€˜±Ÿ8êå«¥Ş1
+X	java:S125<"<This block of commented-out lines of code should be removed.(–÷Ò¡8íå«¥Ş1
+V
+java:S1068"4Remove this unused "exportUsersExcel" private field.(âÜİÔûÿÿÿÿ8ã±õ¦Ş1

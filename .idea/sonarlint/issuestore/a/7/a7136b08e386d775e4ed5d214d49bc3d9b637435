@@ -1,0 +1,8 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ø†Ì¥
+R
+java:S18548"<Remove this useless assignment to local variable "rolename".(ýˆî¡
+L
+java:S6437."6Revoke and change this password, as it is compromised.(Ùíç¼
+C
+java:S14818"-Remove this unused "rolename" local variable.(ýˆî¡

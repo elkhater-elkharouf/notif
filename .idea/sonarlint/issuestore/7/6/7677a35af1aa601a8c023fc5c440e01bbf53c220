@@ -1,0 +1,6 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¼†ïÜ
+P
+java:S1118":Add a private constructor to hide the implicit public one.(ªß ô
+g
+java:S5998"LRefactor this repetition that can lead to a stack overflow for large inputs.(ÜÄõÜşÿÿÿÿ

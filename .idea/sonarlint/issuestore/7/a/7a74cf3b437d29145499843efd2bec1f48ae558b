@@ -1,0 +1,15 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ø†Ì¥8‘ öÆë1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¯÷øÆë1
+w
+java:S3305"UInject this field value directly into "javaMailSender", the only method that uses it.(Ÿ‰Õûÿÿÿÿ8¯÷øÆë1
+G	java:S106)"+Replace this use of System.out by a logger.(ïê“ı8¶÷øÆë1
+]	java:S1251"<This block of commented-out lines of code should be removed.(êå¸ëÿÿÿÿÿ8¥ öÆë1
+]	java:S125B"<This block of commented-out lines of code should be removed.(Ø¦øİûÿÿÿÿ8¥ öÆë1
+l
+java:S1128"ORemove this unused import 'org.springframework.beans.factory.annotation.Value'.(ìø›8·÷øÆë1
+d
+java:S1128	"GRemove this unused import 'org.springframework.mail.SimpleMailMessage'.(€·ÊŒ8·÷øÆë1
+P
+java:S1128"4Remove this unused import 'java.security.Principal'.(’ÛŞ[8·÷øÆë1

@@ -1,0 +1,18 @@
+
+Q
+java:S3740."/Provide the parametrized type for this generic.(¢†¥Õüÿÿÿÿ8­„ÊŸá1
+Q
+java:S37405"/Provide the parametrized type for this generic.(¢†¥Õüÿÿÿÿ8­„ÊŸá1
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ
+^
+java:S2259+"BA "NullPointerException" could be thrown; "user" is nullable here.(ñ—ƒG8ÀÇ‹¬ç1
+r
+java:S3655M"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(æëÊ§ùÿÿÿÿ8©‘ÆŠå1
+S
+java:S1854/"6Remove this useless assignment to local variable "bi".(Ðò„—8Á–ÆŸá1
+S
+java:S18546"6Remove this useless assignment to local variable "bi".(Ðò„—8Á–ÆŸá1
+D
+java:S1481/"'Remove this unused "bi" local variable.(Ðò„—8Ã–ÆŸá1
+D
+java:S14816"'Remove this unused "bi" local variable.(Ðò„—8Ã–ÆŸá1

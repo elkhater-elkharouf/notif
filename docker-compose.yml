@@ -1,0 +1,44 @@
+version: "3"
+services:
+  discovery-service:
+    build:
+      context: ./discovery-service
+    ports:
+      - "8761:8761"
+    image: "discovery-service"
+
+  gateway-service:
+    build:
+      context: ./gateway-service
+    ports:
+      - "8888:9999"
+    image: "gateway-service"
+    depends_on:
+      - discovery-service
+    environment:
+      - eureka.client.service-url.defaultZone=http://discovery-service:8761/eureka/
+
+  user-service:
+    image: "user-service"
+    restart: always
+    build: .
+    ports:
+      - 8001:8001
+    depends_on:
+      - mysqldb
+    environment:
+      SPRING_APPLICATION_JSON: '{ "spring.datasource.url" : "jdbc:mysql://mysqldb:3306/user?createDatabaseIfNotExist=true", "spring.datasource.username" : "root" }'
+
+  mysqldb:
+    container_name: mysqldb
+    image: mysql
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: user
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+
+volumes:
+  mysql-data:
