@@ -28,8 +28,8 @@ private IProjetService iProjetService ;
         Projet savedProjet = iProjetService.addProjet(projet);
         Assertions.assertNotNull(savedProjet.getIdProjet());
         Assertions.assertEquals("projet1", savedProjet.getNameProjet());
-        Assertions.assertEquals(new Date(), savedProjet.getDateDeb());
-        Assertions.assertEquals(new Date(), savedProjet.getDateFin());
+        Assertions.assertEquals(projet.getDateDeb(), savedProjet.getDateDeb());
+        Assertions.assertEquals(projet.getDateFin(), savedProjet.getDateFin());
         Assertions.assertEquals(1, savedProjet.getStatus());
 
 
