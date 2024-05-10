@@ -14,6 +14,6 @@ public interface IProjetService {
     public List<Projet> getAllProjets();
     public Projet addMailAndAsseignToProject(Mail mail , int idP);
     public Projet addProjetWithUsers(Projet projet, Set<Integer> userIds) ;
-
+    public Projet addProjetWithMailAndUsers(Projet projet,List<Integer> userIds);
 
 }

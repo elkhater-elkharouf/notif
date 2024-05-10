@@ -21,14 +21,14 @@ services:
   user-service:
     image: "user-service"
     restart: always
-    build: .
+    build: ./user-service
     ports:
       - 8001:8001
     depends_on:
       - mysqldb
     environment:
-      SPRING_APPLICATION_JSON: '{ "spring.datasource.url" : "jdbc:mysql://mysqldb:3306/user?createDatabaseIfNotExist=true", "spring.datasource.username" : "root" }'
-
+      - "SPRING_APPLICATION_JSON={ \"spring.datasource.url\" : \"jdbc:mysql://mysqldb:3306/user?createDatabaseIfNotExist=true\", \"spring.datasource.username\" : \"root\", \"spring.datasource.password\" : \"root\" }"
+      - "eureka.client.service-url.defaultZone=http://discovery-service:8761/eureka/"
   mysqldb:
     container_name: mysqldb
     image: mysql
@@ -38,7 +38,17 @@ services:
       - 3306:3306
     environment:
       MYSQL_DATABASE: user
+      #MYSQL_PASSWORD: "password"
+#      MYSQL_ROOT_PASSWORD: "root"
       MYSQL_ALLOW_EMPTY_PASSWORD: yes
 
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: mysqldb
+      PMA_PORT: 3306
 volumes:
   mysql-data:

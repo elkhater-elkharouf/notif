@@ -18,6 +18,13 @@ public class UserDetailsServiceImp implements org.springframework.security.core.
     public UserDetailsServiceImp(IUserService userService) {
         this.userService = userService;
     }
+    public Integer getUserIdByEmail(String email) {
+        com.example.userservice.Entities.User user = userService.laodUserByUserName(email);
+        if (user != null) {
+            return  user.getIdUser();
+        }
+        return null;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

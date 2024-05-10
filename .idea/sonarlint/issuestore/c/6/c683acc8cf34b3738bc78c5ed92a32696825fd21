@@ -1,0 +1,14 @@
+
+^
+java:S4973L"<Strings and Boxed types should be compared using "equals()".(Øêúÿÿÿÿ8Æ‚¶úò1
+^
+java:S4973P"<Strings and Boxed types should be compared using "equals()".(¥Ó²ûÿÿÿÿ8Æ‚¶úò1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8Æ‚¶úò1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ÒëÅìõ1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ËÖÕìõ1
+_
+java:S6813!"BRemove this field injection and use constructor injection instead.(êæÄŞ8 Üìïõ1
+X	java:S125*"<This block of commented-out lines of code should be removed.(ÖàÍè8€Åö1
+]	java:S1250"<This block of commented-out lines of code should be removed.(Ş°†ùıÿÿÿÿ8É×ïõ1

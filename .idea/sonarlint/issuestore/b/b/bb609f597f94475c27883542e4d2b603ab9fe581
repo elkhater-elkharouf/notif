@@ -1,30 +1,41 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ
-`
-java:S2095)"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¿×óê
-`
-java:S2095-"JUse try-with-resources or close this "XMLSlideShow" in a "finally" clause.(¢áÄ‰
-Q	java:S1250"<This block of commented-out lines of code should be removed.(ßÜ¢µ
-m
-java:S3776U"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ž¹àùúÿÿÿÿ
-Q	java:S125h"<This block of commented-out lines of code should be removed.(¥´ù§
-F
-java:S1128"+Remove this unused import 'java.awt.Color'.(»£ÃÊøÿÿÿÿ
-Z
-java:S1128"DRemove this unused import 'org.apache.poi.openxml4j.opc.OPCPackage'.(Û“æå
-9
-java:S1128"Remove this duplicated import.(÷êüžûÿÿÿÿ
-4
-java:S1128"Remove this duplicated import.(úƒÛÕ
-9
-java:S1128"Remove this duplicated import.(µ¦âžÿÿÿÿÿ
-9
-java:S1128"Remove this duplicated import.(¸ÀÚþÿÿÿÿ
-]
-java:S1128"GRemove this unused import 'org.apache.poi.xwpf.usermodel.XWPFDocument'.(“õÅ
-c
-java:S1128"HRemove this unused import 'org.apache.poi.xwpf.usermodel.XWPFParagraph'.(Ã¨À×øÿÿÿÿ
-]
-java:S1128"BRemove this unused import 'org.apache.poi.xwpf.usermodel.XWPFRun'.(ñÀð„ùÿÿÿÿ
-F
-java:S1128!"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8§„›ëõ1
+g
+java:S20955"JUse try-with-resources or close this "XMLSlideShow" in a "finally" clause.(¢áÄ‰8„†›ëõ1
+g
+java:S20951"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¿×óê8„†›ëõ1
+_
+java:S6813-"BRemove this field injection and use constructor injection instead.(êæÄÞ8Óµ«ëõ1
+X	java:S1258"<This block of commented-out lines of code should be removed.(ßÜ¢µ8†›ëõ1
+t
+java:S3776]"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ž¹àùúÿÿÿÿ8¡†›ëõ1
+X	java:S125p"<This block of commented-out lines of code should be removed.(¥´ù§8¤†›ëõ1
+Y	java:S125£"<This block of commented-out lines of code should be removed.(Ž«ûú8§†›ëõ1
+M
+java:S1128"+Remove this unused import 'java.awt.Color'.(»£ÃÊøÿÿÿÿ8Ÿ“¡ëõ1
+a
+java:S1128"DRemove this unused import 'org.apache.poi.openxml4j.opc.OPCPackage'.(Û“æå8 “¡ëõ1
+@
+java:S1128"Remove this duplicated import.(÷êüžûÿÿÿÿ8§†›ëõ1
+;
+java:S1128"Remove this duplicated import.(úƒÛÕ8§†›ëõ1
+@
+java:S1128"Remove this duplicated import.(µ¦âžÿÿÿÿÿ8¨†›ëõ1
+@
+java:S1128"Remove this duplicated import.(¸ÀÚþÿÿÿÿ8¨†›ëõ1
+d
+java:S1128"GRemove this unused import 'org.apache.poi.xwpf.usermodel.XWPFDocument'.(“õÅ8 “¡ëõ1
+j
+java:S1128"HRemove this unused import 'org.apache.poi.xwpf.usermodel.XWPFParagraph'.(Ã¨À×øÿÿÿÿ8 “¡ëõ1
+d
+java:S1128"BRemove this unused import 'org.apache.poi.xwpf.usermodel.XWPFRun'.(ñÀð„ùÿÿÿÿ8 “¡ëõ1
+g
+java:S1128"JRemove this unused import 'org.springframework.core.io.ByteArrayResource'.(Ã¤Ê¾8¡“¡ëõ1
+j
+java:S1128"MRemove this unused import 'org.springframework.mail.javamail.JavaMailSender'.(ÕÃ›8¡“¡ëõ1
+r
+java:S1128"PRemove this unused import 'org.springframework.mail.javamail.MimeMessageHelper'.(Ö€”÷øÿÿÿÿ8¡“¡ëõ1
+^
+java:S1128!"<Remove this unused import 'javax.mail.internet.MimeMessage'.(«ÀÔ€þÿÿÿÿ8¡“¡ëõ1
+M
+java:S1128%"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¡“¡ëõ1

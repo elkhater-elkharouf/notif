@@ -1,6 +1,8 @@
 package com.example.userservice.Services.User;
 
 import com.example.userservice.Entities.*;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import com.example.userservice.Repository.PrivilegeRepository;
 import com.example.userservice.Repository.RoleRepository;
 import com.example.userservice.Repository.UserRepository;
@@ -40,6 +42,15 @@ public class UserServiceImp  implements IUserService {
     private EmailUserService emailUserService;
     RoleServiceImp roleService ;
     ImageServiceImpl imageService ;
+    @Override
+    public User getCurrentLoggedInUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null && authentication.getPrincipal() instanceof User) {
+            return (User) authentication.getPrincipal();
+
+        }
+        return null; // Aucun utilisateur connecté ou utilisateur non trouvé dans le contexte de sécurité
+    }
     @Override
     public User addUser(User u) throws SQLException {
         String pwd = u.getPassword();
@@ -180,7 +191,7 @@ public class UserServiceImp  implements IUserService {
     public User addUserWithRoleAndAffectPrivileges(User u) {
         String pwd = u.getPassword();
         u.setPassword(passwordEncoder.encode(pwd));
-        u.setEnabled(false);
+        //u.setEnabled(false);
 
         Role r = u.getRole();
         Set<Privilege> affectedPrivileges = new HashSet<>();

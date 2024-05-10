@@ -1,4 +1,7 @@
 package com.example.userservice.Services.User;
+import com.example.userservice.Entities.EmailTemplate;
+import com.example.userservice.Entities.GenericNotification;
+import com.example.userservice.Repository.EmailTemplateRepository;
 import lombok.AllArgsConstructor;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.openxml4j.opc.OPCPackage;
@@ -10,6 +13,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.VelocityEngine;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -20,13 +26,18 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import javax.transaction.Transactional;
 import java.io.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Transactional
 @AllArgsConstructor
 public class WordService {
-    private JavaMailSender javaMailSender;
+    //private JavaMailSender javaMailSender;
+    EmailTemplateRepository emailTemplateRepository;
+    @Autowired
+    EmailServiceImpl emailService ;
     public ByteArrayInputStream generateWordFilesFromExcel(File excelFile, File wordTemplate) throws IOException, InvalidFormatException, MessagingException {
         // Load Excel file
         Workbook workbook = new XSSFWorkbook(excelFile);
@@ -91,55 +102,39 @@ public class WordService {
         }
     }
     private void sendEmail(String toEmail, String fname ,byte[] attachmentData) throws MessagingException {
-        MimeMessage message = javaMailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message, true);
 
-        helper.setTo(toEmail);
-        helper.setSubject("your generated docx file");
 
-        helper.setText("Cher(e) " + fname + ",\n\nvous trouverez ci-joint le document d'augmentation de salaire \n\nCordialement,");
+        GenericNotification genericNotification = GenericNotification.builder()
+                .label("augmentation de salaire")
+                .emailTo(toEmail)
+                .attachmentData(attachmentData)
+                .build();
+        Map<String, Object> myHashMap = new HashMap<>();
+        myHashMap.put("fname",fname);
+// Définissez les attributs dans GenericNotification
+        genericNotification.setAttributes(myHashMap);
 
-        helper.addAttachment("output_" + fname + ".docx", new ByteArrayResource(attachmentData));
+        // Envoyez l'e-mail en utilisant le service d'e-mail
+        try {
+            emailService.sendEmailSpecificTemplate(genericNotification);
 
-      javaMailSender.send(message);
+        } catch (MessagingException e) {
+            // Gérer les erreurs de messagerie ici
+            e.printStackTrace();
+        }
+
+//        MimeMessage message = javaMailSender.createMimeMessage();
+//        MimeMessageHelper helper = new MimeMessageHelper(message, true);
+//
+//        helper.setTo(toEmail);
+//        helper.setSubject("your generated docx file");
+//
+//        helper.setText("Cher(e) " + fname + ",\n\nvous trouverez ci-joint le document d'augmentation de salaire \n\nCordialement,");
+//
+//        helper.addAttachment("output_" + fname + ".docx", new ByteArrayResource(attachmentData));
+//
+//      javaMailSender.send(message);
 
     }
+
 }
-      /*  public ByteArrayInputStream createWordFile(MultipartFile excelFile, MultipartFile wordTemplate) throws IOException {
-            // Load the Word template
-            XWPFDocument doc = new XWPFDocument(wordTemplate.getInputStream());
-            System.out.println("hani khlat");
-
-            // Load the Excel file
-            Workbook workbook = new XSSFWorkbook(excelFile.getInputStream());
-            Sheet sheet = workbook.getSheetAt(0);
-
-            // Iterate over the rows in the Excel file
-            Iterator<Row> rowIterator = sheet.iterator();
-            while (rowIterator.hasNext()) {
-                Row row = rowIterator.next();
-                String fname = row.getCell(1).getStringCellValue();  // Assuming 'Fname' is in the second column
-
-                // Replace the 'nom' field in the Word file with 'fname'
-                for (XWPFParagraph p : doc.getParagraphs()) {
-                    for (XWPFRun r : p.getRuns()) {
-                        String text = r.getText(0);
-                        if (text != null && text.contains("nom")) {
-                            text = text.replace("nom", fname);
-                            r.setText(text, 0);
-                        }
-                    }
-                }
-                System.out.println("hani khlat");
-                // Write the modified Word file to a stream
-                ByteArrayOutputStream out = new ByteArrayOutputStream();
-                doc.write(out);
-                ByteArrayInputStream in = new ByteArrayInputStream(out.toByteArray());
-                out.close();
-
-                return in;
-            }
-
-            return null;
-        }*/
-

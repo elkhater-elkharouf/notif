@@ -1,5 +1,7 @@
 package com.example.userservice.Services.User;
 import java.awt.Color; // Importer la classe Color pour spécifier la couleur du texte
+
+import com.example.userservice.Entities.GenericNotification;
 import org.apache.poi.xslf.usermodel.XMLSlideShow; // Importer la classe XMLSlideShow pour manipuler les fichiers PowerPoint
 import org.apache.poi.xslf.usermodel.XSLFShape; // Importer la classe XSLFShape pour manipuler les formes dans une diapositive
 import org.apache.poi.xslf.usermodel.XSLFSlide; // Importer la classe XSLFSlide pour manipuler les diapositives
@@ -21,6 +23,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -30,12 +33,17 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import javax.transaction.Transactional;
 import java.io.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 @Service
 @Transactional
 @AllArgsConstructor
 public class PPTService {
-    private JavaMailSender javaMailSender;
+
+    @Autowired
+    EmailServiceImpl emailService ;
     public ByteArrayInputStream generatePPTFilesFromExcel(File excelFile, File pptTemplate) throws IOException, InvalidFormatException, MessagingException {
         // Load Excel file
         Workbook workbook = new XSSFWorkbook(excelFile);
@@ -133,16 +141,35 @@ public class PPTService {
             }*/
 
     private void sendEmail(String toEmail, String fname, byte[] attachmentData) throws MessagingException {
-        MimeMessage message = javaMailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message, true);
 
-        helper.setTo(toEmail);
-        helper.setSubject("Your Generated ppt File");
+        GenericNotification genericNotification = GenericNotification.builder()
+                .label("aid mubarek")
+                .emailTo(toEmail)
+                .attachmentData(attachmentData)
+                .build();
+        Map<String, Object> myHashMap = new HashMap<>();
+        myHashMap.put("fname",fname);
+// Définissez les attributs dans GenericNotification
+        genericNotification.setAttributes(myHashMap);
 
-        helper.setText("Dear " + fname + ",\n\nPlease find your generated ppt file attached.\n\nBest regards.");
+        // Envoyez l'e-mail en utilisant le service d'e-mail
+        try {
+            emailService.sendEmailSpecificTemplate(genericNotification);
 
-        helper.addAttachment("output_" + fname + ".pptx", new ByteArrayResource(attachmentData));
-
-        javaMailSender.send(message);
+        } catch (MessagingException e) {
+            // Gérer les erreurs de messagerie ici
+            e.printStackTrace();
+        }
+//        MimeMessage message = javaMailSender.createMimeMessage();
+//        MimeMessageHelper helper = new MimeMessageHelper(message, true);
+//
+//        helper.setTo(toEmail);
+//        helper.setSubject("Your Generated ppt File");
+//
+//        helper.setText("Dear " + fname + ",\n\nPlease find your generated ppt file attached.\n\nBest regards.");
+//
+//        helper.addAttachment("output_" + fname + ".pptx", new ByteArrayResource(attachmentData));
+//
+//        javaMailSender.send(message);
     }
 }

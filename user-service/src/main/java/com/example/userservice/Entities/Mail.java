@@ -23,7 +23,8 @@ public class Mail implements Serializable {
     private String password;
 
 
-    @OneToOne
+
+    @OneToOne(mappedBy = "mail", cascade = CascadeType.ALL)
     @JsonIgnore
     private Projet projet;
 

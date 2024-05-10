@@ -3,28 +3,47 @@ package com.example.userservice.Security;
 import com.example.userservice.Entities.Mail;
 import com.example.userservice.Repository.MailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.lang.Nullable;
+import org.springframework.mail.*;
+import org.springframework.mail.javamail.*;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
-import java.security.Principal;
-import java.util.Properties;
+import javax.activation.FileTypeMap;
+import javax.mail.*;
+import javax.mail.internet.MimeMessage;
+import java.util.*;
 
 @Configuration
-
 public class MailConfig {
     @Autowired
     private MailRepository mailConfigRepository;
-
-    @Bean
-    public JavaMailSender javaMailSender() {
+//   @Autowired
+//private SecurityUtils securityUtils;
+@Bean
+    public JavaMailSender getJavaMailSenderForCurrentUser() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-
+        // Obtenir l'utilisateur connecté
+      //  Integer currentUserId = securityUtils.getCurrentUserId();
         // Récupérer les informations de configuration depuis la base de données
-        Mail mailConfigEntity = mailConfigRepository.findById(8).orElse(null);
+        Mail mailConfigEntity = mailConfigRepository.findById(1).orElse(null);
+     //  Mail mailConfigEntity = mailConfigRepository.findByUserId(currentUserId);
+      //  Long userId = null;
+        // Convertir l'ID de l'utilisateur en Long s'il n'est pas nul
+//        if (currentUserId != null) {
+//            userId = currentUserId;
+//        }
+        // Récupérer les informations de configuration depuis la base de données
+//        Mail mailConfigEntity = null;
+//        if (currentUserId != null) {
+//            mailConfigEntity = mailConfigRepository.findByUserId(currentUserId);
+//        }
+//        if (userId != null) {
+//            mailConfigEntity = mailConfigRepository.findByUserId(userId);
+//        }
         if (mailConfigEntity != null) {
             mailSender.setHost(mailConfigEntity.getHost());
             mailSender.setPort(mailConfigEntity.getPort());
@@ -44,6 +63,7 @@ public class MailConfig {
 
         return mailSender;
     }
+
 }
 /*    @Bean
     public JavaMailSender javaMailSender() {

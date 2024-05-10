@@ -8,7 +8,6 @@ import com.example.userservice.Entities.*;
 import com.example.userservice.Exception.Mensaje;
 import com.example.userservice.Model.EmailRequest;
 import com.example.userservice.Model.PasswordResetModel;
-import com.example.userservice.Model.UserDto;
 import com.example.userservice.Security.JWTUtil;
 import com.example.userservice.Services.Mail.IEmailService;
 import com.example.userservice.Services.Privilege.IPrivilegeService;
@@ -20,7 +19,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -31,7 +29,6 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.security.Principal;
-import java.sql.Blob;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.*;
@@ -56,7 +53,10 @@ public class UserController {
         return "bills hello from microservices user !";
 
     }
-
+    @GetMapping("/CurrentLoggedUser")
+    public User getCurrentLoggedInUser(){
+        return iUserService.getCurrentLoggedInUser();
+    }
 /*
     @PostMapping("/send")
     public ResponseEntity<String> sendEmail(@RequestPart EmailRequest emailRequest ) {
@@ -119,9 +119,7 @@ public String sendEmailWithAttachment(@RequestBody EmailRequest emailRequest) th
             return Response.status(Response.Status.CREATED).entity(user).build();
         }
 
-
     }
-
     @GetMapping("/getUserById/{id}")
     @ResponseBody
     public  Response  getUserById(@PathVariable("id") int id){
@@ -153,6 +151,7 @@ public String sendEmailWithAttachment(@RequestBody EmailRequest emailRequest) th
                                             @RequestPart("user") User user,
                                             @RequestPart(value = "image", required = false) MultipartFile imageFile) throws IOException {
         // Récupérer l'utilisateur existant en utilisant l'ID fourni
+
         User existingUser = iUserService.getUserById(userId);
         if (existingUser == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -463,6 +462,10 @@ public String sendEmailWithAttachment(@RequestBody EmailRequest emailRequest) th
        Mail createdEmail = iEmailService.addEmail(mail);
        return ResponseEntity.status(HttpStatus.CREATED).body(createdEmail);
    }
+    @GetMapping("/AllMail")
+    public List<Mail> getAllMail(){
+        return iEmailService.AllMail();
+    }
 
 /**********************************************************************/
 
@@ -489,5 +492,11 @@ public ResponseEntity<List<Image>> list(){
         Map result = cloudinaryService.delete(imagen.getImagenId());
         imagenService.delete(id);
         return new ResponseEntity(new Mensaje("imagen eliminada"), HttpStatus.OK);
+    }
+
+    @PostMapping("/addProjetByStep")
+    public ResponseEntity<Projet> addProjetWithMailAndUsers(@RequestBody Projet projet, @RequestParam List<Integer> userIds) {
+        Projet savedProjet = iProjetService.addProjetWithMailAndUsers(projet, userIds);
+        return ResponseEntity.ok(savedProjet);
     }
 }

@@ -1,89 +1,85 @@
 
-h	java:S112ş"FDefine and throw a dedicated exception instead of using a generic one.(ãü‰›üÿÿÿÿ8ò­£­ç1
-c	java:S112Ù"FDefine and throw a dedicated exception instead of using a generic one.(Ä²Ö8ó­£­ç1
+h	java:S112ı"FDefine and throw a dedicated exception instead of using a generic one.(ãü‰›üÿÿÿÿ8€¢ÍÑò1
+c	java:S112Ø"FDefine and throw a dedicated exception instead of using a generic one.(Ä²Ö8¢ÍÑò1
 M
-java:S3740Ø"/Provide the parametrized type for this generic.(¼ËˆÆ8ó­£­ç1
+java:S3740Û"/Provide the parametrized type for this generic.(¼ËˆÆ8¢ÍÑò1
 R
-java:S3740ç"/Provide the parametrized type for this generic.(Öñ×÷ûÿÿÿÿ8ó­£­ç1
+java:S3740ê"/Provide the parametrized type for this generic.(Öñ×÷ûÿÿÿÿ8¢ÍÑò1
 M
-java:S3740é"/Provide the parametrized type for this generic.(£é‘8ó­£­ç1
+java:S3740ì"/Provide the parametrized type for this generic.(£é‘8¢ÍÑò1
 L
-java:S3740ë"/Provide the parametrized type for this generic.(„Êı&8ó­£­ç1
+java:S3740î"/Provide the parametrized type for this generic.(„Êı&8¢ÍÑò1
 Y
-java:S4973j"<Strings and Boxed types should be compared using "equals()".(ùÁä¹8ö­£­ç1
+java:S4973j"<Strings and Boxed types should be compared using "equals()".(ùÁä¹8„¢ÍÑò1
 ^
-java:S4973m"<Strings and Boxed types should be compared using "equals()".(òÆÚòüÿÿÿÿ8ö­£­ç1
+java:S4973m"<Strings and Boxed types should be compared using "equals()".(òÆÚòüÿÿÿÿ8„¢ÍÑò1
 Y
-java:S4973p"<Strings and Boxed types should be compared using "equals()".( àæŞ8ö­£­ç1
+java:S4973p"<Strings and Boxed types should be compared using "equals()".( àæŞ8„¢ÍÑò1
 Y
-java:S4973p"<Strings and Boxed types should be compared using "equals()".( àæŞ8ö­£­ç1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŸöÔÄÿÿÿÿÿ8÷­£­ç1
+java:S4973p"<Strings and Boxed types should be compared using "equals()".( àæŞ8„¢ÍÑò1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŸöÔÄÿÿÿÿÿ8…¢ÍÑò1
 s
-java:S3655è"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ñ°´Öÿÿÿÿÿ8”®£­ç1
-j	java:S1006"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ëğ³‘8—®£­ç1
-]	java:S125>"<This block of commented-out lines of code should be removed.(Ğáïßıÿÿÿÿ8—®£­ç1
-L	java:S106S"+Replace this use of System.out by a logger.(ªÄ¡Ñûÿÿÿÿ8™®£­ç1
+java:S3655ë"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(ñ°´Öÿÿÿÿÿ8«¢ÍÑò1
+j	java:S1003"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ëğ³‘8°¢ÍÑò1
+]	java:S125>"<This block of commented-out lines of code should be removed.(Ğáïßıÿÿÿÿ8±¢ÍÑò1
+L	java:S106S"+Replace this use of System.out by a logger.(ªÄ¡Ñûÿÿÿÿ8³¢ÍÑò1
 b
-java:S4684i"@Replace this persistent entity with a simple POJO or DTO object.(‚Ãğüÿÿÿÿ8›®£­ç1
+java:S4684i"@Replace this persistent entity with a simple POJO or DTO object.(‚Ãğüÿÿÿÿ8µ¢ÍÑò1
 B
-java:S3751"Make this method non "private".(¦êîëÿÿÿÿÿ8®£­ç1
+java:S3751Œ"Make this method non "private".(¦êîëÿÿÿÿÿ8¸¢ÍÑò1
 c
-java:S4684™"@Replace this persistent entity with a simple POJO or DTO object.(…Ôøıÿÿÿÿ8®£­ç1
+java:S4684—"@Replace this persistent entity with a simple POJO or DTO object.(…Ôøıÿÿÿÿ8¹¢ÍÑò1
 B
-java:S3751¶"Make this method non "private".(¦ƒÍåÿÿÿÿÿ8¡®£­ç1
+java:S3751µ"Make this method non "private".(¦ƒÍåÿÿÿÿÿ8¼¢ÍÑò1
 E
-java:S1125»"'Remove the unnecessary boolean literal.(Ã§ùÃ8¢®£­ç1
+java:S1125º"'Remove the unnecessary boolean literal.(Ã§ùÃ8½¢ÍÑò1
 ^
-java:S4684Ë"@Replace this persistent entity with a simple POJO or DTO object.(ºş8£®£­ç1
+java:S4684Ê"@Replace this persistent entity with a simple POJO or DTO object.(ºş8¾¢ÍÑò1
 u
-java:S2737û"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û8¥®£­ç1
+java:S2737ú"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û8Á¢ÍÑò1
 T
-java:S6437à"6Revoke and change this password, as it is compromised.(Ùíç¼8¥®£­ç1
-k	java:S100Ã"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈÓü”8½®£­ç1
-j	java:S100Ç"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á–O8½®£­ç1
+java:S6437ß"6Revoke and change this password, as it is compromised.(Ùíç¼8Á¢ÍÑò1
+k	java:S100Â"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈÓü”8Û¢ÍÑò1
+j	java:S100Æ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á–O8Ü¢ÍÑò1
 ]
-java:S4684Ç"@Replace this persistent entity with a simple POJO or DTO object.(Á–O8½®£­ç1
+java:S4684Æ"@Replace this persistent entity with a simple POJO or DTO object.(Á–O8Ü¢ÍÑò1
 ]
-java:S4684Ò"@Replace this persistent entity with a simple POJO or DTO object.(ìŞÀP8¾®£­ç1
+java:S4684Ñ"@Replace this persistent entity with a simple POJO or DTO object.(ìŞÀP8Ü¢ÍÑò1
 B
-java:S3751Ş"Make this method non "private".(Óù²Õùÿÿÿÿ8¿®£­ç1
+java:S3751İ"Make this method non "private".(Óù²Õùÿÿÿÿ8İ¢ÍÑò1
 ^
-java:S4684ä"@Replace this persistent entity with a simple POJO or DTO object.(¿È³Ê8¿®£­ç1
+java:S4684ã"@Replace this persistent entity with a simple POJO or DTO object.(¿È³Ê8Ş¢ÍÑò1
 =
-java:S3751ä"Make this method non "private".(¿È³Ê8¿®£­ç1
+java:S3751ã"Make this method non "private".(¿È³Ê8Ş¢ÍÑò1
 c
-java:S4684÷"@Replace this persistent entity with a simple POJO or DTO object.(¯¯åıÿÿÿÿ8À®£­ç1
+java:S4684ö"@Replace this persistent entity with a simple POJO or DTO object.(¯¯åıÿÿÿÿ8ß¢ÍÑò1
 B
-java:S3751ƒ"Make this method non "private".(—ÿÿ•üÿÿÿÿ8À®£­ç1
+java:S3751‚"Make this method non "private".(—ÿÿ•üÿÿÿÿ8ß¢ÍÑò1
 c
-java:S4684‰"@Replace this persistent entity with a simple POJO or DTO object.(ÓÄ§Íøÿÿÿÿ8Á®£­ç1
+java:S4684ˆ"@Replace this persistent entity with a simple POJO or DTO object.(ÓÄ§Íøÿÿÿÿ8à¢ÍÑò1
 B
-java:S3751‰"Make this method non "private".(ÓÄ§Íøÿÿÿÿ8Á®£­ç1
+java:S3751ˆ"Make this method non "private".(ÓÄ§Íøÿÿÿÿ8à¢ÍÑò1
 ]
-java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(ÒÂv8Á®£­ç1
+java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(ÒÂv8á¢ÍÑò1
 ^
-java:S4684§"@Replace this persistent entity with a simple POJO or DTO object.(È³š8Â®£­ç1
+java:S4684¦"@Replace this persistent entity with a simple POJO or DTO object.(È³š8â¢ÍÑò1
 =
-java:S3751³"Make this method non "private".(Š¤Üê8Â®£­ç1
+java:S3751²"Make this method non "private".(Š¤Üê8ã¢ÍÑò1
 c
-java:S4684¹"@Replace this persistent entity with a simple POJO or DTO object.(ı½•Îşÿÿÿÿ8Ã®£­ç1
+java:S4684¸"@Replace this persistent entity with a simple POJO or DTO object.(ı½•Îşÿÿÿÿ8ã¢ÍÑò1
 B
-java:S3751¹"Make this method non "private".(ı½•Îşÿÿÿÿ8Ã®£­ç1
+java:S3751¸"Make this method non "private".(ı½•Îşÿÿÿÿ8ã¢ÍÑò1
 c
-java:S4684¿"@Replace this persistent entity with a simple POJO or DTO object.(§áöúÿÿÿÿ8Ã®£­ç1
+java:S4684¾"@Replace this persistent entity with a simple POJO or DTO object.(§áöúÿÿÿÿ8ã¢ÍÑò1
 c
-java:S4684Å"@Replace this persistent entity with a simple POJO or DTO object.(õĞ«ùÿÿÿÿ8Ã®£­ç1
+java:S4684Ä"@Replace this persistent entity with a simple POJO or DTO object.(õĞ«ùÿÿÿÿ8ä¢ÍÑò1
 ^
-java:S4684Î"@Replace this persistent entity with a simple POJO or DTO object.(‰ûëß8Ä®£­ç1
+java:S4684Í"@Replace this persistent entity with a simple POJO or DTO object.(‰ûëß8ä¢ÍÑò1
 X
-java:S1854é":Remove this useless assignment to local variable "result".(£é‘8Æ®£­ç1
+java:S1854ì":Remove this useless assignment to local variable "result".(£é‘8ç¢ÍÑò1
 I
-java:S1452å"&Remove usage of generic wildcard type.(Šóùˆøÿÿÿÿ8Æ®£­ç1
+java:S1452è"&Remove usage of generic wildcard type.(Šóùˆøÿÿÿÿ8ç¢ÍÑò1
 I
-java:S1481é"+Remove this unused "result" local variable.(£é‘8Ç®£­ç1
-d
-java:S1128"BRemove this unused import 'com.example.userservice.Model.UserDto'.(Ïùåçşÿÿÿÿ8Ç®£­ç1
-s
-java:S1128"VRemove this unused import 'org.springframework.security.access.prepost.PostAuthorize'.(ª¤°Ñ8Ç®£­ç1
-G
-java:S1128""*Remove this unused import 'java.sql.Blob'.(ïÚ¶ã8Ç®£­ç1
+java:S1481ì"+Remove this unused "result" local variable.(£é‘8è¢ÍÑò1
+^
+java:S4684ò"@Replace this persistent entity with a simple POJO or DTO object.(òìœ–8è¢ÍÑò1

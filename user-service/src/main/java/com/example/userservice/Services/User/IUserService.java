@@ -13,8 +13,8 @@ import java.util.List;
 import java.util.Set;
 
 public interface IUserService {
-
-        public User addUser(User u) throws SQLException;
+    public User getCurrentLoggedInUser() ;
+    public User addUser(User u) throws SQLException;
         public User getUser(String email);
      //   public String updateUser(int userId, Role role, List<Privilege> privileges, Image image);
         public User updateUser(User u);

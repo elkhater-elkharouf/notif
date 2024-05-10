@@ -13,7 +13,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -101,6 +100,8 @@ public class  JwtAuthentificationFilter extends UsernamePasswordAuthenticationFi
                                 //convertit la liste des authoritys de lobjet user spring en liste de priviléges
                                 .withClaim("privileges",user.getAuthorities().stream().map(ga->ga.getAuthority()).collect(Collectors.toList()))
                                 .withClaim("role",user1.getRole().getRoleName())
+                                .withClaim("idUser",user1.getIdUser())
+                                .withClaim("email",user1.getEmail())
                                 .sign(algorithm);
         // envoyer jwt au client dans l header  appelé Authorization
 
@@ -146,4 +147,5 @@ public class  JwtAuthentificationFilter extends UsernamePasswordAuthenticationFi
 
         response.getWriter().write(errorJson);
     }
+
 }

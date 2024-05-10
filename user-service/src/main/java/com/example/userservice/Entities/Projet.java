@@ -20,14 +20,16 @@ public class Projet implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idProjet ;
+    private String nameProjet ;
     @Temporal(TemporalType.DATE)
     private Date dateDeb ;
-    private Boolean status ;
-
+    private int status ;
+    @Temporal(TemporalType.DATE)
+    private Date dateFin ;
     @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Set<User> users;
 
-    @OneToOne(mappedBy = "projet" , cascade = CascadeType.ALL)
+    @OneToOne
     private Mail mail ;
 
 }

@@ -1,10 +1,27 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8ƒßØ¥Ş1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8£’İËò1
 g
-java:S2095 "JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¿×óê8ÕóÙ¥Ş1
+java:S2095/"JUse try-with-resources or close this "XWPFDocument" in a "finally" clause.(¼î±Š8û“İËò1
 g
-java:S2095$"JUse try-with-resources or close this "XWPFDocument" in a "finally" clause.(¼î±Š8ÕóÙ¥Ş1
-X	java:S125("<This block of commented-out lines of code should be removed.(ßÜ¢µ8§ßØ¥Ş1
-]	java:S125l"<This block of commented-out lines of code should be removed.(¿âÖçùÿÿÿÿ8­ßØ¥Ş1
+java:S2095+"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¿×óê8û“İËò1
+_
+java:S6813'"BRemove this field injection and use constructor injection instead.(êæÄŞ8ü“İËò1
+X	java:S125%"<This block of commented-out lines of code should be removed.(ËáçÕ8ş“İËò1
+X	java:S1253"<This block of commented-out lines of code should be removed.(ßÜ¢µ8”İËò1
+X	java:S125~"<This block of commented-out lines of code should be removed.(«ûú8¶—ŞËò1
+m
+java:S1128"KRemove this unused import 'com.example.userservice.Entities.EmailTemplate'.(éõ·¥øÿÿÿÿ8áøËıò1
+b
+java:S1128"@Remove this unused import 'org.apache.velocity.VelocityContext'.(¹Öôøÿÿÿÿ8áøËıò1
+`
+java:S1128"CRemove this unused import 'org.apache.velocity.app.VelocityEngine'.(‡ÔŸ¢8áøËıò1
 g
-java:S1128"KRemove this unused import 'org.springframework.core.io.FileSystemResource'.(°ü‘48õóÙ¥Ş1
+java:S1128"JRemove this unused import 'org.springframework.core.io.ByteArrayResource'.(Ã¤Ê¾8áøËıò1
+g
+java:S1128"KRemove this unused import 'org.springframework.core.io.FileSystemResource'.(°ü‘48áøËıò1
+j
+java:S1128"MRemove this unused import 'org.springframework.mail.javamail.JavaMailSender'.(ÕÃ›8âøËıò1
+r
+java:S1128"PRemove this unused import 'org.springframework.mail.javamail.MimeMessageHelper'.(Ö€”÷øÿÿÿÿ8âøËıò1
+^
+java:S1128"<Remove this unused import 'javax.mail.internet.MimeMessage'.(«ÀÔ€şÿÿÿÿ8âøËıò1
