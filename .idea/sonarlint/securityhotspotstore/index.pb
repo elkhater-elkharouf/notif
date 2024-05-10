@@ -123,3 +123,7 @@ Nuser-service/src/main/java/com/example/userservice/Entities/EmailTemplate.java
 Zuser-service/src/main/java/com/example/userservice/Repository/EmailTemplateRepository.java,1\b\1b6e0e7ca9612a56ee5fa2cc613d30b7f5f41418
 †
 Vuser-service/src/main/java/com/example/userservice/Services/User/EmailServiceImpl.java,c\6\c683acc8cf34b3738bc78c5ed92a32696825fd21
+Œ
+\user-service/src/test/java/com/example/userservice/Services/Projet/ProjetServiceImpTest.java,8\0\800d17764a9c25df1776c934e9151f097a75bb5a
+ƒ
+Suser-service/src/test/java/com/example/userservice/UserServiceApplicationTests.java,3\b\3b620db136ffa737a7238050801c7ee0acc0b417

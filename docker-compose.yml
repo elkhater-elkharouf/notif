@@ -18,6 +18,19 @@ services:
     environment:
       - eureka.client.service-url.defaultZone=http://discovery-service:8761/eureka/
 
+
+  front-service:
+#    build:
+#      context: /usr/src/app
+    ports:
+      - "4202:4200"
+    image: "angular-dockerv1.1"
+    depends_on:
+      - user-service
+
+
+
+
   user-service:
     image: "user-service"
     restart: always
@@ -27,7 +40,7 @@ services:
     depends_on:
       - mysqldb
     environment:
-      - "SPRING_APPLICATION_JSON={ \"spring.datasource.url\" : \"jdbc:mysql://mysqldb:3306/user?createDatabaseIfNotExist=true\", \"spring.datasource.username\" : \"root\", \"spring.datasource.password\" : \"root\" }"
+      - "SPRING_APPLICATION_JSON={ \"spring.datasource.url\" : \"jdbc:mysql://mysqldb:3306/userDocker?createDatabaseIfNotExist=true\", \"spring.datasource.username\" : \"root\", \"spring.datasource.password\" : \"root\" }"
       - "eureka.client.service-url.defaultZone=http://discovery-service:8761/eureka/"
   mysqldb:
     container_name: mysqldb
@@ -37,7 +50,7 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: user
+      MYSQL_DATABASE: userDocker
       #MYSQL_PASSWORD: "password"
 #      MYSQL_ROOT_PASSWORD: "root"
       MYSQL_ALLOW_EMPTY_PASSWORD: yes
