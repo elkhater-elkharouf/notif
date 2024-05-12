@@ -175,7 +175,7 @@ int user2Id=2 ;
         mail.setPassword(password);
         mailRepository.save(mail);
 
-        // Créer des utilisateurs
+      
         // Fetch fresh instances of User entities
         User user1 = userRepository.findById(user1Id).orElseThrow(() -> new RuntimeException("User not found with id: " + user1Id));
         User user2 = userRepository.findById(user2Id).orElseThrow(() -> new RuntimeException("User not found with id: " + user2Id));
