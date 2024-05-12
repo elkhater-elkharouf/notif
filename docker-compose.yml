@@ -5,34 +5,32 @@ services:
       context: ./discovery-service
     ports:
       - "8761:8761"
-    image: "discovery-service"
+    image: khaterkhrouf/discovery-service
 
   gateway-service:
     build:
       context: ./gateway-service
     ports:
       - "8888:9999"
-    image: "gateway-service"
+    image: khaterkhrouf/gateway-service
     depends_on:
       - discovery-service
     environment:
       - eureka.client.service-url.defaultZone=http://discovery-service:8761/eureka/
 
 
-  front-service:
-#    build:
-#      context: /usr/src/app
-    ports:
-      - "4202:4200"
-    image: "angular-dockerv1.1"
-    depends_on:
-      - user-service
-
+#  front-service:
+#    ports:
+#      - "4202:4200"
+#    image: "angular-dockerv1.1"
+#    depends_on:
+#      - user-service
+#
 
 
 
   user-service:
-    image: "user-service"
+    image: khaterkhrouf/user-service
     restart: always
     build: ./user-service
     ports:
