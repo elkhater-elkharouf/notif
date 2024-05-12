@@ -53,13 +53,13 @@ services:
 #      MYSQL_ROOT_PASSWORD: "root"
       MYSQL_ALLOW_EMPTY_PASSWORD: yes
 
-#  phpmyadmin:
-#    image: phpmyadmin
-#    restart: always
-#    ports:
-#      - 8080:80
-#    environment:
-#      PMA_HOST: mysql
-#      PMA_PORT: 3306
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
 volumes:
   mysql-data:
