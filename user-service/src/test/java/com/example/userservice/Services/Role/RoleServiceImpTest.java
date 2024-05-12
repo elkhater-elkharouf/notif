@@ -1,6 +1,8 @@
 package com.example.userservice.Services.Role;
 
+import com.example.userservice.Entities.Privilege;
 import com.example.userservice.Entities.Role;
+import com.example.userservice.Repository.PrivilegeRepository;
 import com.example.userservice.Repository.RoleRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
@@ -10,8 +12,11 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.transaction.Transactional;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -24,6 +29,8 @@ class RoleServiceImpTest {
 
     @Autowired
     private RoleRepository roleRepository;
+    @Autowired
+    private PrivilegeRepository privilegeRepository;
 
     @Test
     void addRole() {
@@ -106,11 +113,35 @@ class RoleServiceImpTest {
         }
     }
 
-//    @Test
-//    void addRoleWithPrivilege() {
-//    }
-//
-//    @Test
-//    void affectRoleToPrivilege() {
-//    }
+    @Test
+    @Transactional
+    void addRoleWithPrivilege() {
+        // Création d'un rôle avec un privilège simulé
+        Role role = new Role();
+        role.setRoleName("Test Role");
+
+        // Fetch fresh instances of Privilege entities
+        Privilege priv1 = privilegeRepository.findById(1).orElseThrow(() -> new RuntimeException("Privilege not found with id: 1"));
+        Privilege priv2 = privilegeRepository.findById(2).orElseThrow(() -> new RuntimeException("Privilege not found with id: 2"));
+
+        // Ajout des privilèges au rôle
+        Set<Privilege> privileges = new HashSet<>();
+        privileges.add(priv1);
+        privileges.add(priv2);
+        role.setPrivileges(privileges);
+
+        // Appel de la méthode à tester
+        Role savedRole = roleService.AddRoleWithPrivilege(role);
+
+        // Vérifications
+        assertNotNull(savedRole);
+        assertNotNull(savedRole.getIdRole());
+        assertEquals("Test Role", savedRole.getRoleName());
+
+        // Récupération du rôle depuis le repository pour vérification
+        Role retrievedRole = roleRepository.findById(savedRole.getIdRole()).orElse(null);
+        assertNotNull(retrievedRole);
+        assertEquals("Test Role", retrievedRole.getRoleName());
+        assertEquals(2, retrievedRole.getPrivileges().size());
+    }
 }

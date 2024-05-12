@@ -5,21 +5,21 @@ n	java:S117‰"QRename this local variable to match the regular expression '^[a
 n	java:S117‰"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍˆõË8Âß¸«ç1
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8Ëß¸«ç1
 `
-java:S2259š"BA "NullPointerException" could be thrown; "user" is nullable here.(í¿ŸÇ8µêĞò1
-j
-java:S2259®"GA "NullPointerException" could be thrown; "privilege" is nullable here.(­ôøøÿÿÿÿÿ8µêĞò1
-`
-java:S2259"BA "NullPointerException" could be thrown; "user" is nullable here.(èÀ˜ë8µêĞò1
+java:S2259¬"BA "NullPointerException" could be thrown; "user" is nullable here.(İóë…8µêĞò1
 `
 java:S2259¤"BA "NullPointerException" could be thrown; "user" is nullable here.(œ¤¸‘8µêĞò1
-`
-java:S2259¬"BA "NullPointerException" could be thrown; "user" is nullable here.(İóë…8µêĞò1
-e
-java:S2259º"BA "NullPointerException" could be thrown; "user" is nullable here.(ñöµ¡ûÿÿÿÿ8µêĞò1
 j
 java:S2259»"GA "NullPointerException" could be thrown; "privilege" is nullable here.(Ú¶ÒÉüÿÿÿÿ8Âà¸«ç1
 `
+java:S2259"BA "NullPointerException" could be thrown; "user" is nullable here.(èÀ˜ë8µêĞò1
+j
+java:S2259®"GA "NullPointerException" could be thrown; "privilege" is nullable here.(­ôøøÿÿÿÿÿ8µêĞò1
+`
+java:S2259š"BA "NullPointerException" could be thrown; "user" is nullable here.(í¿ŸÇ8µêĞò1
+`
 java:S2259ˆ"BA "NullPointerException" could be thrown; "user" is nullable here.(äß8µêĞò1
+e
+java:S2259º"BA "NullPointerException" could be thrown; "user" is nullable here.(ñöµ¡ûÿÿÿÿ8µêĞò1
 `
 java:S2259®"BA "NullPointerException" could be thrown; "user" is nullable here.(şÔ†Ÿ8µêĞò1
 b

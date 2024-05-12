@@ -48,23 +48,26 @@ PrivilegeRepository privilegeRepository;
     @Override
     @Transactional
     public Role AddRoleWithPrivilege(Role role) {
-
-        for (Privilege privilege : role.getPrivileges()){
-            System.out.println(privilege.getPrivilegeName()+"ssssssssssssssssss");
-            Privilege p = privilegeRepository.findById(privilege.getIdPrivilege()).orElse(null);
-            if (privilege.getRoles() == null) {
-                privilege.setRoles(new HashSet<>());
-
-            }
-             roleRepository.save(role);
-            Role r = roleRepository.findById(role.getIdRole()).orElse(null);
-            r.getPrivileges().addAll(role.getPrivileges());
-                privilege.getRoles().add(role);
-                privilegeRepository.save(privilege);
-
+        // Assurez-vous que la liste de privilèges du rôle n'est pas null
+        if (role.getPrivileges() == null) {
+            role.setPrivileges(new HashSet<>());
         }
+
+        // Parcourir les privilèges et les associer au rôle
+        for (Privilege privilege : role.getPrivileges()) {
+            // Recherche du privilège dans la base de données
+            Privilege retrievedPrivilege = privilegeRepository.findById(privilege.getIdPrivilege())
+                    .orElseThrow(() -> new RuntimeException("Privilege not found with id: " + privilege.getIdPrivilege()));
+
+            // Associer le rôle au privilège
+            retrievedPrivilege.getRoles().add(role);
+            // Sauvegarder le privilège modifié
+            privilegeRepository.save(retrievedPrivilege);
+        }
+
+        // Sauvegarder le rôle avec les privilèges associés
         return roleRepository.save(role);
-        }
+    }
 
 
     @Override
