@@ -14,6 +14,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -110,11 +111,34 @@ private IProjetService iProjetService ;
            Assertions.assertTrue(true);
         }
     }
-//
-//    @Test
-//    void getProjetById() {
-//    }
-//
+    @Test
+    void getProjetById_ProjetExists() {
+        // Créer un projet
+        Projet projet = new Projet();
+        projet.setNameProjet("Test Projet");
+        projet.setDateDeb(new Date());
+        projet.setStatus(1);
+        projet.setDateFin(new Date());
+
+        // Enregistrer le projet dans la base de données
+        projetRepository.save(projet);
+
+        // Récupérer le projet par son ID
+        Projet retrievedProjet = projetService.getProjetById(projet.getIdProjet());
+
+        // Vérifications
+        assertNotNull(retrievedProjet);
+
+    }
+
+    @Test
+    void getProjetById_ProjetNotExists() {
+        // Récupérer un projet avec un ID inexistant
+        Projet retrievedProjet = projetService.getProjetById(-1);
+
+        // Vérifier si le projet récupéré est null
+        assertNull(retrievedProjet);
+    }
     @Test
     void getAllProjets() {
         List<Projet> retrievedProjet = iProjetService.getAllProjets();
@@ -128,73 +152,59 @@ private IProjetService iProjetService ;
             Assertions.assertEquals(0, retrievedProjet.size());
         }
     }
-//
-//    @Test
-//    void addMailAndAsseignToProject() {
-//    }
-//
-//    @Test
-//    void addProjetWithUsers() {
-//    }
-//
-//    @Test
-//    void addProjetWithMailAndUsers() {
-//        // Données de test
-//        String projectName = "Test Projet";
-//        String host = "testHost";
-//        int port = 1234;
-//        String username = "testUser";
-//        String password = "testPassword";
-//        Date startDate = new Date();
-//        Date endDate = new Date();
-//        String user1FirstName = "John";
-//        String user1LastName = "Doe";
-//        String user2FirstName = "Jane";
-//        String user2LastName = "Doe";
-//
-//        // Enregistrer le mail dans la base de données
-//        Mail mail = new Mail();
-//        mail.setHost(host);
-//        mail.setPort(port);
-//        mail.setUsername(username);
-//        mail.setPassword(password);
-//        mailRepository.save(mail);
-//
-//        // Créer des utilisateurs
-//        User user1 = new User();
-//        user1.setFname(user1FirstName);
-//        user1.setLname(user1LastName);
-//        userRepository.save(user1);
-//
-//        User user2 = new User();
-//        user2.setFname(user2FirstName);
-//        user2.setLname(user2LastName);
-//        userRepository.save(user2);
-//
-//        // Créer une liste d'utilisateurs à associer au projet
-//        List<Integer> userIds = List.of(user1.getIdUser(), user2.getIdUser());
-//
-//        // Créer un projet
-//        Projet projet = new Projet();
-//        projet.setNameProjet(projectName);
-//        projet.setDateDeb(startDate);
-//        projet.setStatus(1);
-//        projet.setDateFin(endDate);
-//        projet.setMail(mail);
-//
-//        // Exécuter la méthode à tester
-//        Projet savedProjet = iProjetService.addProjetWithMailAndUsers(projet, userIds);
-//
-//        // Vérifications
-//        assertNotNull(savedProjet.getIdProjet());
-//        assertEquals(projectName, savedProjet.getNameProjet());
-//        assertNotNull(savedProjet.getMail());
-//        assertEquals(host, savedProjet.getMail().getHost());
-//        assertEquals(port, savedProjet.getMail().getPort());
-//        assertEquals(username, savedProjet.getMail().getUsername());
-//        assertEquals(password, savedProjet.getMail().getPassword());
-//        assertEquals(2, savedProjet.getUsers().size()); // Vérifie que les deux utilisateurs sont associés au projet
-//    }
+
+    @Test
+    @Transactional
+    void addProjetWithMailAndUsers() {
+        // Données de test
+        String projectName = "Test Projet";
+        String host = "testHost";
+        int port = 1234;
+        String username = "testUser";
+        String password = "testPassword";
+        Date startDate = new Date();
+        Date endDate = new Date();
+int user1Id=1;
+int user2Id=2 ;
+
+        // Enregistrer le mail dans la base de données
+        Mail mail = new Mail();
+        mail.setHost(host);
+        mail.setPort(port);
+        mail.setUsername(username);
+        mail.setPassword(password);
+        mailRepository.save(mail);
+
+        // Créer des utilisateurs
+        // Fetch fresh instances of User entities
+        User user1 = userRepository.findById(user1Id).orElseThrow(() -> new RuntimeException("User not found with id: " + user1Id));
+        User user2 = userRepository.findById(user2Id).orElseThrow(() -> new RuntimeException("User not found with id: " + user2Id));
+
+
+        // Créer une liste d'utilisateurs à associer au projet
+        List<Integer> userIds = List.of(user1.getIdUser(), user2.getIdUser());
+
+        // Créer un projet
+        Projet projet = new Projet();
+        projet.setNameProjet(projectName);
+        projet.setDateDeb(startDate);
+        projet.setStatus(1);
+        projet.setDateFin(endDate);
+        projet.setMail(mail);
+
+        // Exécuter la méthode à tester
+        Projet savedProjet = iProjetService.addProjetWithMailAndUsers(projet, userIds);
+
+        // Vérifications
+        assertNotNull(savedProjet.getIdProjet());
+        assertEquals(projectName, savedProjet.getNameProjet());
+        assertNotNull(savedProjet.getMail());
+        assertEquals(host, savedProjet.getMail().getHost());
+        assertEquals(port, savedProjet.getMail().getPort());
+        assertEquals(username, savedProjet.getMail().getUsername());
+        assertEquals(password, savedProjet.getMail().getPassword());
+        assertEquals(2, savedProjet.getUsers().size()); // Vérifie que les deux utilisateurs sont associés au projet
+    }
 
 
 
