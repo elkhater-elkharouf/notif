@@ -127,3 +127,11 @@ Vuser-service/src/main/java/com/example/userservice/Services/User/EmailServiceIm
 \user-service/src/test/java/com/example/userservice/Services/Projet/ProjetServiceImpTest.java,8\0\800d17764a9c25df1776c934e9151f097a75bb5a
 ƒ
 Suser-service/src/test/java/com/example/userservice/UserServiceApplicationTests.java,3\b\3b620db136ffa737a7238050801c7ee0acc0b417
+ˆ
+Xuser-service/src/test/java/com/example/userservice/Services/User/UserServiceImpTest.java,0\7\0785a820b5309d72244e8f5a9f73edc3b98593f1
+Ž
+^user-service/src/main/java/com/example/userservice/Services/Privilege/PrivilegeServiceImp.java,a\c\ac9f97dad3e516e05e8a034bddd98b384581d00d
+’
+buser-service/src/test/java/com/example/userservice/Services/Privilege/PrivilegeServiceImpTest.java,e\f\ef4c9e5818f41f0b0e82e2b70be4b1dcebfd898b
+ˆ
+Xuser-service/src/test/java/com/example/userservice/Services/Role/RoleServiceImpTest.java,6\9\6910a12204cd1a7d047c4d72cc554d6f2293d3c7
