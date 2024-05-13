@@ -98,26 +98,7 @@ public class EmailUserService {
             javaMailSender.send(message);
         }
     }
-/*
-    public void sendEmail(String recipient, String subject, String senderName, String mailContent, MultipartFile attachment) throws MessagingException {
-        MimeMessage message = javaMailSender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message, true);
-        helper.setTo(recipient);
-        helper.setSubject(subject);
-        helper.setText(mailContent, true);
-        helper.setFrom(senderName);
-        // Ajout de la pièce jointe
-       FileSystemResource file = new FileSystemResource(new File(String.valueOf(attachment)));
-       helper.addAttachment(file.getFilename(), file);
-        // Ajout de la pièce jointe
-      //  ByteArrayResource resource = new ByteArrayResource(filePath.getBytes());
-        //helper.addAttachment(filePath.getOriginalFilename(), resource);
-       /* if (attachment != null) {
-            helper.addAttachment(attachment.getOriginalFilename(), attachment);
-        }*//*
-        javaMailSender.send(message);
-    }
-*/
+
 
     public void sendMailWithAttchment(String toEmail,
                                      String body,

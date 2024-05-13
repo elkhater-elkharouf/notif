@@ -5,24 +5,16 @@ import com.example.userservice.Repository.MailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.lang.Nullable;
-import org.springframework.mail.*;
-import org.springframework.mail.javamail.*;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-import org.springframework.util.Assert;
 
-import javax.activation.FileTypeMap;
-import javax.mail.*;
-import javax.mail.internet.MimeMessage;
+import org.springframework.mail.javamail.*;
+
 import java.util.*;
 
 @Configuration
 public class MailConfig {
     @Autowired
     private MailRepository mailConfigRepository;
-//   @Autowired
-//private SecurityUtils securityUtils;
+
 @Bean
     public JavaMailSender getJavaMailSenderForCurrentUser() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
@@ -65,49 +57,5 @@ public class MailConfig {
     }
 
 }
-/*    @Bean
-    public JavaMailSender javaMailSender() {
-        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-        mailSender.setHost("smtp.gmail.com");
-        mailSender.setPort(587);
-        mailSender.setUsername("katerkarouf26@gmail.com");
-        mailSender.setPassword("ocgo wupl fprn cjoq");
 
-        Properties props = mailSender.getJavaMailProperties();
-        props.put("mail.transport.protocol", "smtp");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
-
-        return mailSender;
-    }*/
-
-/*
-    @Value("${email.host}")
-    private String host;
-
-    @Value("${email.from}")
-    private String from;
-
-    @Value("${email.subject}")
-    private String subject;
-
-    @Value("${email.port}")
-    private int port ;
-
-    @Bean
-    public JavaMailSender javaMailService() {
-        JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
-        javaMailSender.setHost(host);
-        javaMailSender.setPort(port);
-
-        return javaMailSender;
-    }
-
-    @Bean
-    public SimpleMailMessage simpleMailMessage() {
-        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-        simpleMailMessage.setFrom(from);
-        simpleMailMessage.setSubject(subject);
-        return simpleMailMessage;
-    }*/
 

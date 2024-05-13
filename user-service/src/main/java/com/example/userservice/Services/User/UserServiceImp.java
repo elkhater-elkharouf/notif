@@ -8,19 +8,11 @@ import com.example.userservice.Repository.RoleRepository;
 import com.example.userservice.Repository.UserRepository;
 import com.example.userservice.Repository.VerificationTokenRepository;
 import com.example.userservice.Services.Role.RoleServiceImp;
-import com.example.userservice.Services.User.IUserService;
 import lombok.AllArgsConstructor;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.transaction.Transactional;
-
 import javax.ws.rs.core.Response;
-
-import java.sql.Blob;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.HashSet;
@@ -122,13 +114,7 @@ public class UserServiceImp  implements IUserService {
         return userRepository.save(existingUser);
     }
 
-/*
-    @Override
-    public User updateUser(User u) {
-        String pwd = u.getPassword();
-        u.setPassword(passwordEncoder.encode(pwd));
-        return userRepository.save(u);
-    }*/
+
 
     @Override
     public void deleteUser(int id) {

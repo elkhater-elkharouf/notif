@@ -1,14 +1,6 @@
 
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ø†Ì¥
 Z
-java:S1874"DRemove this use of "WebSecurityConfigurerAdapter"; it is deprecated.(Ë¶Ï“
+java:S1874"DRemove this use of "WebSecurityConfigurerAdapter"; it is deprecated.(Ë¶Ï“
 T
-java:S5344%">Don't use the default "PasswordEncoder" relying on plain-text.( Á¨‹
-V	java:S125="<This block of commented-out lines of code should be removed.(Ä™ªÿÿÿÿÿÿ
-Q	java:S125E"<This block of commented-out lines of code should be removed.(Ô¹Ú¬
-v
-java:S1128"ZRemove this unused import 'org.springframework.security.oauth2.provider.token.TokenStore'.(òÉÖ8ÇÅ×ôò1
-
-java:S1128"mRemove this unused import 'org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter'.(ÒçÂêúÿÿÿÿ8ÇÅ×ôò1
-€
-java:S1128"cRemove this unused import 'org.springframework.security.oauth2.provider.token.store.JwtTokenStore'.(Š§œÛ8ÇÅ×ôò1
+java:S5344#">Don't use the default "PasswordEncoder" relying on plain-text.( Á¨‹

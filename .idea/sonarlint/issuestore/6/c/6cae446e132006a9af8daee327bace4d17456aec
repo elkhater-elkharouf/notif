@@ -1,8 +1,7 @@
 
-k	java:S117k"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²øºëúÿÿÿÿ
+k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²øºëúÿÿÿÿ
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ
 e
 java:S2095"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(˜„°Žÿÿÿÿÿ
 m
-java:S3776i"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Ð—§âüÿÿÿÿ
-Q	java:S1252"<This block of commented-out lines of code should be removed.(Â¤É°
+java:S37763"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Ð—§âüÿÿÿÿ

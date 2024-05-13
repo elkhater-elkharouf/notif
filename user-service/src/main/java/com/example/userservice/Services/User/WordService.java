@@ -1,5 +1,5 @@
 package com.example.userservice.Services.User;
-import com.example.userservice.Entities.EmailTemplate;
+
 import com.example.userservice.Entities.GenericNotification;
 import com.example.userservice.Repository.EmailTemplateRepository;
 import lombok.AllArgsConstructor;
@@ -13,17 +13,9 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
-import org.apache.velocity.VelocityContext;
-import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-
 import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
 import javax.transaction.Transactional;
 import java.io.*;
 import java.util.HashMap;
@@ -34,7 +26,7 @@ import java.util.Map;
 @Transactional
 @AllArgsConstructor
 public class WordService {
-    //private JavaMailSender javaMailSender;
+
     EmailTemplateRepository emailTemplateRepository;
     @Autowired
     EmailServiceImpl emailService ;
@@ -123,17 +115,6 @@ public class WordService {
             e.printStackTrace();
         }
 
-//        MimeMessage message = javaMailSender.createMimeMessage();
-//        MimeMessageHelper helper = new MimeMessageHelper(message, true);
-//
-//        helper.setTo(toEmail);
-//        helper.setSubject("your generated docx file");
-//
-//        helper.setText("Cher(e) " + fname + ",\n\nvous trouverez ci-joint le document d'augmentation de salaire \n\nCordialement,");
-//
-//        helper.addAttachment("output_" + fname + ".docx", new ByteArrayResource(attachmentData));
-//
-//      javaMailSender.send(message);
 
     }
 

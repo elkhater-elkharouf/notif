@@ -1,28 +1,9 @@
 
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ø†Ì¥8å¼¿ğõ1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ó¼¿ğõ1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ó¼¿ğõ1
 ˆ
-java:S3305"fInject this field value directly into "getJavaMailSenderForCurrentUser", the only method that uses it.(Ÿ‰Õûÿÿÿÿ8ğö·ö1
-]	java:S125"<This block of commented-out lines of code should be removed.(›•œºùÿÿÿÿ8ÖŒÒö1
-]	java:S125"<This block of commented-out lines of code should be removed.(‰¯öêıÿÿÿÿ8µæÑö1
-X	java:S125!"<This block of commented-out lines of code should be removed.(„¢É8¶‚·ö1
-G	java:S106<"+Replace this use of System.out by a logger.(ïê“ı8¶«×ğõ1
-]	java:S125E"<This block of commented-out lines of code should be removed.(êå¸ëÿÿÿÿÿ8ş¼¿ğõ1
-]	java:S125V"<This block of commented-out lines of code should be removed.(Ø¦øİûÿÿÿÿ8ş¼¿ğõ1
-[
-java:S1128">Remove this unused import 'org.springframework.lang.Nullable'.(—Ùë8ş¼¿ğõ1
-R
-java:S1128	"5Remove this unused import 'org.springframework.mail'.(ù´™´8ş¼¿ğõ1
-g
-java:S1128"ERemove this unused import 'org.springframework.stereotype.Component'.(Ş÷Ñ¸ÿÿÿÿÿ8ş¼¿ğõ1
-`
-java:S1128"CRemove this unused import 'org.springframework.stereotype.Service'.(¼º¡Ú8ëº·ö1
-Y
-java:S1128"<Remove this unused import 'org.springframework.util.Assert'.(ü‰¤š8ş¼¿ğõ1
-[
-java:S1128"9Remove this unused import 'javax.activation.FileTypeMap'.(éõ›™øÿÿÿÿ8ÿ¼¿ğõ1
-I
-java:S1128"'Remove this unused import 'javax.mail'.(ğ†ÌŞùÿÿÿÿ8ÿ¼¿ğõ1
-^
-java:S1128"<Remove this unused import 'javax.mail.internet.MimeMessage'.(«ÀÔ€şÿÿÿÿ8ÿ¼¿ğõ1
+java:S3305"fInject this field value directly into "getJavaMailSenderForCurrentUser", the only method that uses it.(Ÿ‰Õûÿÿÿÿ8ğö·ö1
+]	java:S125"<This block of commented-out lines of code should be removed.(‰¯öêıÿÿÿÿ8µæÑö1
+X	java:S125"<This block of commented-out lines of code should be removed.(„¢É8¶‚·ö1
+G	java:S1064"+Replace this use of System.out by a logger.(ïê“ı8¶«×ğõ1

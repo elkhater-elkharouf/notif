@@ -34,10 +34,7 @@ public class  JwtAuthentificationFilter extends UsernamePasswordAuthenticationFi
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws  AuthenticationException {
         System.out.println("attemptAuthentication");
-        /*
-        String email= request.getParameter("email");
-        String password = request.getParameter("password");
-         */
+
         // Convertir les données de la requête en un objet Java en utilisant la bibliothèque Jackson
         try {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -125,9 +122,7 @@ public class  JwtAuthentificationFilter extends UsernamePasswordAuthenticationFi
         response.setContentType("application/json");
         //pour serialiser un objet en json avec entrer et sortie
         new ObjectMapper().writeValue(response.getOutputStream(),idToken);
-        //renvoie dans un objet json dans le body
-       // String jsonResponse = "{\"token\":\"" + jwtAccessToken + "\"}";
-        //response.getOutputStream().write(jsonResponse.getBytes());
+
 
 
     }

@@ -1,27 +1,9 @@
 
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8£’ÝËò1
 g
-java:S2095/"JUse try-with-resources or close this "XWPFDocument" in a "finally" clause.(¼î±Š8û“ÝËò1
+java:S2095'"JUse try-with-resources or close this "XWPFDocument" in a "finally" clause.(¼î±Š8û“ÝËò1
 g
-java:S2095+"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¿×óê8û“ÝËò1
+java:S2095#"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¿×óê8’óÄ‘÷1
 _
-java:S6813'"BRemove this field injection and use constructor injection instead.(êæÄÞ8ü“ÝËò1
-X	java:S125%"<This block of commented-out lines of code should be removed.(ËáçÕ8þ“ÝËò1
-X	java:S1253"<This block of commented-out lines of code should be removed.(ßÜ¢µ8Ž”ÝËò1
-X	java:S125~"<This block of commented-out lines of code should be removed.(Ž«ûú8¶—ÞËò1
-m
-java:S1128"KRemove this unused import 'com.example.userservice.Entities.EmailTemplate'.(éõ·¥øÿÿÿÿ8áøËýò1
-b
-java:S1128"@Remove this unused import 'org.apache.velocity.VelocityContext'.(¹ÖŽôøÿÿÿÿ8áøËýò1
-`
-java:S1128"CRemove this unused import 'org.apache.velocity.app.VelocityEngine'.(‡ÔŸ¢8áøËýò1
-g
-java:S1128"JRemove this unused import 'org.springframework.core.io.ByteArrayResource'.(Ã¤Ê¾8áøËýò1
-g
-java:S1128"KRemove this unused import 'org.springframework.core.io.FileSystemResource'.(°ü‘48áøËýò1
-j
-java:S1128"MRemove this unused import 'org.springframework.mail.javamail.JavaMailSender'.(ÕÃ›8âøËýò1
-r
-java:S1128"PRemove this unused import 'org.springframework.mail.javamail.MimeMessageHelper'.(Ö€”÷øÿÿÿÿ8âøËýò1
-^
-java:S1128"<Remove this unused import 'javax.mail.internet.MimeMessage'.(«ÀÔ€þÿÿÿÿ8âøËýò1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8’óÄ‘÷1
+X	java:S125+"<This block of commented-out lines of code should be removed.(ßÜ¢µ8¦óÄ‘÷1

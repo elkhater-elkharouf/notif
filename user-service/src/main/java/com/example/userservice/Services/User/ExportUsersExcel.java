@@ -46,60 +46,6 @@ public class ExportUsersExcel {
         return in;
     }
 
-/*
-    public void replaceNamesInWordFile(String inputFilePath, String outputFilePath, String nameToReplace, String replacement) throws IOException {
-        FileInputStream fis = new FileInputStream(inputFilePath);
-        XWPFDocument document = new XWPFDocument(fis);
-        fis.close();
-
-        // Parcourir tous les paragraphes et remplacer les noms
-        for (XWPFParagraph paragraph : document.getParagraphs()) {
-            List<XWPFRun> runs = paragraph.getRuns();
-            for (XWPFRun run : runs) {
-                String text = run.getText(0);
-                if (text != null && text.contains(nameToReplace)) {
-                    text = text.replace(nameToReplace, replacement);
-                    run.setText(text, 0);
-                }
-            }
-        }
-
-        // Parcourir toutes les tables et remplacer les noms
-        for (XWPFTable table : document.getTables()) {
-            for (XWPFTableRow row : table.getRows()) {
-                for (XWPFTableCell cell : row.getTableCells()) {
-                    for (XWPFParagraph paragraph : cell.getParagraphs()) {
-                        for (XWPFRun run : paragraph.getRuns()) {
-                            String text = run.getText(0);
-                            if (text != null && text.contains(nameToReplace)) {
-                                text = text.replace(nameToReplace, replacement);
-                                run.setText(text, 0);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        // Écrire dans le fichier de sortie
-        FileOutputStream fos = new FileOutputStream(outputFilePath);
-        document.write(fos);
-        fos.close();
-        document.close();
-    }
-
-    public void createTemplateForEachUser(String inputFilePath, String outputFolderPath, List<User> users) throws IOException {
-        File outputFolder = new File(outputFolderPath);
-        if (!outputFolder.exists()) {
-            outputFolder.mkdirs();
-        }
-
-        for (User user : users) {
-            String outputFile = outputFolderPath + "/" + user.getFname() + ".docx";
-            replaceNamesInWordFile(inputFilePath, outputFile, "{Fname}", user.getFname());
-        }
-    }
-*/
 
 
     public String createWordDocumentsFromExcel(String excelFilePath, String wordTemplatePath) {

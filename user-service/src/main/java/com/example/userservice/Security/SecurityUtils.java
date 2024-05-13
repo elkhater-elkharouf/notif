@@ -33,29 +33,6 @@ public class SecurityUtils {
         return null;
     }
 
-//    public String getCurrentUserId() {
-//        String email = getCurrentUserEmail();
-//        if (email != null) {
-//            UserDetails userDetails = userDetailsService.loadUserByUsername(email);
-//            if (userDetails instanceof User) {
-//                return ((User) userDetails).getUsername();
-//            }
-//        }
-//        return null;
-//    }
-
-//    public String getCurrentUserEmail() {
-//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//        if(authentication != null){
-//            Object principal = authentication.getPrincipal();
-//            if (principal instanceof String) {
-//                return (String) principal;
-//            } else if (principal instanceof UserDetails) {
-//                return ((UserDetails) principal).getUsername();
-//            }
-//        }
-//        return null;
-//    }
 public String getCurrentUserEmail() {
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     if(authentication != null){

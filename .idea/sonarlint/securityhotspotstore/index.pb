@@ -135,3 +135,9 @@ Xuser-service/src/test/java/com/example/userservice/Services/User/UserServiceImp
 buser-service/src/test/java/com/example/userservice/Services/Privilege/PrivilegeServiceImpTest.java,e\f\ef4c9e5818f41f0b0e82e2b70be4b1dcebfd898b
 ˆ
 Xuser-service/src/test/java/com/example/userservice/Services/Role/RoleServiceImpTest.java,6\9\6910a12204cd1a7d047c4d72cc554d6f2293d3c7
+Œ
+\user-service/src/main/java/com/example/userservice/Services/Privilege/IPrivilegeService.java,7\b\7bbaa46440359c2e582a931734ac4be6a485699e
+Ž
+^user-service/src/main/java/com/example/userservice/Services/User/VerificationTokenService.java,1\3\13524db1f7c3b4ca43b80886153b90e3349bb785
+‘
+auser-service/src/main/java/com/example/userservice/Services/User/VerificationTokenServiceImp.java,c\8\c82e34a1cf97f9c6602c534057505c594bc30b0c

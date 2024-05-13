@@ -46,12 +46,12 @@ public class PPTController {
             headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
             headers.setContentDispositionFormData("attachment", "ppt_files.pptx");
 
-            //  return new ResponseEntity<>(byteArrayOutputStream.toByteArray(), headers, HttpStatus.OK);
+
             return ResponseEntity.ok()
                     .headers(headers)
                     .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.pptx"))
                     .body(new InputStreamResource(in));
-            ///ResponseEntity.ok().body("Word files generated successfully.");
+
         } catch (IOException | InvalidFormatException | MessagingException e) {
             e.printStackTrace();
             throw new RuntimeException("mamcheeeeeeetech.", e);

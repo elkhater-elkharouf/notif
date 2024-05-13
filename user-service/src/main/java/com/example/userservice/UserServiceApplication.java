@@ -17,8 +17,7 @@ import javax.mail.MessagingException;
 @SpringBootApplication
 @EnableFeignClients
 public class UserServiceApplication {
-/*@Autowired
- private    EmailUserService emailUserService ;*/
+
     public static void main(String[] args) {
         SpringApplication.run(UserServiceApplication.class, args);
     }
@@ -26,10 +25,7 @@ public class UserServiceApplication {
     PasswordEncoder passwordEncoder (){
         return new BCryptPasswordEncoder();
     }
-   /* @EventListener(ApplicationReadyEvent.class)
-    public void triggerEmail() throws MessagingException {
-        emailUserService.sendMailWithAttchment("elkhater.elkharouf@esprit.tn","hello khater","jjjjj","C:/Users/LENOVO/Pictures/boiteblanche.png");
-    }*/
+
 }
 
 

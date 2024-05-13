@@ -8,7 +8,5 @@ java:S4042+"NUse "java.nio.file.Files#delete" here for better messages on error
 U	java:S899,";Do something with the "boolean" value returned by "delete".(£Â›Ûûÿÿÿÿ
 i
 java:S4042,"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(£Â›Ûûÿÿÿÿ
-Q	java:S1251"<This block of commented-out lines of code should be removed.(ã‚ ç
-Q	java:S1256"<This block of commented-out lines of code should be removed.(€˜±Ÿ
 O
 java:S1068"4Remove this unused "exportUsersExcel" private field.(âÜÝÔûÿÿÿÿ

@@ -1,13 +1,8 @@
 package com.example.userservice.Services.User;
 
-import com.example.userservice.Entities.Image;
 import com.example.userservice.Entities.Privilege;
-import com.example.userservice.Entities.Role;
 import com.example.userservice.Entities.User;
-import org.springframework.web.multipart.MultipartFile;
-
 import javax.ws.rs.core.Response;
-import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Set;

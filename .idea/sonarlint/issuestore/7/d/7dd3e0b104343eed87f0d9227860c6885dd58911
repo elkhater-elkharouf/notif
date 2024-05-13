@@ -1,15 +1,6 @@
 
-b	java:S112!"FDefine and throw a dedicated exception instead of using a generic one.(¿Ç…£8ÛÄÍ‰å1
-r	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºé²ıÿÿÿÿ8ÜÄÍ‰å1
-r	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºé²ıÿÿÿÿ8ÜÄÍ‰å1
+b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¿Ç…£8ÛÄÍ‰å1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºé²ıÿÿÿÿ8ÜÄÍ‰å1
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºé²ıÿÿÿÿ8ÜÄÍ‰å1
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8ŞÄÍ‰å1
-X	java:S125"<This block of commented-out lines of code should be removed.(‘µŠÈ8´Ÿ»Šå1
-e
-java:S1128"CRemove this unused import 'com.example.userservice.Entities.Image'.(Â¹”±ÿÿÿÿÿ8µŸ»Šå1
-d
-java:S1128"BRemove this unused import 'com.example.userservice.Entities.Role'.(ªİ¦®ùÿÿÿÿ8¶Ÿ»Šå1
-n
-java:S1128"LRemove this unused import 'org.springframework.web.multipart.MultipartFile'.(ôŸœÿÿÿÿÿ8éÄÍ‰å1
-G
-java:S1128
-"*Remove this unused import 'java.sql.Blob'.(ïÚ¶ã8éÄÍ‰å1
+X	java:S125"<This block of commented-out lines of code should be removed.(‘µŠÈ8´Ÿ»Šå1

@@ -31,37 +31,27 @@ public class WordController {
         try {
             File tempExcelFile = File.createTempFile("temp_excel", ".xlsx");
             excelFile.transferTo(tempExcelFile);
-
             File tempWordTemplate = File.createTempFile("temp_word_template", ".docx");
             wordTemplate.transferTo(tempWordTemplate);
             ByteArrayInputStream in =  wordExportService.generateWordFilesFromExcel(tempExcelFile, tempWordTemplate);
             System.out.println(in.toString());
-            // Clean up temporary files if needed
             tempExcelFile.delete();
             tempWordTemplate.delete();
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
             headers.setContentDispositionFormData("attachment", "word_files.docx");
 
-          //  return new ResponseEntity<>(byteArrayOutputStream.toByteArray(), headers, HttpStatus.OK);
+
             return ResponseEntity.ok()
                     .headers(headers)
                     .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.docx"))
                     .body(new InputStreamResource(in));
-                    ///ResponseEntity.ok().body("Word files generated successfully.");
+
         } catch (IOException | InvalidFormatException |MessagingException e) {
             e.printStackTrace();
             throw new RuntimeException("mamcheeeeeeetech.", e);
         }
     }
 }
-/*
-    @GetMapping("/download/{filename:.+}")
-    public ResponseEntity<Resource> downloadFile(@PathVariable String filename) {
-        Resource file = new UrlResource(Paths.get(filename).toUri());
 
-        return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"")
-                .body(file);
-    }*/
 

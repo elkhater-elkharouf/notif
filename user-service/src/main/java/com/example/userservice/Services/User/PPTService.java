@@ -1,40 +1,25 @@
 package com.example.userservice.Services.User;
-import java.awt.Color; // Importer la classe Color pour spécifier la couleur du texte
 
 import com.example.userservice.Entities.GenericNotification;
-import org.apache.poi.xslf.usermodel.XMLSlideShow; // Importer la classe XMLSlideShow pour manipuler les fichiers PowerPoint
-import org.apache.poi.xslf.usermodel.XSLFShape; // Importer la classe XSLFShape pour manipuler les formes dans une diapositive
-import org.apache.poi.xslf.usermodel.XSLFSlide; // Importer la classe XSLFSlide pour manipuler les diapositives
-import org.apache.poi.xslf.usermodel.XSLFTextParagraph; // Importer la classe XSLFTextParagraph pour manipuler les paragraphes de texte
-import org.apache.poi.xslf.usermodel.XSLFTextRun; // Importer la classe XSLFTextRun pour manipuler les runs de texte
-import org.apache.poi.xslf.usermodel.XSLFTextShape; // I
+import org.apache.poi.xslf.usermodel.XMLSlideShow;
+import org.apache.poi.xslf.usermodel.XSLFShape;
+import org.apache.poi.xslf.usermodel.XSLFSlide;
+import org.apache.poi.xslf.usermodel.XSLFTextParagraph;
+import org.apache.poi.xslf.usermodel.XSLFTextRun;
+import org.apache.poi.xslf.usermodel.XSLFTextShape;
 import lombok.AllArgsConstructor;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xslf.usermodel.XMLSlideShow;
-import org.apache.poi.xslf.usermodel.XSLFShape;
-import org.apache.poi.xslf.usermodel.XSLFSlide;
-import org.apache.poi.xslf.usermodel.XSLFTextShape;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
-import org.apache.poi.xwpf.usermodel.XWPFParagraph;
-import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-
 import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
 import javax.transaction.Transactional;
 import java.io.*;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Service
@@ -109,36 +94,6 @@ public class PPTService {
             }
         }
     }
- /*   private void replacePlaceholder(XMLSlideShow pptxFilePath, String fname, String lname){
-
-
-            for (XSLFSlide slide : pptxFilePath.getSlides()) {
-                for (XSLFShape shape : slide.getShapes()) {
-                    if (shape instanceof XSLFTextShape) {
-                        XSLFTextShape textShape = (XSLFTextShape) shape;
-                        String text = textShape.getText();
-                        if (text != null) {
-                            text = text.replace("nom", fname.toUpperCase());
-                            text = text.replace("LastName", lname.toUpperCase());
-                            textShape.setText(text);
-                            // Définissez explicitement la police et la couleur du texte
-                            for (XSLFTextParagraph paragraph : textShape) {
-                                for (XSLFTextRun run : paragraph) {
-                                    // Définir la police
-                                    run.setFontFamily("Calibri (Corps)"); // Remplacez "Arial" par la police désirée
-
-                                    // Définir la couleur du texte
-                                    Color textColor = new Color(255, 255, 255); // Exemple de couleur rouge
-                                    run.setFontColor(textColor);
-                                    // Définir la taille de la police
-                                    run.setFontSize(20.0);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            }*/
 
     private void sendEmail(String toEmail, String fname, byte[] attachmentData) throws MessagingException {
 
@@ -160,16 +115,6 @@ public class PPTService {
             // Gérer les erreurs de messagerie ici
             e.printStackTrace();
         }
-//        MimeMessage message = javaMailSender.createMimeMessage();
-//        MimeMessageHelper helper = new MimeMessageHelper(message, true);
 //
-//        helper.setTo(toEmail);
-//        helper.setSubject("Your Generated ppt File");
-//
-//        helper.setText("Dear " + fname + ",\n\nPlease find your generated ppt file attached.\n\nBest regards.");
-//
-//        helper.addAttachment("output_" + fname + ".pptx", new ByteArrayResource(attachmentData));
-//
-//        javaMailSender.send(message);
     }
 }

@@ -1,11 +1,9 @@
 
 n
-java:S11924"QDefine a constant instead of duplicating this literal "application/json" 4 times.(ªŞÃı8÷äÇñò1
+java:S11921"QDefine a constant instead of duplicating this literal "application/json" 4 times.(ªŞÃı8÷äÇñò1
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ø†Ì¥8òÛ¢Õò1
 L	java:S106$"+Replace this use of System.out by a logger.(Ÿ•ôÜûÿÿÿÿ8àåÇñò1
-X	java:S125&"<This block of commented-out lines of code should be removed.(»öÃ—8áåÇñò1
-G	java:S106G"+Replace this use of System.out by a logger.(—‹ƒÅ8ùåÇñò1
-G	java:S106U"+Replace this use of System.out by a logger.(¾™êä8ûåÇñò1
+G	java:S106D"+Replace this use of System.out by a logger.(—‹ƒÅ8ùåÇñò1
+G	java:S106R"+Replace this use of System.out by a logger.(¾™êä8ûåÇñò1
 S
-java:S6437]"6Revoke and change this password, as it is compromised.(Ùíç¼8ûåÇñò1
-^	java:S125"<This block of commented-out lines of code should be removed.(›¿Óÿÿÿÿÿ8ºæÇñò1
+java:S6437Z"6Revoke and change this password, as it is compromised.(Ùíç¼8ûåÇñò1
