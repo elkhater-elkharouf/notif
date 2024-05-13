@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.example</groupId>
     <artifactId>user-service</artifactId>
-    <version>2.1</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>user-service</name>
     <description>user-service</description>
     <properties>
@@ -153,7 +153,14 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+    <!--  Deploy to Nexus  -->
+    <distributionManagement>
+        <repository>
+            <id>deploymentRepo</id>
+            <name>Nexus Repository</name>
+            <url>http://172.20.10.5:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -166,6 +173,7 @@
 
 
         </dependencies>
+
     </dependencyManagement>
     <build>
         <plugins>
@@ -214,16 +222,16 @@
         </plugins>
     </build>
 
-    <distributionManagement>
-        <repository>
-            <id>deploymentRepo</id>
-            <name>Nexus Repository</name>
-            <url>http://172.20.10.5:8081/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>deploymentRepo</id>
-            <name>snapshots Nexus Repository</name>
-            <url>http://172.20.10.5:8081/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <id>deploymentRepo</id>-->
+<!--            <name>Nexus Repository</name>-->
+<!--            <url>http://172.20.10.5:8081/repository/maven-releases/</url>-->
+<!--        </repository>-->
+<!--        <snapshotRepository>-->
+<!--            <id>deploymentRepo</id>-->
+<!--            <name>snapshots Nexus Repository</name>-->
+<!--            <url>http://172.20.10.5:8081/repository/maven-snapshots/</url>-->
+<!--        </snapshotRepository>-->
+<!--    </distributionManagement>-->
 </project>
