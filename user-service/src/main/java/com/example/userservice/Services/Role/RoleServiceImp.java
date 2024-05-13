@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -72,17 +73,24 @@ PrivilegeRepository privilegeRepository;
 
     @Override
     public Boolean AffectRoleToPrivilege(int idRole , int idPrivilege){
-       boolean value;
-        Role role = roleRepository.findById(idRole).orElse(null);
-        Privilege privilege = privilegeRepository.findById(idPrivilege).orElse(null);
-        if (role.getPrivileges() == null) {
-            role.setPrivileges(new HashSet<>());
+        Optional<Role> optionalRole = roleRepository.findById(idRole);
+        Optional<Privilege> optionalPrivilege = privilegeRepository.findById(idPrivilege);
 
+        if (optionalRole.isPresent() && optionalPrivilege.isPresent()) {
+            Role role = optionalRole.get();
+            Privilege privilege = optionalPrivilege.get();
+
+            // Ajouter le privilège au rôle et le rôle au privilège
+            role.getPrivileges().add(privilege);
+            privilege.getRoles().add(role);
+
+            // Enregistrer les modifications dans la base de données
+            roleRepository.save(role);
+
+            return true;
+        } else {
+            return false; // Si le rôle ou le privilège n'existe pas
         }
-
-       value = role.getPrivileges().add(privilege);
-        return value;
-
     }
 
 

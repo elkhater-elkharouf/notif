@@ -28,8 +28,16 @@ public class CloudinaryService {
 
     public Map upload(MultipartFile multipartFile) throws IOException {
         File file = convert(multipartFile);
-        Map result = cloudinary.uploader().upload(file, ObjectUtils.emptyMap());
-        file.delete();
+        Map<String, Object> result = cloudinary.uploader().upload(file, ObjectUtils.emptyMap());
+        boolean isDeleted = file.delete();
+        if (isDeleted) {
+            // File was successfully deleted
+            System.out.println("File deleted successfully");
+        } else {
+            // File deletion failed
+            System.out.println("Failed to delete file");
+            // You might want to handle this case accordingly
+        }
         return result;
     }
 
@@ -40,9 +48,10 @@ public class CloudinaryService {
 
     private File convert(MultipartFile multipartFile) throws IOException {
         File file = new File(multipartFile.getOriginalFilename());
-        FileOutputStream fo = new FileOutputStream(file);
-        fo.write(multipartFile.getBytes());
-        fo.close();
+        try (FileOutputStream fo = new FileOutputStream(file)) {
+            fo.write(multipartFile.getBytes());
+        }
         return file;
     }
+
 }

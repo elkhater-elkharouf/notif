@@ -103,13 +103,14 @@ public String sendEmailWithAttachment(@RequestBody EmailRequest emailRequest) th
     @PostMapping("/addUser")
     @ResponseBody
     public Response addUser (@RequestBody User user ) throws SQLException {
-        if (user.getEmail() == ""){
+
+        if (user.getEmail().equals("")){
             return Response.status(Response.Status.BAD_REQUEST).entity("Email Obligatoire").build();
         }
-        if (user.getPassword() == ""){
+        if (user.getPassword().equals("")){
             return Response.status(Response.Status.BAD_REQUEST).entity("Password Obligatoire").build();
         }
-        if (user.getLname() == "" || user.getFname()==""){
+        if (user.getLname().equals("") || user.getFname().equals("")){
             return Response.status(Response.Status.BAD_REQUEST).entity("Nom et prenom Obligatoires").build();
         }
         if (iUserService.laodUserByUserName(user.getEmail()) != null){
@@ -486,9 +487,11 @@ public ResponseEntity<List<Image>> list(){
 
     @DeleteMapping("/deleteImage/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id)throws IOException {
-        if(!imagenService.exists(id))
-            return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
-        Image imagen = imagenService.getOne(id).get();
+        Optional<Image> optionalImage = imagenService.getOne(id);
+        if (!optionalImage.isPresent()) {
+            return new ResponseEntity<>(new Mensaje("No existe"), HttpStatus.NOT_FOUND);
+        }
+        Image imagen = optionalImage.get();
         Map result = cloudinaryService.delete(imagen.getImagenId());
         imagenService.delete(id);
         return new ResponseEntity(new Mensaje("imagen eliminada"), HttpStatus.OK);

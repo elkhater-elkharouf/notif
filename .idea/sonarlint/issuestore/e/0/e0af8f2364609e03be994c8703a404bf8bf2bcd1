@@ -2,16 +2,13 @@
 Q
 java:S3740"/Provide the parametrized type for this generic.(ƒø’ëüÿÿÿÿ8ùÒĞŸá1
 L
-java:S3740"/Provide the parametrized type for this generic.(‰ÌÖá8ùÒĞŸá1
-L
-java:S3740$"/Provide the parametrized type for this generic.(İ“í“8ùÒĞŸá1
+java:S3740,"/Provide the parametrized type for this generic.(İ“í“8ùÒĞŸá1
 Q
-java:S3740%"/Provide the parametrized type for this generic.(î¡âõşÿÿÿÿ8ùÒĞŸá1
+java:S3740-"/Provide the parametrized type for this generic.(î¡âõşÿÿÿÿ8ùÒĞŸá1
 €
-java:S1488%"^Immediately return this expression instead of assigning it to the temporary variable "result".(î¡âõşÿÿÿÿ8úÒĞŸá1
+java:S1488-"^Immediately return this expression instead of assigning it to the temporary variable "result".(î¡âõşÿÿÿÿ8úÒĞŸá1
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ
-k
-java:S2095+"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(ˆ†™÷8ÓĞŸá1
-\	java:S899 ";Do something with the "boolean" value returned by "delete".(²Œ­ûÿÿÿÿ8†ÓĞŸá1
 p
-java:S4042 "NUse "java.nio.file.Files#delete" here for better messages on error conditions.(²Œ­ûÿÿÿÿ8†ÓĞŸá1
+java:S4042 "NUse "java.nio.file.Files#delete" here for better messages on error conditions.(ñŸêÿÿÿÿÿ8¼ùõ‹÷1
+F	java:S106#"+Replace this use of System.out by a logger.(‚»åo8¼ùõ‹÷1
+G	java:S106&"+Replace this use of System.out by a logger.(Ë¥ä˜8½ùõ‹÷1
