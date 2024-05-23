@@ -1,12 +1,11 @@
 package com.example.userservice.Services.User;
-
+import org.slf4j.Logger;
 import com.example.userservice.Entities.*;
+import com.example.userservice.Repository.*;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import com.example.userservice.Repository.PrivilegeRepository;
-import com.example.userservice.Repository.RoleRepository;
-import com.example.userservice.Repository.UserRepository;
-import com.example.userservice.Repository.VerificationTokenRepository;
 import com.example.userservice.Services.Role.RoleServiceImp;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -15,16 +14,13 @@ import javax.transaction.Transactional;
 import javax.ws.rs.core.Response;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Collectors;
-
+import org.slf4j.LoggerFactory;
 @Service
 @AllArgsConstructor
 public class UserServiceImp  implements IUserService {
-
+    private static final Logger logger = LoggerFactory.getLogger(UserServiceImp.class);
     UserRepository userRepository;
     RoleRepository roleRepository;
     PrivilegeRepository privilegeRepository;
@@ -34,6 +30,7 @@ public class UserServiceImp  implements IUserService {
     private EmailUserService emailUserService;
     RoleServiceImp roleService ;
     ImageServiceImpl imageService ;
+    MailRepository mailRepository ;
     @Override
     public User getCurrentLoggedInUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -303,4 +300,73 @@ public class UserServiceImp  implements IUserService {
         return userRepository.save(user);
     }
 
+
+
+    public int getEmailConfigurationIdForLoggedInUser(String email) {
+        User user = userRepository.findByEmail(email);
+        if (user != null) {
+            List<Mail> mails = mailRepository.findByUsername(user.getEmail());
+            if (!mails.isEmpty()) {
+                int mailConfigId = mails.get(0).getId();
+                logger.debug("Mail configuration ID found: {}", mailConfigId);
+                return mailConfigId;
+            } else {
+                logger.debug("No mail configurations found for user: {}", email);
+            }
+        } else {
+            logger.debug("No user found with email: {}", email);
+        }
+        return -1;  // Return -1 if no mail configuration found
+    }
+
+    // Method to get the JavaMailSender for the current user
+    public JavaMailSender getJavaMailSenderForCurrentUser() {
+        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+        String userEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        logger.debug("Current user email: {}", userEmail);
+
+        int mailConfigId = getEmailConfigurationIdForLoggedInUser(userEmail);
+        logger.debug("Retrieved mail configuration ID: {}", mailConfigId);
+
+        if (mailConfigId != -1) {
+            Mail mailConfigEntity = mailRepository.findById(mailConfigId).orElse(null);
+
+            if (mailConfigEntity != null) {
+                mailSender.setHost(mailConfigEntity.getHost());
+                mailSender.setPort(mailConfigEntity.getPort());
+                mailSender.setUsername(mailConfigEntity.getUsername());
+                mailSender.setPassword(mailConfigEntity.getPassword());
+
+                Properties props = mailSender.getJavaMailProperties();
+                props.put("mail.transport.protocol", "smtp");
+                props.put("mail.smtp.auth", "true");
+                props.put("mail.smtp.starttls.enable", "true");
+                logger.debug("Mail sender configured with host: {}, port: {}", mailConfigEntity.getHost(), mailConfigEntity.getPort());
+            } else {
+                logger.error("No mail configuration entity found with ID: {}", mailConfigId);
+                configureDefaultMailSender(mailSender);
+            }
+        } else {
+            logger.debug("No mail configuration ID found for the user: {}", userEmail);
+            configureDefaultMailSender(mailSender);
+        }
+
+        return mailSender;
+    }
+
+    // Method to configure default mail sender
+    private void configureDefaultMailSender(JavaMailSenderImpl mailSender) {
+        // You can set default mail sender properties here
+        mailSender.setHost("defaultHost");
+        mailSender.setPort(25);
+        mailSender.setUsername("defaultUsername");
+        mailSender.setPassword("defaultPassword");
+
+        Properties props = mailSender.getJavaMailProperties();
+        props.put("mail.transport.protocol", "smtp");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+
+        logger.debug("Default mail sender configured");
+    }
 }

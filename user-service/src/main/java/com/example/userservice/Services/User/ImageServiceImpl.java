@@ -34,30 +34,29 @@ public class ImageServiceImpl implements IImageService {
     }
 
     @Override
-    public  void save(MultipartFile imagen, int idUser) throws IOException {
-
-        User user = userRepository.findById(idUser).orElse(null);
+    public void save(MultipartFile imageFile, int userId) throws IOException {
+        User user = userRepository.findById(userId).orElse(null);
         if (user == null)
-               new ResponseEntity<>("No existe el usuario", HttpStatus.NOT_FOUND);
+            throw new IllegalArgumentException("No existe el usuario");
 
-        if (user.getImage() != null) {
-            // User already has an image, update it
-            Image existingImage = user.getImage();
-            Map result = cloudImage.upload(imagen);
-            BufferedImage bi = ImageIO.read(imagen.getInputStream());
-            existingImage.setImagenUrl((String) result.get("url"));
-            existingImage.setImagenId((String) result.get("public_id"));
-              new ResponseEntity<>(imagenRepository.save(existingImage), HttpStatus.OK);
+        Map<String, Object> uploadResult = cloudImage.upload(imageFile);
+        BufferedImage bufferedImage = ImageIO.read(imageFile.getInputStream());
+        String imageUrl = (String) uploadResult.get("url");
+        String imageId = (String) uploadResult.get("public_id");
+
+        Image image = user.getImage();
+        if (image != null) {
+            // Mettez à jour l'image existante
+
+            image.setImagenUrl(imageUrl);
+            image.setImagenId(imageId);
+        } else {
+            // Créez une nouvelle image
+            image = new Image(imageFile.getOriginalFilename(), imageUrl, imageId);
+            user.setImage(image);
+            image.setUser(user);
         }
-        // User doesn't have an image, create a new one
-        Map result = cloudImage.upload(imagen);
-        BufferedImage bi = ImageIO.read(imagen.getInputStream());
-        Image media = new Image((String) result.get("original_filename"),
-                (String) result.get("url"),
-                (String) result.get("public_id"));
-        user.setImage(media);
-        media.setUser(user);
-          new ResponseEntity<>(imagenRepository.save(media), HttpStatus.CREATED);
+        imagenRepository.save(image);
     }
 
 

@@ -1,12 +1,16 @@
 
-g	java:S1124"FDefine and throw a dedicated exception instead of using a generic one.(ŒëĞŒşÿÿÿÿ8ºå«¥Ş1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8¾å«¥Ş1
-L	java:S106%"+Replace this use of System.out by a logger.(ĞˆÍüÿÿÿÿ8Øå«¥Ş1
-W	java:S899&";Do something with the "boolean" value returned by "delete".( §Å¼8Ùå«¥Ş1
+g	java:S1126"FDefine and throw a dedicated exception instead of using a generic one.(ŒëĞŒşÿÿÿÿ8Íü¾Àù1
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ùˆ›f8ıÊÂÓù1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8Ïü¾Àù1
+~	java:S116"]Rename this field "GenericWordService" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬–ú—ùÿÿÿÿ8…ËÂÓù1
+L	java:S106'"+Replace this use of System.out by a logger.(ĞˆÍüÿÿÿÿ8Úü¾Àù1
+W	java:S899(";Do something with the "boolean" value returned by "delete".( §Å¼8Úü¾Àù1
 k
-java:S4042&"NUse "java.nio.file.Files#delete" here for better messages on error conditions.( §Å¼8Ùå«¥Ş1
-\	java:S899'";Do something with the "boolean" value returned by "delete".(£Â›Ûûÿÿÿÿ8Úå«¥Ş1
+java:S4042("NUse "java.nio.file.Files#delete" here for better messages on error conditions.( §Å¼8Úü¾Àù1
+\	java:S899)";Do something with the "boolean" value returned by "delete".(£Â›Ûûÿÿÿÿ8Ûü¾Àù1
 p
-java:S4042'"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(£Â›Ûûÿÿÿÿ8Úå«¥Ş1
+java:S4042)"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(£Â›Ûûÿÿÿÿ8Ûü¾Àù1
 V
-java:S1068"4Remove this unused "exportUsersExcel" private field.(âÜİÔûÿÿÿÿ8ã±õ¦Ş1
+java:S1068"4Remove this unused "exportUsersExcel" private field.(âÜİÔûÿÿÿÿ8áü¾Àù1
+X
+java:S1068"6Remove this unused "GenericWordService" private field.(¬–ú—ùÿÿÿÿ8ÎæÄÕù1

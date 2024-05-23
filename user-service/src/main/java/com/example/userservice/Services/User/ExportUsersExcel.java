@@ -11,13 +11,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class ExportUsersExcel {
     private final UserRepository userRepository ;
     public ExportUsersExcel(UserRepository userRepository ){this.userRepository=userRepository ;}
     public ByteArrayInputStream exportUsers(String department) throws IOException{
-        String[] columns ={"idUser","Fname","Lname","email"};
+        String[] columns ={"idUser","Fname","Lname","email", "numTel", "department" ,"Role"};
         Workbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet("Users");
 
@@ -36,6 +37,9 @@ public class ExportUsersExcel {
             row.createCell(1).setCellValue(user.getFname());
             row.createCell(2).setCellValue(user.getLname());
             row.createCell(3).setCellValue(user.getEmail());
+            row.createCell(4).setCellValue(user.getNumTel());
+            row.createCell(5).setCellValue(user.getDepartment());
+            row.createCell(6).setCellValue(user.getRole().getRoleName());
         }
         // Write to stream
         ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -47,6 +51,72 @@ public class ExportUsersExcel {
     }
 
 
+    public ByteArrayInputStream exportAllUsers() throws IOException{
+        String[] columns ={"idUser","Fname","Lname","email", "numTel", "department" ,"Role"};
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Users");
+
+        // Header row
+        Row headerRow = sheet.createRow(0);
+        for (int i = 0; i < columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+        }
+        // Data Rows
+        List<User> users = userRepository.findAll() ;
+        int rowNum = 1;
+        for (User user : users) {
+            Row row = sheet.createRow(rowNum++);
+            row.createCell(0).setCellValue(user.getIdUser());
+            row.createCell(1).setCellValue(user.getFname());
+            row.createCell(2).setCellValue(user.getLname());
+            row.createCell(3).setCellValue(user.getEmail());
+            row.createCell(4).setCellValue(user.getNumTel());
+            row.createCell(5).setCellValue(user.getDepartment());
+            row.createCell(6).setCellValue(user.getRole().getRoleName());
+        }
+        // Write to stream
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        workbook.write(out);
+        ByteArrayInputStream in = new ByteArrayInputStream(out.toByteArray());
+        out.close();
+
+        return in;
+    }
+
+    public ByteArrayInputStream exportUsersByProjectId(Set<User> users) throws IOException {
+        String[] columns = {"idUser", "Fname", "Lname", "email", "numTel", "department" ,"Role"};
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Users");
+
+        // Header row
+        Row headerRow = sheet.createRow(0);
+        for (int i = 0; i < columns.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(columns[i]);
+        }
+
+        // Data Rows
+        int rowNum = 1;
+        for (User user : users) {
+            Row row = sheet.createRow(rowNum++);
+            row.createCell(0).setCellValue(user.getIdUser());
+            row.createCell(1).setCellValue(user.getFname());
+            row.createCell(2).setCellValue(user.getLname());
+            row.createCell(3).setCellValue(user.getEmail());
+            row.createCell(4).setCellValue(user.getNumTel());
+            row.createCell(5).setCellValue(user.getDepartment());
+            row.createCell(6).setCellValue(user.getRole().getRoleName());
+        }
+
+        // Write to stream
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        workbook.write(out);
+        ByteArrayInputStream in = new ByteArrayInputStream(out.toByteArray());
+        out.close();
+
+        return in;
+    }
 
     public String createWordDocumentsFromExcel(String excelFilePath, String wordTemplatePath) {
         // Lire les noms des utilisateurs à partir du fichier Excel
@@ -98,5 +168,11 @@ public class ExportUsersExcel {
 
         return fileName;
     }
+
+
+
+
+
+
 
 }

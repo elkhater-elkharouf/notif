@@ -13,29 +13,29 @@ import java.io.File;
 import java.io.IOException;
 
 @RestController
-public class WordController {
+public class GenericWordController {
     private final ExportUsersExcel exportUsersExcel;
     private final WordService wordExportService;
     private  final GenericWordService GenericWordService;
 
     @Autowired
-    public WordController(ExportUsersExcel exportUsersExcel, WordService wordExportService, GenericWordService GenericWordService) {
+    public GenericWordController(ExportUsersExcel exportUsersExcel, WordService wordExportService, GenericWordService GenericWordService) {
         this.exportUsersExcel = exportUsersExcel;
         this.wordExportService = wordExportService;
         this.GenericWordService = GenericWordService;
     }
 
-    @PostMapping("/export/word/from/excel")
+    @PostMapping("/export/wordGeneric/from/excel")
     public ResponseEntity<InputStreamResource> exportWordFromExcel(
             @RequestPart("excelFile") MultipartFile excelFile,
             @RequestPart("wordTemplate") MultipartFile wordTemplate
-            ) {
+    ) {
         try {
             File tempExcelFile = File.createTempFile("temp_excel", ".xlsx");
             excelFile.transferTo(tempExcelFile);
             File tempWordTemplate = File.createTempFile("temp_word_template", ".docx");
             wordTemplate.transferTo(tempWordTemplate);
-            ByteArrayInputStream in =  wordExportService.generateWordFilesFromExcel(tempExcelFile, tempWordTemplate);
+            ByteArrayInputStream in =  GenericWordService.generateWordFilesFromExcelTest(tempExcelFile, tempWordTemplate);
             System.out.println(in.toString());
             tempExcelFile.delete();
             tempWordTemplate.delete();

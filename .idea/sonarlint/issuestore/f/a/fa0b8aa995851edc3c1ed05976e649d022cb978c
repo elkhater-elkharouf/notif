@@ -1,14 +1,8 @@
 
-[	java:S112F"FDefine and throw a dedicated exception instead of using a generic one.(…ÇÁÐ
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŸöÔÄÿÿÿÿÿ
-Q	java:S1253"<This block of commented-out lines of code should be removed.(°„÷½
-X
-java:S1128"BRemove this unused import 'com.example.userservice.Entities.User'.(Óôþù
-Q
-java:S1128"6Remove this unused import 'lombok.AllArgsConstructor'.(´œ¾öùÿÿÿÿ
-[
-java:S1128"@Remove this unused import 'org.springframework.http.HttpStatus'.(íŸ¤Šúÿÿÿÿ
-F
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
-E
-java:S1068"/Remove this unused "userService" private field.(°¦Ù
+b	java:S112q"FDefine and throw a dedicated exception instead of using a generic one.(…ÇÁÐ8”Ý‹¬ù1
+¥
+java:S1192."‚Define a constant instead of duplicating this literal "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" 3 times.(üÏ¥Ôÿÿÿÿÿ8‚„­ù1
+v
+java:S1192*"TDefine a constant instead of duplicating this literal "Content-Disposition" 3 times.(³‡—¯ýÿÿÿÿ8‚„­ù1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŸöÔÄÿÿÿÿÿ8–Ý‹¬ù1
+]	java:S125^"<This block of commented-out lines of code should be removed.(›‰Ûöýÿÿÿÿ8·Ý‹¬ù1

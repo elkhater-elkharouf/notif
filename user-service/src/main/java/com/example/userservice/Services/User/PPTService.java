@@ -50,7 +50,6 @@ public class PPTService {
                     String lname = lnameCell.getStringCellValue();
                     String email=emailCell.getStringCellValue();
 
-
                     // Clone the template for each Fname
                     XMLSlideShow pptxFilePath = new XMLSlideShow(new FileInputStream(pptTemplate));
 
@@ -104,7 +103,7 @@ public class PPTService {
                 .build();
         Map<String, Object> myHashMap = new HashMap<>();
         myHashMap.put("fname",fname);
-// Définissez les attributs dans GenericNotification
+        // Définissez les attributs dans GenericNotification
         genericNotification.setAttributes(myHashMap);
 
         // Envoyez l'e-mail en utilisant le service d'e-mail

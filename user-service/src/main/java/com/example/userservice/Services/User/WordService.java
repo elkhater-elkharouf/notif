@@ -87,7 +87,7 @@ public class WordService {
                     // Remplace le placeholder $nom$ par la valeur de Fname
                     text = text.replace("nom", fname.toUpperCase());
                     text = text.replace("LastName", lname.toUpperCase());
-                    text = text.replace("MONEY" , montant.toString()) ;
+                    text = text.replace("montant" , montant.toString()) ;
                     r.setText(text, 0);
                 }
             }
@@ -103,7 +103,8 @@ public class WordService {
                 .build();
         Map<String, Object> myHashMap = new HashMap<>();
         myHashMap.put("fname",fname);
-// Définissez les attributs dans GenericNotification
+        myHashMap.put("attachmentLink", attachmentData);
+        // Définissez les attributs dans GenericNotification
         genericNotification.setAttributes(myHashMap);
 
         // Envoyez l'e-mail en utilisant le service d'e-mail

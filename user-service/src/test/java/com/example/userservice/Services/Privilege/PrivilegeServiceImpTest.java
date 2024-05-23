@@ -8,6 +8,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,9 +16,10 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
 @SpringBootTest
+@ActiveProfiles("test")
 class PrivilegeServiceImpTest {
 
-    @Autowired
+   @Autowired
     private PrivilegeServiceImp privilegeService;
 
     @Autowired
@@ -40,7 +42,6 @@ class PrivilegeServiceImpTest {
         // Vérifier que le nom du Privilege enregistré correspond au nom défini
         assertEquals("TEST_PRIVILEGE", retrievedPrivilege.getPrivilegeName());
     }
-
     @Test
     void updatePrivilege() {
         // Données de test

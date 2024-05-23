@@ -1,9 +1,19 @@
 
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ø†Ì¥8å¼¿ðõ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ø†Ì¥8£Í­ƒú1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8ó¼¿ðõ1
-ˆ
-java:S3305"fInject this field value directly into "getJavaMailSenderForCurrentUser", the only method that uses it.(Ÿ‰žÕûÿÿÿÿ8ðö·Žö1
-]	java:S125"<This block of commented-out lines of code should be removed.(‰¯öêýÿÿÿÿ8µæÑŽö1
-X	java:S125"<This block of commented-out lines of code should be removed.(„¢É8¶‚·Žö1
-G	java:S1064"+Replace this use of System.out by a logger.(ïê“ý8¶«×ðõ1
+java:S2094"BRemove this empty class, write its code or make it an "interface".(ÄŽæÉ8£Í­ƒú1
+X	java:S125"<This block of commented-out lines of code should be removed.(‘Í8¥Í­ƒú1
+d
+java:S1128"BRemove this unused import 'com.example.userservice.Entities.Mail'.(Ï¸ ÿÿÿÿÿ8¥Í­ƒú1
+p
+java:S1128"NRemove this unused import 'com.example.userservice.Repository.MailRepository'.(Õ»¯¡úÿÿÿÿ8¥Í­ƒú1
+u
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡ž¸Îùÿÿÿÿ8¥Í­ƒú1
+e
+java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Þ8¥Í­ƒú1
+s
+java:S1128"QRemove this unused import 'org.springframework.context.annotation.Configuration'.(¬²Úäþÿÿÿÿ8¥Í­ƒú1
+[
+java:S1128	">Remove this unused import 'org.springframework.mail.javamail'.(åÉèÄ8¥Í­ƒú1
+C
+java:S1128"&Remove this unused import 'java.util'.(Î€ŒÙ8¦Í­ƒú1

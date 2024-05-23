@@ -1,9 +1,9 @@
 
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8£’İËò1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8ªÿŒø1
 g
-java:S2095#"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¿×óê8’óÄ‘÷1
+java:S2095'"JUse try-with-resources or close this "XWPFDocument" in a "finally" clause.(¼î±Š8Í‰ø1
 g
-java:S2095'"JUse try-with-resources or close this "XWPFDocument" in a "finally" clause.(¼î±Š8û“İËò1
+java:S2095#"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¿×óê8Í‰ø1
 _
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8’óÄ‘÷1
-X	java:S125+"<This block of commented-out lines of code should be removed.(ßÜ¢µ8¦óÄ‘÷1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ï‰ø1
+X	java:S125+"<This block of commented-out lines of code should be removed.(ßÜ¢µ8ğ‰ø1

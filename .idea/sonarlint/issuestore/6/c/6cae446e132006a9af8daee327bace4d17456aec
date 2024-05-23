@@ -1,7 +1,25 @@
 
-k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²øºëúÿÿÿÿ
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ
-e
-java:S2095"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(˜„°ÿÿÿÿÿ
+h
+java:S1192"FDefine a constant instead of duplicating this literal "Users" 3 times.(³Áõ»úÿÿÿÿ8ÓŒ­ù1
+i
+java:S1192"GDefine a constant instead of duplicating this literal "numTel" 3 times.(Ïõ—Øûÿÿÿÿ8ÔŒ­ù1
+i
+java:S1192"GDefine a constant instead of duplicating this literal "idUser" 3 times.(Ïõ—Øûÿÿÿÿ8ÒŒ­ù1
+h
+java:S1192"FDefine a constant instead of duplicating this literal "Lname" 3 times.(Ïõ—Øûÿÿÿÿ8ÒŒ­ù1
 m
-java:S37763"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Ğ—§âüÿÿÿÿ
+java:S1192"KDefine a constant instead of duplicating this literal "department" 3 times.(Ïõ—Øûÿÿÿÿ8ÓŒ­ù1
+h
+java:S1192"FDefine a constant instead of duplicating this literal "Fname" 3 times.(Ïõ—Øûÿÿÿÿ8ÔŒ­ù1
+h
+java:S1192"FDefine a constant instead of duplicating this literal "email" 3 times.(Ïõ—Øûÿÿÿÿ8ÔŒ­ù1
+r	java:S117{"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²øºëúÿÿÿÿ8¿¨»¬ù1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8À¨»¬ù1
+l
+java:S2095"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(˜„°ÿÿÿÿÿ8†ñ­ù1
+l
+java:S20958"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(˜„°ÿÿÿÿÿ8²ª»¬ù1
+l
+java:S2095Y"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(˜„°ÿÿÿÿÿ8òóŒ­ù1
+t
+java:S3776y"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Ğ—§âüÿÿÿÿ8Èª»¬ù1

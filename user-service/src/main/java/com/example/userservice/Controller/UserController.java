@@ -33,7 +33,8 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.*;
 import java.util.stream.Collectors;
-
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 @RestController
 @AllArgsConstructor
 @CrossOrigin(origins = "*")
@@ -47,11 +48,19 @@ public class UserController {
     EmailUserService emailUserService ;
     CloudinaryService cloudinaryService;
     IImageService imagenService;
+    UserServiceImp userService ;
     @GetMapping("/helloUser")
     public String Hello(){
 
         return "bills hello from microservices user !";
 
+    }
+
+    @GetMapping("/email-configuration")
+    public int getEmailConfigurationId() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String email = (String) authentication.getPrincipal();
+        return userService.getEmailConfigurationIdForLoggedInUser(email);
     }
     @GetMapping("/CurrentLoggedUser")
     public User getCurrentLoggedInUser(){
@@ -417,7 +426,10 @@ public String sendEmailWithAttachment(@RequestBody EmailRequest emailRequest) th
     public List<Projet> getAllAllProjet(){
         return iProjetService.getAllProjets();
     }
-
+    @GetMapping("/getUsersByProjetId/{projetId}")
+    public Set<User> getUsersByProjetId(@PathVariable int projetId) {
+        return iProjetService.getUsersByProjetId(projetId);
+    }
     @PostMapping("/addProjet")
     @ResponseBody
     public Projet addProjet (@RequestBody Projet projet){

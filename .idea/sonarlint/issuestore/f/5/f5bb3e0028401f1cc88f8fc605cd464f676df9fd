@@ -1,0 +1,23 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8±ôÕûù1
+g
+java:S2095"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¿×óê8›ßüù1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ñıÕûù1
+t
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(âä­£ùÿÿÿÿ8¿ó£üù1
+L	java:S106'"+Replace this use of System.out by a logger.(Ì‘”Úÿÿÿÿÿ8Îó£üù1
+G	java:S106B"+Replace this use of System.out by a logger.(ş¨Èº8Òó£üù1
+t
+java:S3776W"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(ûˆ¿óùÿÿÿÿ8¼„şù1
+\
+java:S1854f"?Remove this useless assignment to local variable "placeholder".(³’Ş¯8½„şù1
+G	java:S106c"+Replace this use of System.out by a logger.(¤Ûæã8¾„şù1
+M
+java:S1481f"0Remove this unused "placeholder" local variable.(³’Ş¯8¾„şù1
+G	java:S106x"+Replace this use of System.out by a logger.(ğ¼İ©8À„şù1
+d
+java:S1128	"GRemove this unused import 'org.apache.poi.xwpf.usermodel.XWPFDocument'.(“õÅ8•ë„şù1
+j
+java:S1128
+"HRemove this unused import 'org.apache.poi.xwpf.usermodel.XWPFParagraph'.(Ã¨À×øÿÿÿÿ8•ë„şù1

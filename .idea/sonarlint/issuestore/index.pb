@@ -141,3 +141,11 @@ Xuser-service/src/test/java/com/example/userservice/Services/Role/RoleServiceImp
 ^user-service/src/main/java/com/example/userservice/Services/User/VerificationTokenService.java,1\3\13524db1f7c3b4ca43b80886153b90e3349bb785
 ‘
 auser-service/src/main/java/com/example/userservice/Services/User/VerificationTokenServiceImp.java,c\8\c82e34a1cf97f9c6602c534057505c594bc30b0c
+ˆ
+Xuser-service/src/main/java/com/example/userservice/Services/User/GenericWordService.java,8\8\88a55d913fd64b19740988bacc1f288dc0e53171
+‹
+[user-service/src/main/java/com/example/userservice/Services/User/GenericWordController.java,9\8\986f8f43923f3d2aabe092a41ae63ab3160cd223
+‡
+Wuser-service/src/main/java/com/example/userservice/Services/User/GenericPPTService.java,f\5\f5bb3e0028401f1cc88f8fc605cd464f676df9fd
+Š
+Zuser-service/src/main/java/com/example/userservice/Services/User/GenericPPTController.java,2\9\298ed43e5eccf72bf23d27da18aa51b1292c8271

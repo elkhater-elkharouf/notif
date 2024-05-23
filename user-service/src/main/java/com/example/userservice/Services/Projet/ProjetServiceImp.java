@@ -107,9 +107,14 @@ public class ProjetServiceImp implements  IProjetService {
        // sendEmailToUsers(affectedUsers, mail);
         return savedProjet;
     }
-
-
-//    private void sendEmailToUsers(Set<User> users, Mail mail) {
+@Override
+    public Set<User> getUsersByProjetId(int projetId) {
+        Projet projet = projetRepository.findById(projetId).orElse(null);
+        if (projet != null) {
+            return projet.getUsers();
+        }
+        return null; // Or throw an exception if needed
+    }//    private void sendEmailToUsers(Set<User> users, Mail mail) {
 //        // Créer un message e-mail
 //        SimpleMailMessage message = new SimpleMailMessage();
 //        message.setSubject("Nouveau Projet: " + mail.getProjet().getNameProjet());

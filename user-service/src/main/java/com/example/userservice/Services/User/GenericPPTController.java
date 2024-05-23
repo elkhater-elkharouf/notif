@@ -1,55 +1,58 @@
 package com.example.userservice.Services.User;
+
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
 import javax.mail.MessagingException;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
-
 @RestController
-public class WordController {
+public class GenericPPTController {
     private final ExportUsersExcel exportUsersExcel;
-    private final WordService wordExportService;
-    private  final GenericWordService GenericWordService;
+    private final GenericPPTService genericPPTService;
 
     @Autowired
-    public WordController(ExportUsersExcel exportUsersExcel, WordService wordExportService, GenericWordService GenericWordService) {
+    public GenericPPTController(ExportUsersExcel exportUsersExcel, GenericPPTService genericPPTService) {
         this.exportUsersExcel = exportUsersExcel;
-        this.wordExportService = wordExportService;
-        this.GenericWordService = GenericWordService;
+        this.genericPPTService = genericPPTService;
     }
 
-    @PostMapping("/export/word/from/excel")
+    @PostMapping("/export/pptGeneric/from/excel")
     public ResponseEntity<InputStreamResource> exportWordFromExcel(
             @RequestPart("excelFile") MultipartFile excelFile,
-            @RequestPart("wordTemplate") MultipartFile wordTemplate
-            ) {
+            @RequestPart("pptTTemplate") MultipartFile pptTTemplate
+    ) {
         try {
             File tempExcelFile = File.createTempFile("temp_excel", ".xlsx");
             excelFile.transferTo(tempExcelFile);
-            File tempWordTemplate = File.createTempFile("temp_word_template", ".docx");
-            wordTemplate.transferTo(tempWordTemplate);
-            ByteArrayInputStream in =  wordExportService.generateWordFilesFromExcel(tempExcelFile, tempWordTemplate);
+
+            File tempWordTemplate = File.createTempFile("temp_ppt_template", ".pptxx");
+            pptTTemplate.transferTo(tempWordTemplate);
+            ByteArrayInputStream in =  genericPPTService.generatePPTFilesFromExcel(tempExcelFile, tempWordTemplate);
             System.out.println(in.toString());
+            // Clean up temporary files if needed
             tempExcelFile.delete();
             tempWordTemplate.delete();
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-            headers.setContentDispositionFormData("attachment", "word_files.docx");
+            headers.setContentDispositionFormData("attachment", "ppt_files.pptx");
 
 
             return ResponseEntity.ok()
                     .headers(headers)
-                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.docx"))
+                    .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.pptx"))
                     .body(new InputStreamResource(in));
 
-        } catch (IOException | InvalidFormatException |MessagingException e) {
+        } catch (IOException | InvalidFormatException | MessagingException e) {
             e.printStackTrace();
             throw new RuntimeException("mamcheeeeeeetech.", e);
         }

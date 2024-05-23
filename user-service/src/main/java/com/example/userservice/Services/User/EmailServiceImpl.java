@@ -27,9 +27,10 @@ public class EmailServiceImpl implements IEmailService {
      */
     @Autowired
     private SecurityUtils securityUtils;
-    @Autowired
-    public JavaMailSender emailSender;
-
+//    @Autowired
+//    public JavaMailSender emailSender;
+@Autowired
+UserServiceImp userServiceImp ;
     @Autowired
     private EmailTemplateRepository emailRepository;
     @Value("${send.mail.from}")
@@ -44,7 +45,7 @@ public class EmailServiceImpl implements IEmailService {
 //            // Handle case when no email configuration found for current user
 //            return;
 //        }
-        MimeMessage mimeMessage = emailSender.createMimeMessage();
+        MimeMessage mimeMessage = userServiceImp.getJavaMailSenderForCurrentUser().createMimeMessage();
        // MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
 
         // Créez MimeMessageHelper en mode multipart
@@ -81,7 +82,7 @@ public class EmailServiceImpl implements IEmailService {
             mimeMessageHelper.addAttachment("output_" + template.getLabel()+ ".pptx",
                     new ByteArrayResource(template.getAttachmentData()));
         }
-        emailSender.send(mimeMessage);
+       userServiceImp.getJavaMailSenderForCurrentUser().send(mimeMessage);
     }
 /////////// PRIVATE METHODS /////////////////////////////////////
 }
