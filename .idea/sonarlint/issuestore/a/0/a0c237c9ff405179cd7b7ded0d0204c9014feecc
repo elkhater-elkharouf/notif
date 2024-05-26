@@ -4,24 +4,24 @@ h	java:S112ğ"FDefine and throw a dedicated exception instead of using a gener
 n	java:S117ø"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍˆõË8¾¼¨ƒú1
 n	java:S117ø"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍˆõË8¿¼¨ƒú1
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8À¼¨ƒú1
-`
-java:S2259›"BA "NullPointerException" could be thrown; "user" is nullable here.(İóë…8Ä½¨ƒú1
-e
-java:S2259©"BA "NullPointerException" could be thrown; "user" is nullable here.(ñöµ¡ûÿÿÿÿ8Ä½¨ƒú1
+j
+java:S2259ª"GA "NullPointerException" could be thrown; "privilege" is nullable here.(Ú¶ÒÉüÿÿÿÿ8Ä½¨ƒú1
 `
 java:S2259“"BA "NullPointerException" could be thrown; "user" is nullable here.(œ¤¸‘8Ä½¨ƒú1
-`
-java:S2259‰"BA "NullPointerException" could be thrown; "user" is nullable here.(í¿ŸÇ8Ä½¨ƒú1
-j
-java:S2259"GA "NullPointerException" could be thrown; "privilege" is nullable here.(­ôøøÿÿÿÿÿ8Ä½¨ƒú1
 _
 java:S2259w"BA "NullPointerException" could be thrown; "user" is nullable here.(äß8Ä½¨ƒú1
 `
+java:S2259›"BA "NullPointerException" could be thrown; "user" is nullable here.(İóë…8Ä½¨ƒú1
+`
+java:S2259‰"BA "NullPointerException" could be thrown; "user" is nullable here.(í¿ŸÇ8Ä½¨ƒú1
+`
 java:S2259"BA "NullPointerException" could be thrown; "user" is nullable here.(şÔ†Ÿ8Ä½¨ƒú1
+j
+java:S2259"GA "NullPointerException" could be thrown; "privilege" is nullable here.(­ôøøÿÿÿÿÿ8Ä½¨ƒú1
+e
+java:S2259©"BA "NullPointerException" could be thrown; "user" is nullable here.(ñöµ¡ûÿÿÿÿ8Ä½¨ƒú1
 `
 java:S2259"BA "NullPointerException" could be thrown; "user" is nullable here.(èÀ˜ë8Ä½¨ƒú1
-j
-java:S2259ª"GA "NullPointerException" could be thrown; "privilege" is nullable here.(Ú¶ÒÉüÿÿÿÿ8Ä½¨ƒú1
 b
 java:S2583ƒ"DChange this condition so that it does not always evaluate to "false"(ä¥µ8Ä½¨ƒú1
 E	java:S108G")Either remove or fill this block of code.(”ı¾8Ì½¨ƒú1
