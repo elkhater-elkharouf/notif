@@ -84,8 +84,16 @@ public String sendEmailWithAttachment(@RequestBody EmailRequest emailRequest) th
 }
 
     @GetMapping("/requestPasswordReset/{email}")
-    public Response requestPasswordReset(@PathVariable("email") String email) throws Exception {
-        return iUserService.requestPasswordReset(email);
+    public ResponseEntity<?> requestPasswordReset(@PathVariable("email") String email) {
+        try {
+            // Appeler la méthode de service pour demander la réinitialisation du mot de passe
+            Response response = iUserService.requestPasswordReset(email);
+            // Retourner une réponse avec le corps de la réponse du service
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            // En cas d'exception, retourner une réponse avec un statut d'erreur approprié
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Une erreur est survenue lors de la réinitialisation du mot de passe.");
+        }
     }
     @PostMapping("/password-reset")
     public Response resetPassword(@RequestBody PasswordResetModel passwordResetModel, @QueryParam("token") String token) {

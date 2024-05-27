@@ -10,6 +10,8 @@ import com.example.userservice.Services.Role.RoleServiceImp;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import javax.mail.MessagingException;
 import javax.transaction.Transactional;
 import javax.ws.rs.core.Response;
 import java.sql.SQLException;
@@ -31,6 +33,7 @@ public class UserServiceImp  implements IUserService {
     RoleServiceImp roleService ;
     ImageServiceImpl imageService ;
     MailRepository mailRepository ;
+
     @Override
     public User getCurrentLoggedInUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -225,22 +228,28 @@ public class UserServiceImp  implements IUserService {
     public Response requestPasswordReset(String email) throws Exception {
         User user = userRepository.findByEmail(email);
 
-        if(user==null) {
-            return Response.status(Response.Status.NOT_FOUND).entity("email n'est pas disponible !").build();
-
+        if (user == null) {
+            return Response.status(Response.Status.NOT_FOUND).entity("Email not found!").build();
         }
 
         try {
             String token = UUID.randomUUID().toString();
-            verificationTokenService.affectUserToken(user , token);
-
+            verificationTokenService.affectUserToken(user, token);
             emailUserService.resetPasswordMail(user);
-
-        }catch (Exception e){
-            throw new RuntimeException("email invalid");
+        } catch (MessagingException e) {
+            // Catching specific MessagingException and logging the error
+            // Log the exception here for better debugging
+            e.printStackTrace();  // Consider using a logger in real applications
+            throw new RuntimeException("Failed to send email", e);
+        } catch (Exception e) {
+            // Catch any other exceptions and log them
+            e.printStackTrace();  // Consider using a logger in real applications
+            throw new RuntimeException("An unexpected error occurred", e);
         }
-        return Response.status(Response.Status.OK).entity("email de mot de passe oublié a été envoyé ").build();
+
+        return Response.status(Response.Status.OK).entity("Password reset email has been sent").build();
     }
+
 
 
 

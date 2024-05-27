@@ -3,6 +3,8 @@ package com.example.userservice.Services.User;
 import com.example.userservice.Entities.User;
 import com.example.userservice.Entities.VerificationToken;
 
+import java.util.Optional;
+
 
 public interface VerificationTokenService {
     public VerificationToken findByToken(String token);

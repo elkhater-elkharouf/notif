@@ -1,19 +1,9 @@
 
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ø†Ì¥8£Í­ƒú1
 _
-java:S2094"BRemove this empty class, write its code or make it an "interface".(ÄæÉ8£Í­ƒú1
-X	java:S125"<This block of commented-out lines of code should be removed.(‘Í8¥Í­ƒú1
-d
-java:S1128"BRemove this unused import 'com.example.userservice.Entities.Mail'.(Ï¸ ÿÿÿÿÿ8¥Í­ƒú1
-p
-java:S1128"NRemove this unused import 'com.example.userservice.Repository.MailRepository'.(Õ»¯¡úÿÿÿÿ8¥Í­ƒú1
-u
-java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ8¥Í­ƒú1
-e
-java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Ş8¥Í­ƒú1
-s
-java:S1128"QRemove this unused import 'org.springframework.context.annotation.Configuration'.(¬²Úäşÿÿÿÿ8¥Í­ƒú1
-[
-java:S1128	">Remove this unused import 'org.springframework.mail.javamail'.(åÉèÄ8¥Í­ƒú1
-C
-java:S1128"&Remove this unused import 'java.util'.(Î€ŒÙ8¦Í­ƒú1
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ä¶¸Ìû1
+ˆ
+java:S3305"fInject this field value directly into "getJavaMailSenderForCurrentUser", the only method that uses it.(Ÿ‰Õûÿÿÿÿ8å¶¸Ìû1
+]	java:S125"<This block of commented-out lines of code should be removed.(‰¯öêıÿÿÿÿ8ì¶¸Ìû1
+X	java:S125"<This block of commented-out lines of code should be removed.(„¢É8í¶¸Ìû1
+G	java:S1064"+Replace this use of System.out by a logger.(ïê“ı8ï¶¸Ìû1

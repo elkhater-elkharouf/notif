@@ -2,21 +2,22 @@ package com.example.userservice.Services.User;
 
 import com.example.userservice.Entities.User;
 import com.example.userservice.Entities.VerificationToken;
-import com.example.userservice.Repository.UserRepository;
-import lombok.AllArgsConstructor;
-import org.springframework.core.io.ByteArrayResource;
+
+import com.example.userservice.Security.MailConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
+
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import javax.transaction.Transactional;
 import java.io.File;
-import java.io.IOException;
+
 
 
 @Service
@@ -24,9 +25,9 @@ import java.io.IOException;
 @Transactional
 public class EmailUserService {
     private VerificationTokenService verificationTokenService;
-    private JavaMailSender javaMailSender;
-    UserRepository userRepository ;
-
+ private JavaMailSender javaMailSender;
+@Autowired
+private MailConfig mailConfig ;
 
   //  private String host=
 
@@ -72,25 +73,25 @@ public class EmailUserService {
 
 
     public void resetPasswordMail(User user) throws MessagingException{
-       // System.out.println(user.getIdUser()+" dddddd  "+user.getEmail()+"hhhhhhhhhhhhhhhhhhhh$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+        System.out.println(user.getIdUser()+" dddddd  "+user.getEmail()+"hhhhhhhhhhhhhhhhhhhh$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
         VerificationToken verificationToken = verificationTokenService.findByUser(user);
 
         if (verificationToken != null){
             String token = verificationToken.getToken();
 
-        String subject = "Request for reset password";
-        String senderName = "Platform de notification";
+            String subject = "Request for reset password";
+            String senderName = "Plateforme Notification";
 
-        String mailContent = "<p> Someone has requested to reset your password with our project .If it were not you , please ignore it otherwise please click on the link below : </p>";
-        String verifyURL = "http://localhost:9999/USER-SERVICE/password-reset?token=" + token;
+            String mailContent = "<p> Someone has requested to reset your password with our project .If it were not you , please ignore it otherwise please click on the link below : </p>";
+            String verifyURL = "http://localhost:4200/pages/authentication/reset-password-v2?token=" + token;
 
-        mailContent += "<h2><a href=" + verifyURL + ">Click this link to reset password</a></h2>";
+            mailContent += "<h2><a href=" + verifyURL + ">Click this link to reset password</a></h2>";
 
-        mailContent += "<p> thank you<br> the platform of notification App Team</p>";
+            mailContent += "<p> thank you<br> the Notification App Team</p>";
             MimeMessage message = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message);
 
-           // helper.setFrom("katerkarouf26@gmail.com");
+
             helper.setTo(user.getEmail());
             helper.setSubject(subject);
             helper.setText(mailContent, true);

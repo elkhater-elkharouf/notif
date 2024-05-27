@@ -1,73 +1,75 @@
 
-h	java:S112‡"FDefine and throw a dedicated exception instead of using a generic one.(ãü‰›üÿÿÿÿ8ñ‘‡€ú1
-c	java:S112â"FDefine and throw a dedicated exception instead of using a generic one.(Ä²Ö8ñ‘‡€ú1
+h	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ãü‰›üÿÿÿÿ8ñ‘‡€ú1
+c	java:S112ê"FDefine and throw a dedicated exception instead of using a generic one.(Ä²Ö8ñ‘‡€ú1
 M
-java:S3740è"/Provide the parametrized type for this generic.(¼ËˆÆ8ñ‘‡€ú1
+java:S3740ğ"/Provide the parametrized type for this generic.(¼ËˆÆ8ñ‘‡€ú1
 M
-java:S3740û"/Provide the parametrized type for this generic.(£é‘8ñ‘‡€ú1
+java:S3740ƒ"/Provide the parametrized type for this generic.(£é‘8ñ‘‡€ú1
 L
-java:S3740ı"/Provide the parametrized type for this generic.(„Êı&8ñ‘‡€ú1
+java:S3740…"/Provide the parametrized type for this generic.(„Êı&8ñ‘‡€ú1
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŸöÔÄÿÿÿÿÿ8õ‘‡€ú1
 j	java:S1005"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ëğ³‘8š’‡€ú1
 ]	java:S125G"<This block of commented-out lines of code should be removed.(Ğáïßıÿÿÿÿ8œ’‡€ú1
-L	java:S106\"+Replace this use of System.out by a logger.(ªÄ¡Ñûÿÿÿÿ8’‡€ú1
+H
+java:S1452W"&Remove usage of generic wildcard type.(ú¡ùøúÿÿÿÿ8Ó’‡€ú1
+L	java:S106d"+Replace this use of System.out by a logger.(ªÄ¡Ñûÿÿÿÿ8’‡€ú1
 b
-java:S4684r"@Replace this persistent entity with a simple POJO or DTO object.(‚Ãğüÿÿÿÿ8Ÿ’‡€ú1
+java:S4684z"@Replace this persistent entity with a simple POJO or DTO object.(‚Ãğüÿÿÿÿ8Ÿ’‡€ú1
 B
-java:S3751–"Make this method non "private".(¦êîëÿÿÿÿÿ8¢’‡€ú1
+java:S3751"Make this method non "private".(¦êîëÿÿÿÿÿ8¢’‡€ú1
 c
-java:S4684¡"@Replace this persistent entity with a simple POJO or DTO object.(…Ôøıÿÿÿÿ8£’‡€ú1
+java:S4684©"@Replace this persistent entity with a simple POJO or DTO object.(…Ôøıÿÿÿÿ8£’‡€ú1
 B
-java:S3751¿"Make this method non "private".(¦ƒÍåÿÿÿÿÿ8¥’‡€ú1
+java:S3751Ç"Make this method non "private".(¦ƒÍåÿÿÿÿÿ8¥’‡€ú1
 E
-java:S1125Ä"'Remove the unnecessary boolean literal.(Ã§ùÃ8¦’‡€ú1
+java:S1125Ì"'Remove the unnecessary boolean literal.(Ã§ùÃ8¦’‡€ú1
 ^
-java:S4684Ô"@Replace this persistent entity with a simple POJO or DTO object.(ºş8§’‡€ú1
+java:S4684Ü"@Replace this persistent entity with a simple POJO or DTO object.(ºş8§’‡€ú1
 u
-java:S2737„"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û8©’‡€ú1
+java:S2737Œ"WAdd logic to this catch clause or eliminate it and rethrow the exception automatically.(ö™û8©’‡€ú1
 T
-java:S6437é"6Revoke and change this password, as it is compromised.(Ùíç¼8ª’‡€ú1
-k	java:S100Ì"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈÓü”8Ç’‡€ú1
-j	java:S100Ğ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á–O8È’‡€ú1
+java:S6437ñ"6Revoke and change this password, as it is compromised.(Ùíç¼8ª’‡€ú1
+k	java:S100Ô"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÈÓü”8Ç’‡€ú1
+j	java:S100Ø"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á–O8È’‡€ú1
 ]
-java:S4684Ğ"@Replace this persistent entity with a simple POJO or DTO object.(Á–O8È’‡€ú1
+java:S4684Ø"@Replace this persistent entity with a simple POJO or DTO object.(Á–O8È’‡€ú1
 ]
-java:S4684Û"@Replace this persistent entity with a simple POJO or DTO object.(ìŞÀP8É’‡€ú1
+java:S4684ã"@Replace this persistent entity with a simple POJO or DTO object.(ìŞÀP8É’‡€ú1
 B
-java:S3751ç"Make this method non "private".(Óù²Õùÿÿÿÿ8É’‡€ú1
+java:S3751ï"Make this method non "private".(Óù²Õùÿÿÿÿ8É’‡€ú1
 ^
-java:S4684í"@Replace this persistent entity with a simple POJO or DTO object.(¿È³Ê8Ê’‡€ú1
+java:S4684õ"@Replace this persistent entity with a simple POJO or DTO object.(¿È³Ê8Ê’‡€ú1
 =
-java:S3751í"Make this method non "private".(¿È³Ê8Ê’‡€ú1
+java:S3751õ"Make this method non "private".(¿È³Ê8Ê’‡€ú1
 c
-java:S4684€"@Replace this persistent entity with a simple POJO or DTO object.(¯¯åıÿÿÿÿ8Ë’‡€ú1
+java:S4684ˆ"@Replace this persistent entity with a simple POJO or DTO object.(¯¯åıÿÿÿÿ8Ë’‡€ú1
 B
-java:S3751Œ"Make this method non "private".(—ÿÿ•üÿÿÿÿ8Ì’‡€ú1
+java:S3751”"Make this method non "private".(—ÿÿ•üÿÿÿÿ8Ì’‡€ú1
 c
-java:S4684’"@Replace this persistent entity with a simple POJO or DTO object.(ÓÄ§Íøÿÿÿÿ8Ì’‡€ú1
+java:S4684š"@Replace this persistent entity with a simple POJO or DTO object.(ÓÄ§Íøÿÿÿÿ8Ì’‡€ú1
 B
-java:S3751’"Make this method non "private".(ÓÄ§Íøÿÿÿÿ8Ì’‡€ú1
+java:S3751š"Make this method non "private".(ÓÄ§Íøÿÿÿÿ8Ì’‡€ú1
 ]
-java:S4684™"@Replace this persistent entity with a simple POJO or DTO object.(ÒÂv8Ì’‡€ú1
+java:S4684¡"@Replace this persistent entity with a simple POJO or DTO object.(ÒÂv8Ì’‡€ú1
 ^
-java:S4684³"@Replace this persistent entity with a simple POJO or DTO object.(È³š8Î’‡€ú1
+java:S4684»"@Replace this persistent entity with a simple POJO or DTO object.(È³š8Î’‡€ú1
 =
-java:S3751¿"Make this method non "private".(Š¤Üê8Î’‡€ú1
+java:S3751Ç"Make this method non "private".(Š¤Üê8Î’‡€ú1
 c
-java:S4684Å"@Replace this persistent entity with a simple POJO or DTO object.(ı½•Îşÿÿÿÿ8Ï’‡€ú1
+java:S4684Í"@Replace this persistent entity with a simple POJO or DTO object.(ı½•Îşÿÿÿÿ8Ï’‡€ú1
 B
-java:S3751Å"Make this method non "private".(ı½•Îşÿÿÿÿ8Ï’‡€ú1
+java:S3751Í"Make this method non "private".(ı½•Îşÿÿÿÿ8Ï’‡€ú1
 c
-java:S4684Ë"@Replace this persistent entity with a simple POJO or DTO object.(§áöúÿÿÿÿ8Ï’‡€ú1
+java:S4684Ó"@Replace this persistent entity with a simple POJO or DTO object.(§áöúÿÿÿÿ8Ï’‡€ú1
 c
-java:S4684Ñ"@Replace this persistent entity with a simple POJO or DTO object.(õĞ«ùÿÿÿÿ8Ğ’‡€ú1
+java:S4684Ù"@Replace this persistent entity with a simple POJO or DTO object.(õĞ«ùÿÿÿÿ8Ğ’‡€ú1
 ^
-java:S4684Ú"@Replace this persistent entity with a simple POJO or DTO object.(‰ûëß8Ñ’‡€ú1
+java:S4684â"@Replace this persistent entity with a simple POJO or DTO object.(‰ûëß8Ñ’‡€ú1
 X
-java:S1854û":Remove this useless assignment to local variable "result".(£é‘8Ó’‡€ú1
+java:S1854ƒ":Remove this useless assignment to local variable "result".(£é‘8Ó’‡€ú1
 I
-java:S1452õ"&Remove usage of generic wildcard type.(Šóùˆøÿÿÿÿ8Ó’‡€ú1
+java:S1452ı"&Remove usage of generic wildcard type.(Šóùˆøÿÿÿÿ8¿ÉÑû1
 I
-java:S1481û"+Remove this unused "result" local variable.(£é‘8Ô’‡€ú1
+java:S1481ƒ"+Remove this unused "result" local variable.(£é‘8Ô’‡€ú1
 ^
-java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(òìœ–8Õ’‡€ú1
+java:S4684‰"@Replace this persistent entity with a simple POJO or DTO object.(òìœ–8Õ’‡€ú1

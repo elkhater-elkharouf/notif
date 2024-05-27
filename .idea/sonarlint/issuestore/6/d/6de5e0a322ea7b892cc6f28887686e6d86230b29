@@ -1,22 +1,17 @@
 
 {	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8øÏıò1
 ±
-java:S4449s"“Annotate the parameter with @javax.annotation.Nullable in method 'addAttachment' declaration, or make sure that null can not be passed as argument.(ÚÉ……8„‘Ïıò1
+java:S4449t"“Annotate the parameter with @javax.annotation.Nullable in method 'addAttachment' declaration, or make sure that null can not be passed as argument.(ÚÉ……8úììÊû1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ËõÉÌû1
 ˜
-java:S1130&"vRemove the declaration of thrown exception 'javax.mail.MessagingException', as it cannot be thrown from method's body.(©…øÿÿÿÿ8‡‘Ïıò1
-L	java:S1062"+Replace this use of System.out by a logger.(ıàÂ§ıÿÿÿÿ8‰‘Ïıò1
-]	java:S1254"<This block of commented-out lines of code should be removed.(ØÁ†­şÿÿÿÿ8‰‘Ïıò1
+java:S1130'"vRemove the declaration of thrown exception 'javax.mail.MessagingException', as it cannot be thrown from method's body.(©…øÿÿÿÿ8ÿììÊû1
+L	java:S1063"+Replace this use of System.out by a logger.(ıàÂ§ıÿÿÿÿ8‚íìÊû1
+]	java:S1255"<This block of commented-out lines of code should be removed.(ØÁ†­şÿÿÿÿ8‚íìÊû1
 `
-java:S1854R">Remove this useless assignment to local variable "senderName".(†”óÎùÿÿÿÿ8‰‘Ïıò1
-X	java:S125K"<This block of commented-out lines of code should be removed.(÷ò•£8‰‘Ïıò1
+java:S1854S">Remove this useless assignment to local variable "senderName".(ïÍœÎÿÿÿÿÿ8ÖšŸÍû1
+G	java:S106L"+Replace this use of System.out by a logger.(Æ¾ˆÑ8×šŸÍû1
 Q
-java:S1481R"/Remove this unused "senderName" local variable.(†”óÎùÿÿÿÿ8Š‘Ïıò1
-]	java:S125]"<This block of commented-out lines of code should be removed.(â…Õüÿÿÿÿ8‹‘Ïıò1
-X
-java:S1128"6Remove this unused import 'lombok.AllArgsConstructor'.(´œ¾öùÿÿÿÿ8‘Ïıò1
-g
-java:S1128"JRemove this unused import 'org.springframework.core.io.ByteArrayResource'.(Ã¤Ê¾8‘Ïıò1
-n
-java:S1128"LRemove this unused import 'org.springframework.web.multipart.MultipartFile'.(ôŸœÿÿÿÿÿ8‘Ïıò1
-R
-java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8‘Ïıò1
+java:S1481S"/Remove this unused "senderName" local variable.(ïÍœÎÿÿÿÿÿ8ØšŸÍû1
+e
+java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Ş8ÿÓğÊû1

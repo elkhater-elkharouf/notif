@@ -1,33 +1,34 @@
 
-h	java:S112Ê"FDefine and throw a dedicated exception instead of using a generic one.(Ö¥‚—øÿÿÿÿ8½¼¨ƒú1
-h	java:S112ğ"FDefine and throw a dedicated exception instead of using a generic one.(Ö¥‚—øÿÿÿÿ8½¼¨ƒú1
-n	java:S117ø"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍˆõË8¾¼¨ƒú1
-n	java:S117ø"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍˆõË8¿¼¨ƒú1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8À¼¨ƒú1
-j
-java:S2259ª"GA "NullPointerException" could be thrown; "privilege" is nullable here.(Ú¶ÒÉüÿÿÿÿ8Ä½¨ƒú1
+h	java:S112Í"FDefine and throw a dedicated exception instead of using a generic one.(Ö¥‚—øÿÿÿÿ8õçµÌû1
+h	java:S112ó"FDefine and throw a dedicated exception instead of using a generic one.(¡ö’ğüÿÿÿÿ8ÖùûÌû1
+c	java:S112÷"FDefine and throw a dedicated exception instead of using a generic one.(–†Ş†8ÖùûÌû1
+n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍˆõË8÷çµÌû1
+n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍˆõË8÷çµÌû1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8ûçµÌû1
 `
-java:S2259“"BA "NullPointerException" could be thrown; "user" is nullable here.(œ¤¸‘8Ä½¨ƒú1
+java:S2259œ"BA "NullPointerException" could be thrown; "user" is nullable here.(œ¤¸‘8èéµÌû1
+j
+java:S2259¦"GA "NullPointerException" could be thrown; "privilege" is nullable here.(­ôøøÿÿÿÿÿ8èéµÌû1
+j
+java:S2259³"GA "NullPointerException" could be thrown; "privilege" is nullable here.(Ú¶ÒÉüÿÿÿÿ8èéµÌû1
+`
+java:S2259¤"BA "NullPointerException" could be thrown; "user" is nullable here.(İóë…8çéµÌû1
 _
-java:S2259w"BA "NullPointerException" could be thrown; "user" is nullable here.(äß8Ä½¨ƒú1
+java:S2259z"BA "NullPointerException" could be thrown; "user" is nullable here.(äß8èéµÌû1
 `
-java:S2259›"BA "NullPointerException" could be thrown; "user" is nullable here.(İóë…8Ä½¨ƒú1
+java:S2259’"BA "NullPointerException" could be thrown; "user" is nullable here.(í¿ŸÇ8çéµÌû1
 `
-java:S2259‰"BA "NullPointerException" could be thrown; "user" is nullable here.(í¿ŸÇ8Ä½¨ƒú1
-`
-java:S2259"BA "NullPointerException" could be thrown; "user" is nullable here.(şÔ†Ÿ8Ä½¨ƒú1
-j
-java:S2259"GA "NullPointerException" could be thrown; "privilege" is nullable here.(­ôøøÿÿÿÿÿ8Ä½¨ƒú1
+java:S2259"BA "NullPointerException" could be thrown; "user" is nullable here.(èÀ˜ë8èéµÌû1
 e
-java:S2259©"BA "NullPointerException" could be thrown; "user" is nullable here.(ñöµ¡ûÿÿÿÿ8Ä½¨ƒú1
+java:S2259²"BA "NullPointerException" could be thrown; "user" is nullable here.(ñöµ¡ûÿÿÿÿ8çéµÌû1
 `
-java:S2259"BA "NullPointerException" could be thrown; "user" is nullable here.(èÀ˜ë8Ä½¨ƒú1
+java:S2259 "BA "NullPointerException" could be thrown; "user" is nullable here.(şÔ†Ÿ8èéµÌû1
 b
-java:S2583ƒ"DChange this condition so that it does not always evaluate to "false"(ä¥µ8Ä½¨ƒú1
-E	java:S108G")Either remove or fill this block of code.(”ı¾8Ì½¨ƒú1
-G	java:S106w"+Replace this use of System.out by a logger.(äß8Ï½¨ƒú1
-Y	java:S125„"<This block of commented-out lines of code should be removed.(Ë•ÙĞ8Ğ½¨ƒú1
-Y	java:S125±"<This block of commented-out lines of code should be removed.(¸ÂïÏ8Ó½¨ƒú1
-Y	java:S125’"<This block of commented-out lines of code should be removed.(ÚÃ®µ8Û½¨ƒú1
+java:S2583Œ"DChange this condition so that it does not always evaluate to "false"(ä¥µ8èéµÌû1
+E	java:S108J")Either remove or fill this block of code.(”ı¾8ôéµÌû1
+G	java:S106z"+Replace this use of System.out by a logger.(äß8ùéµÌû1
+Y	java:S125‡"<This block of commented-out lines of code should be removed.(Ë•ÙĞ8ûéµÌû1
+Y	java:S125´"<This block of commented-out lines of code should be removed.(¸ÂïÏ8€êµÌû1
+Y	java:S125›"<This block of commented-out lines of code should be removed.(ÚÃ®µ8ŒêµÌû1
 T
-java:S6437ë"6Revoke and change this password, as it is compromised.(ªÿæ8¡©£§ú1
+java:S6437ô"6Revoke and change this password, as it is compromised.(ªÿæ8™êµÌû1

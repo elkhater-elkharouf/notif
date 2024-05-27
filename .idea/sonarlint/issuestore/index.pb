@@ -149,3 +149,9 @@ Xuser-service/src/main/java/com/example/userservice/Services/User/GenericWordSer
 Wuser-service/src/main/java/com/example/userservice/Services/User/GenericPPTService.java,f\5\f5bb3e0028401f1cc88f8fc605cd464f676df9fd
 ä
 Zuser-service/src/main/java/com/example/userservice/Services/User/GenericPPTController.java,2\9\298ed43e5eccf72bf23d27da18aa51b1292c8271
+Ç
+Ruser-service/src/main/java/com/example/userservice/Entities/VerificationToken.java,1\1\11a435ac3014585fa26036066ed112b4fd5d39d4
+é
+^user-service/src/main/java/com/example/userservice/Repository/VerificationTokenRepository.java,f\1\f10f6bb9d68780f8986cbadcf19499801ac6b462
+è
+_user-service/src/main/java/com/example/userservice/Controller/CustomGlobalExceptionHandler.java,8\b\8b270d475c0ac30e5d642903b600afe6f8612eb5
