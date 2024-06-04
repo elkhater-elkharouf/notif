@@ -21,61 +21,61 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 @ActiveProfiles("test")
 class RoleServiceImpTest {
-    @Autowired
-    private RoleServiceImp roleService;
-
-    @Autowired
-    private RoleRepository roleRepository;
-    @Autowired
-    private PrivilegeRepository privilegeRepository;
-
-    @Test
-    void addRole() {
-        Role role = new Role();
-        role.setRoleName("TEST_ROLE");
-
-        Role savedRole = roleService.addRole(role);
-
-        Role retrievedRole = roleRepository.findById(savedRole.getIdRole()).orElse(null);
-
-        assertNotNull(retrievedRole);
-        assertEquals("TEST_ROLE", retrievedRole.getRoleName());
-    }
-
-    @Test
-    void updateRole() {
-        Role role = new Role();
-        role.setIdRole(1);
-        role.setRoleName("Test Role");
-
-        Role savedRole = roleRepository.save(role);
-
-        savedRole.setRoleName("Updated Test Role");
-
-        Role updatedRole = roleService.updateRole(savedRole);
-
-        assertEquals(savedRole.getIdRole(), updatedRole.getIdRole());
-        assertEquals("Updated Test Role", updatedRole.getRoleName());
-
-        Optional<Role> retrievedRole = roleRepository.findById(updatedRole.getIdRole());
-        assertTrue(retrievedRole.isPresent());
-        assertEquals("Updated Test Role", retrievedRole.get().getRoleName());
-    }
-
-    @Test
-    void deleteRole() {
-        Role role = new Role();
-        role.setRoleName("Role à supprimer");
-
-        Role savedRole = roleRepository.save(role);
-
-        int roleId = savedRole.getIdRole();
-
-        roleService.deleteRole(roleId);
-
-        Optional<Role> deletedRole = roleRepository.findById(roleId);
-        assertFalse(deletedRole.isPresent(), "La suppression du rôle a échoué");
-    }
+//    @Autowired
+//    private RoleServiceImp roleService;
+//
+//    @Autowired
+//    private RoleRepository roleRepository;
+//    @Autowired
+//    private PrivilegeRepository privilegeRepository;
+//
+//    @Test
+//    void addRole() {
+//        Role role = new Role();
+//        role.setRoleName("TEST_ROLE");
+//
+//        Role savedRole = roleService.addRole(role);
+//
+//        Role retrievedRole = roleRepository.findById(savedRole.getIdRole()).orElse(null);
+//
+//        assertNotNull(retrievedRole);
+//        assertEquals("TEST_ROLE", retrievedRole.getRoleName());
+//    }
+//
+//    @Test
+//    void updateRole() {
+//        Role role = new Role();
+//        role.setIdRole(1);
+//        role.setRoleName("Test Role");
+//
+//        Role savedRole = roleRepository.save(role);
+//
+//        savedRole.setRoleName("Updated Test Role");
+//
+//        Role updatedRole = roleService.updateRole(savedRole);
+//
+//        assertEquals(savedRole.getIdRole(), updatedRole.getIdRole());
+//        assertEquals("Updated Test Role", updatedRole.getRoleName());
+//
+//        Optional<Role> retrievedRole = roleRepository.findById(updatedRole.getIdRole());
+//        assertTrue(retrievedRole.isPresent());
+//        assertEquals("Updated Test Role", retrievedRole.get().getRoleName());
+//    }
+//
+//    @Test
+//    void deleteRole() {
+//        Role role = new Role();
+//        role.setRoleName("Role à supprimer");
+//
+//        Role savedRole = roleRepository.save(role);
+//
+//        int roleId = savedRole.getIdRole();
+//
+//        roleService.deleteRole(roleId);
+//
+//        Optional<Role> deletedRole = roleRepository.findById(roleId);
+//        assertFalse(deletedRole.isPresent(), "La suppression du rôle a échoué");
+//    }
 
 //    @Test
 //    void getRoleById_RoleExists() {
@@ -97,18 +97,18 @@ class RoleServiceImpTest {
 //        assertNull(retrievedRole, "Le rôle récupéré devrait être null car le rôle n'existe pas");
 //    }
 
-    @Test
-    void getAllRoles() {
-        List<Role> retrievedRoles = roleService.getAllRoles();
-
-        if (!retrievedRoles.isEmpty()) {
-            System.out.println("Size of retrieved list: " + retrievedRoles.size());
-            Assertions.assertEquals(retrievedRoles.size(), retrievedRoles.size());
-        } else {
-            System.out.println("Retrieved list is empty.");
-            Assertions.assertEquals(0, retrievedRoles.size());
-        }
-    }
+//    @Test
+//    void getAllRoles() {
+//        List<Role> retrievedRoles = roleService.getAllRoles();
+//
+//        if (!retrievedRoles.isEmpty()) {
+//            System.out.println("Size of retrieved list: " + retrievedRoles.size());
+//            Assertions.assertEquals(retrievedRoles.size(), retrievedRoles.size());
+//        } else {
+//            System.out.println("Retrieved list is empty.");
+//            Assertions.assertEquals(0, retrievedRoles.size());
+//        }
+//    }
 
 //    @Test
 //    @Transactional

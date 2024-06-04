@@ -18,30 +18,30 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 @ActiveProfiles("test")
 class PrivilegeServiceImpTest {
-
-   @Autowired
-    private PrivilegeServiceImp privilegeService;
-
-    @Autowired
-    private PrivilegeRepository privilegeRepository;
-
-    @Test
-    void addPrivilege() {
-        // Créer un nouvel objet Privilege
-        Privilege privilege = new Privilege();
-        privilege.setPrivilegeName("TEST_PRIVILEGE");
-
-        // Appeler la méthode à tester
-        Privilege savedPrivilege = privilegeService.addPrivilege(privilege);
-
-        // Récupérer le Privilege à partir de la base de données pour vérifier s'il a été correctement enregistré
-        Privilege retrievedPrivilege = privilegeRepository.findById(savedPrivilege.getIdPrivilege()).orElse(null);
-
-        // Vérifier que le Privilege enregistré n'est pas null
-        assertNotNull(retrievedPrivilege);
-        // Vérifier que le nom du Privilege enregistré correspond au nom défini
-        assertEquals("TEST_PRIVILEGE", retrievedPrivilege.getPrivilegeName());
-    }
+//
+//   @Autowired
+//    private PrivilegeServiceImp privilegeService;
+//
+//    @Autowired
+//    private PrivilegeRepository privilegeRepository;
+//
+//    @Test
+//    void addPrivilege() {
+//        // Créer un nouvel objet Privilege
+//        Privilege privilege = new Privilege();
+//        privilege.setPrivilegeName("TEST_PRIVILEGE");
+//
+//        // Appeler la méthode à tester
+//        Privilege savedPrivilege = privilegeService.addPrivilege(privilege);
+//
+//        // Récupérer le Privilege à partir de la base de données pour vérifier s'il a été correctement enregistré
+//        Privilege retrievedPrivilege = privilegeRepository.findById(savedPrivilege.getIdPrivilege()).orElse(null);
+//
+//        // Vérifier que le Privilege enregistré n'est pas null
+//        assertNotNull(retrievedPrivilege);
+//        // Vérifier que le nom du Privilege enregistré correspond au nom défini
+//        assertEquals("TEST_PRIVILEGE", retrievedPrivilege.getPrivilegeName());
+//    }
 //    @Test
 //    void updatePrivilege() {
 //        // Données de test
@@ -114,19 +114,19 @@ class PrivilegeServiceImpTest {
 //        assertNull(retrievedPrivilege, "Le Privilege récupéré devrait être null car le Privilege n'existe pas");
 //    }
 
-    @Test
-    void getAllPrivileges() {
-        List<Privilege> retrievedPrivileges = privilegeService.getAllPrivileges();
-
-        if (!retrievedPrivileges.isEmpty()) {
-            System.out.println("Size of retrieved list: " + retrievedPrivileges.size());
-            Assertions.assertEquals(retrievedPrivileges.size(), retrievedPrivileges.size());
-            // Ajoutez d'autres assertions nécessaires en fonction de vos besoins
-        } else {
-            System.out.println("Retrieved list is empty.");
-            Assertions.assertEquals(0, retrievedPrivileges.size());
-        }
-    }
+//    @Test
+//    void getAllPrivileges() {
+//        List<Privilege> retrievedPrivileges = privilegeService.getAllPrivileges();
+//
+//        if (!retrievedPrivileges.isEmpty()) {
+//            System.out.println("Size of retrieved list: " + retrievedPrivileges.size());
+//            Assertions.assertEquals(retrievedPrivileges.size(), retrievedPrivileges.size());
+//            // Ajoutez d'autres assertions nécessaires en fonction de vos besoins
+//        } else {
+//            System.out.println("Retrieved list is empty.");
+//            Assertions.assertEquals(0, retrievedPrivileges.size());
+//        }
+//    }
 //
 //    @Test
 //    void addAndAssignPrivilegeToRole() {

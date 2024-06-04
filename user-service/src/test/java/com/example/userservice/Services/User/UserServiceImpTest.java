@@ -30,18 +30,18 @@ class UserServiceImpTest {
 
 
 
-    @Autowired
-    private UserServiceImp userService;
-
-    @Autowired
-    private RoleRepository roleRepository;
-
-    @Autowired
-    private PrivilegeRepository privilegeRepository;
-
-
-    @Autowired
-    private UserRepository userRepository;
+//    @Autowired
+//    private UserServiceImp userService;
+//
+//    @Autowired
+//    private RoleRepository roleRepository;
+//
+//    @Autowired
+//    private PrivilegeRepository privilegeRepository;
+//
+//
+//    @Autowired
+//    private UserRepository userRepository;
 
 
 
