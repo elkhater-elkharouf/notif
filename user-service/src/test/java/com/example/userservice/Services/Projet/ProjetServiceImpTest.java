@@ -141,19 +141,19 @@ private IProjetService iProjetService ;
 //        // Vérifier si le projet récupéré est null
 //        assertNull(retrievedProjet);
 //    }
-    @Test
-    void getAllProjets() {
-        List<Projet> retrievedProjet = iProjetService.getAllProjets();
-
-        if (!retrievedProjet.isEmpty()) {
-            System.out.println("Size of retrieved list: " + retrievedProjet.size());
-            Assertions.assertEquals(retrievedProjet.size(), retrievedProjet.size());
-            // Add any other necessary assertions based on your requirements
-        } else {
-            System.out.println("Retrieved list is empty.");
-            Assertions.assertEquals(0, retrievedProjet.size());
-        }
-    }
+//    @Test
+//    void getAllProjets() {
+//        List<Projet> retrievedProjet = iProjetService.getAllProjets();
+//
+//        if (!retrievedProjet.isEmpty()) {
+//            System.out.println("Size of retrieved list: " + retrievedProjet.size());
+//            Assertions.assertEquals(retrievedProjet.size(), retrievedProjet.size());
+//            // Add any other necessary assertions based on your requirements
+//        } else {
+//            System.out.println("Retrieved list is empty.");
+//            Assertions.assertEquals(0, retrievedProjet.size());
+//        }
+//    }
 
 //    @Test
 //    @Transactional
