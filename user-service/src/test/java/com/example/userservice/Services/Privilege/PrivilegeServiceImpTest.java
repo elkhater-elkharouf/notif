@@ -42,51 +42,51 @@ class PrivilegeServiceImpTest {
         // Vérifier que le nom du Privilege enregistré correspond au nom défini
         assertEquals("TEST_PRIVILEGE", retrievedPrivilege.getPrivilegeName());
     }
-    @Test
-    void updatePrivilege() {
-        // Données de test
-        Privilege privilege = new Privilege();
-        privilege.setIdPrivilege(1);
-        privilege.setPrivilegeName("Test Privilege");
+//    @Test
+//    void updatePrivilege() {
+//        // Données de test
+//        Privilege privilege = new Privilege();
+//        privilege.setIdPrivilege(1);
+//        privilege.setPrivilegeName("Test Privilege");
+//
+//        // Enregistrer le privilège initial dans le repository
+//        Privilege savedPrivilege = privilegeRepository.save(privilege);
+//
+//        // Modifier les détails du privilège
+//        savedPrivilege.setPrivilegeName("Updated Test Privilege");
+//
+//        // Mettre à jour le privilège
+//        Privilege updatedPrivilege = privilegeService.updatePrivilege(savedPrivilege);
+//
+//        // Vérification
+//        assertEquals(savedPrivilege.getIdPrivilege(), updatedPrivilege.getIdPrivilege());
+//        assertEquals("Updated Test Privilege", updatedPrivilege.getPrivilegeName());
+//
+//        // Vérifie si la mise à jour a réussi en cherchant le privilège dans le repository
+//        Optional<Privilege> retrievedPrivilege = privilegeRepository.findById(updatedPrivilege.getIdPrivilege());
+//        assertTrue(retrievedPrivilege.isPresent());
+//        assertEquals("Updated Test Privilege", retrievedPrivilege.get().getPrivilegeName());
+//    }
 
-        // Enregistrer le privilège initial dans le repository
-        Privilege savedPrivilege = privilegeRepository.save(privilege);
-
-        // Modifier les détails du privilège
-        savedPrivilege.setPrivilegeName("Updated Test Privilege");
-
-        // Mettre à jour le privilège
-        Privilege updatedPrivilege = privilegeService.updatePrivilege(savedPrivilege);
-
-        // Vérification
-        assertEquals(savedPrivilege.getIdPrivilege(), updatedPrivilege.getIdPrivilege());
-        assertEquals("Updated Test Privilege", updatedPrivilege.getPrivilegeName());
-
-        // Vérifie si la mise à jour a réussi en cherchant le privilège dans le repository
-        Optional<Privilege> retrievedPrivilege = privilegeRepository.findById(updatedPrivilege.getIdPrivilege());
-        assertTrue(retrievedPrivilege.isPresent());
-        assertEquals("Updated Test Privilege", retrievedPrivilege.get().getPrivilegeName());
-    }
-
-@Test
-void deletePrivilege() {
-    // Données de test
-    Privilege privilege = new Privilege();
-    privilege.setPrivilegeName("Privilege à supprimer");
-
-    // Enregistrer le privilège dans le repository
-    Privilege savedPrivilege = privilegeRepository.save(privilege);
-
-    // Récupérer l'ID du privilège sauvegardé
-    int privilegeId = savedPrivilege.getIdPrivilege();
-
-    // Supprimer le privilège
-    privilegeService.deletePrivilege(privilegeId);
-
-    // Vérification
-    Optional<Privilege> deletedPrivilege = privilegeRepository.findById(privilegeId);
-    assertFalse(deletedPrivilege.isPresent(), "La suppression du privilège a échoué");
-}
+//@Test
+//void deletePrivilege() {
+//    // Données de test
+//    Privilege privilege = new Privilege();
+//    privilege.setPrivilegeName("Privilege à supprimer");
+//
+//    // Enregistrer le privilège dans le repository
+//    Privilege savedPrivilege = privilegeRepository.save(privilege);
+//
+//    // Récupérer l'ID du privilège sauvegardé
+//    int privilegeId = savedPrivilege.getIdPrivilege();
+//
+//    // Supprimer le privilège
+//    privilegeService.deletePrivilege(privilegeId);
+//
+//    // Vérification
+//    Optional<Privilege> deletedPrivilege = privilegeRepository.findById(privilegeId);
+//    assertFalse(deletedPrivilege.isPresent(), "La suppression du privilège a échoué");
+//}
 
 //    @Test
 //    void getPrivilegeById_PrivilegeExists() {

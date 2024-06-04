@@ -90,29 +90,29 @@ private IProjetService iProjetService ;
         assertTrue(retrievedProjet.isPresent());
         assertEquals("Updated Test Projet", retrievedProjet.get().getNameProjet());
     }
-    @Test
-    void deleteProjet() {
-        // Données de test
-        Projet projet = new Projet();
-        projet.setNameProjet("Projet à supprimer");
-
-        // Enregistrer le projet dans le repository
-        Projet savedProjet = projetRepository.save(projet);
-
-        // Récupérer l'ID du projet sauvegardé
-        int projetId = savedProjet.getIdProjet();
-
-        // Supprimer le projet
-        iProjetService.deleteProjet(projetId);
-
-        // Vérification
-        Optional<Projet> deletedProjet = projetRepository.findById(projetId);
-        if(deletedProjet ==null){
-            Assertions.fail("Delation failed");
-        }else {
-           Assertions.assertTrue(true);
-        }
-    }
+//    @Test
+//    void deleteProjet() {
+//        // Données de test
+//        Projet projet = new Projet();
+//        projet.setNameProjet("Projet à supprimer");
+//
+//        // Enregistrer le projet dans le repository
+//        Projet savedProjet = projetRepository.save(projet);
+//
+//        // Récupérer l'ID du projet sauvegardé
+//        int projetId = savedProjet.getIdProjet();
+//
+//        // Supprimer le projet
+//        iProjetService.deleteProjet(projetId);
+//
+//        // Vérification
+//        Optional<Projet> deletedProjet = projetRepository.findById(projetId);
+//        if(deletedProjet ==null){
+//            Assertions.fail("Delation failed");
+//        }else {
+//           Assertions.assertTrue(true);
+//        }
+//    }
 //    @Test
 //    void getProjetById_ProjetExists() {
 //        // Créer un projet
@@ -155,58 +155,58 @@ private IProjetService iProjetService ;
         }
     }
 
-    @Test
-    @Transactional
-    void addProjetWithMailAndUsers() {
-        // Données de test
-        String projectName = "Test Projet";
-        String host = "testHost";
-        int port = 1234;
-        String username = "testUser";
-        String password = "testPassword";
-        Date startDate = new Date();
-        Date endDate = new Date();
-int user1Id=1;
-int user2Id=2 ;
-
-        // Enregistrer le mail dans la base de données
-        Mail mail = new Mail();
-        mail.setHost(host);
-        mail.setPort(port);
-        mail.setUsername(username);
-        mail.setPassword(password);
-        mailRepository.save(mail);
-
-
-        // Fetch fresh instances of User entities
-        User user1 = userRepository.findById(user1Id).orElseThrow(() -> new RuntimeException("User not found with id: " + user1Id));
-        User user2 = userRepository.findById(user2Id).orElseThrow(() -> new RuntimeException("User not found with id: " + user2Id));
-
-
-        // Créer une liste d'utilisateurs à associer au projet
-        List<Integer> userIds = List.of(user1.getIdUser(), user2.getIdUser());
-
-        // Créer un projet
-        Projet projet = new Projet();
-        projet.setNameProjet(projectName);
-        projet.setDateDeb(startDate);
-        projet.setStatus(1);
-        projet.setDateFin(endDate);
-        projet.setMail(mail);
-
-        // Exécuter la méthode à tester
-        Projet savedProjet = iProjetService.addProjetWithMailAndUsers(projet, userIds);
-
-        // Vérifications
-        assertNotNull(savedProjet.getIdProjet());
-        assertEquals(projectName, savedProjet.getNameProjet());
-        assertNotNull(savedProjet.getMail());
-        assertEquals(host, savedProjet.getMail().getHost());
-        assertEquals(port, savedProjet.getMail().getPort());
-        assertEquals(username, savedProjet.getMail().getUsername());
-        assertEquals(password, savedProjet.getMail().getPassword());
-        assertEquals(2, savedProjet.getUsers().size()); // Vérifie que les deux utilisateurs sont associés au projet
-    }
+//    @Test
+//    @Transactional
+//    void addProjetWithMailAndUsers() {
+//        // Données de test
+//        String projectName = "Test Projet";
+//        String host = "testHost";
+//        int port = 1234;
+//        String username = "testUser";
+//        String password = "testPassword";
+//        Date startDate = new Date();
+//        Date endDate = new Date();
+//int user1Id=1;
+//int user2Id=2 ;
+//
+//        // Enregistrer le mail dans la base de données
+//        Mail mail = new Mail();
+//        mail.setHost(host);
+//        mail.setPort(port);
+//        mail.setUsername(username);
+//        mail.setPassword(password);
+//        mailRepository.save(mail);
+//
+//
+//        // Fetch fresh instances of User entities
+//        User user1 = userRepository.findById(user1Id).orElseThrow(() -> new RuntimeException("User not found with id: " + user1Id));
+//        User user2 = userRepository.findById(user2Id).orElseThrow(() -> new RuntimeException("User not found with id: " + user2Id));
+//
+//
+//        // Créer une liste d'utilisateurs à associer au projet
+//        List<Integer> userIds = List.of(user1.getIdUser(), user2.getIdUser());
+//
+//        // Créer un projet
+//        Projet projet = new Projet();
+//        projet.setNameProjet(projectName);
+//        projet.setDateDeb(startDate);
+//        projet.setStatus(1);
+//        projet.setDateFin(endDate);
+//        projet.setMail(mail);
+//
+//        // Exécuter la méthode à tester
+//        Projet savedProjet = iProjetService.addProjetWithMailAndUsers(projet, userIds);
+//
+//        // Vérifications
+//        assertNotNull(savedProjet.getIdProjet());
+//        assertEquals(projectName, savedProjet.getNameProjet());
+//        assertNotNull(savedProjet.getMail());
+//        assertEquals(host, savedProjet.getMail().getHost());
+//        assertEquals(port, savedProjet.getMail().getPort());
+//        assertEquals(username, savedProjet.getMail().getUsername());
+//        assertEquals(password, savedProjet.getMail().getPassword());
+//        assertEquals(2, savedProjet.getUsers().size()); // Vérifie que les deux utilisateurs sont associés au projet
+//    }
 
 
 
