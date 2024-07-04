@@ -91,9 +91,8 @@
 #      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
 #      ignore_errors: yes
     - name: Publish JaCoCo coverage report
-      command: /var/lib/jenkins/workspace/notif/user-service/target/site/jacoco/jacoco-resources/index.html --classfiles '**/classes' --sourcefiles '**/src' --execfiles '**/target/jacoco.exec' --html ./jacoco-report --excludes '**/*Test*,**/*_javassist/**'
-      args:
-        chdir: /var/lib/jenkins/workspace/notif/user-service
+      command: -f /var/lib/jenkins/workspace/notif/user-service/target/site/jacoco/jacoco-resources/index.html --classfiles '**/classes' --sourcefiles '**/src' --execfiles '**/target/jacoco.exec' --html ./jacoco-report --excludes '**/*Test*,**/*_javassist/**'
+
       ignore_errors: yes
     - name: Build Docker image for user-service
       command: docker build -t user-service .
