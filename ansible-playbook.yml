@@ -1,11 +1,17 @@
-- name: sample_book
-  hosts: root
-  remote_user: root
-  become: true
+#- name: sample_book
+#  hosts: root
+#  remote_user: root
+#  become: true
+#  tasks:
+#    - name: Run nexus container
+#      command: docker start nexus
+#      ignore_errors: yes
+#    - name: Run SonarQube container
+#      command: docker start sonarqueb
+#      ignore_errors: yes
+---
+- name: Test Ansible connectivity
+  hosts: localhost
   tasks:
-    - name: Run nexus container
-      command: docker start nexus
-      ignore_errors: yes
-    - name: Run SonarQube container
-      command: docker start sonarqueb
-      ignore_errors: yes
+    - name: Check connectivity
+      command: echo "Ansible is working"
