@@ -1,5 +1,5 @@
 - name: sample_book
-  hosts: server1
+  hosts: root
   remote_user: root
   become: true
   tasks:
@@ -9,4 +9,3 @@
     - name: Run SonarQube container
       command: docker start sonarqueb
       ignore_errors: yes
-    
