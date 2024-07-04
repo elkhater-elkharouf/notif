@@ -9,6 +9,7 @@ import com.example.userservice.Exception.Mensaje;
 import com.example.userservice.Model.EmailRequest;
 import com.example.userservice.Model.PasswordResetModel;
 import com.example.userservice.Security.JWTUtil;
+import com.example.userservice.Services.EmailNotification.IEmailTemplateService;
 import com.example.userservice.Services.Mail.IEmailService;
 import com.example.userservice.Services.Privilege.IPrivilegeService;
 import com.example.userservice.Services.Projet.IProjetService;
@@ -27,6 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
+import java.io.File;
 import java.io.IOException;
 import java.security.Principal;
 import java.sql.SQLException;
@@ -49,13 +51,20 @@ public class UserController {
     CloudinaryService cloudinaryService;
     IImageService imagenService;
     UserServiceImp userService ;
+    private SmsService smsService;
+    IEmailTemplateService iEmailTemplateService ;
     @GetMapping("/helloUser")
     public String Hello(){
 
         return "bills hello from microservices user !";
 
     }
-
+    @PostMapping("/send")
+    public void sendSms(@RequestPart("file") MultipartFile file, @RequestPart("messageTemplate") String messageTemplate) throws IOException {
+        File tempFile = File.createTempFile("data", ".xlsx");
+        file.transferTo(tempFile);
+        smsService.sendSms(tempFile, messageTemplate);
+    }
     @GetMapping("/email-configuration")
     public int getEmailConfigurationId() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -505,6 +514,11 @@ public ResponseEntity<List<Image>> list(){
           imagenService.save(image,idUser);
     }
 
+    @PostMapping("/TelechargerImage")
+    public void upload(@RequestPart("file") MultipartFile image)throws IOException {
+        imagenService.uploadImage(image);
+    }
+
     @DeleteMapping("/deleteImage/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id)throws IOException {
         Optional<Image> optionalImage = imagenService.getOne(id);
@@ -521,5 +535,9 @@ public ResponseEntity<List<Image>> list(){
     public ResponseEntity<Projet> addProjetWithMailAndUsers(@RequestBody Projet projet, @RequestParam List<Integer> userIds) {
         Projet savedProjet = iProjetService.addProjetWithMailAndUsers(projet, userIds);
         return ResponseEntity.ok(savedProjet);
+    }
+    @PostMapping("/addTemplate")
+    public EmailTemplate addTemplate(@RequestBody  EmailTemplate emailTemplate){
+    return iEmailTemplateService.addTemplate(emailTemplate);
     }
 }

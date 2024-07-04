@@ -1,11 +1,0 @@
-
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8§„›ëõ1
-g
-java:S2095&"JUse try-with-resources or close this "XMLSlideShow" in a "finally" clause.(¢áÄ‰8¿Û»‘÷1
-g
-java:S2095""JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¿×óê8¾Û»‘÷1
-_
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8ÀÛ»‘÷1
-X	java:S125)"<This block of commented-out lines of code should be removed.(ßÜ¢µ8ÒÛ»‘÷1
-t
-java:S3776M"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ž¹àùúÿÿÿÿ8ÖÛ»‘÷1

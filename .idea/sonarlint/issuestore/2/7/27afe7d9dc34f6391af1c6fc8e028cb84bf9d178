@@ -1,0 +1,10 @@
+
+s
+java:S1192"QDefine a constant instead of duplicating this literal "application/json" 3 times.(öÁıüÿÿÿÿ8Ø°ˆô†2
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8Ú°ˆô†2
+^
+java:S1854#"<Remove this useless assignment to local variable "response".(°Áøœûÿÿÿÿ8¯±ˆô†2
+P
+java:S1874".Remove this use of "create"; it is deprecated.(ûÆ“Òúÿÿÿÿ8°±ˆô†2
+O
+java:S1481#"-Remove this unused "response" local variable.(°Áøœûÿÿÿÿ8´±ˆô†2

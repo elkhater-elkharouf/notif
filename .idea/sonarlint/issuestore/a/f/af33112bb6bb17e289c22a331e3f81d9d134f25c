@@ -1,0 +1,9 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(õ›ÛÄ8ªÿŒø1
+g
+java:S2095#"JUse try-with-resources or close this "XSSFWorkbook" in a "finally" clause.(¿×óê8Í‰ø1
+g
+java:S2095'"JUse try-with-resources or close this "XWPFDocument" in a "finally" clause.(¼î±Š8Í‰ø1
+_
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8Ï‰ø1
+X	java:S125+"<This block of commented-out lines of code should be removed.(ßÜ¢µ8ğ‰ø1

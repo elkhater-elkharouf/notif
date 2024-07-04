@@ -1,0 +1,6 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(υ›ΫΔ
+_
+java:S1128"BRemove this unused import 'com.example.userservice.Entities.User'.(Στώω8©κνύƒ2
+O
+java:S1128"2Remove this unused import 'java.sql.SQLException'.(ΫοΖ8 ¬ξύƒ2

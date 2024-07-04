@@ -1,0 +1,11 @@
+
+b	java:S112)"FDefine and throw a dedicated exception instead of using a generic one.(Ğ¾8àÎë¹‚2
+b	java:S112,"FDefine and throw a dedicated exception instead of using a generic one.(ĞÂ¸º8áÎë¹‚2
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŸöÔÄÿÿÿÿÿ8Ë©Š¹‚2
+W	java:S8994";Do something with the "boolean" value returned by "delete".( §Å¼8ôÎë¹‚2
+k
+java:S40424"NUse "java.nio.file.Files#delete" here for better messages on error conditions.( §Å¼8ôÎë¹‚2
+V
+java:S1068"4Remove this unused "exportUsersExcel" private field.(âÜİÔûÿÿÿÿ8™¨É¹‚2
+W
+java:S1068"5Remove this unused "wordExportService" private field.(ØØ‹üÿÿÿÿ8™¨É¹‚2

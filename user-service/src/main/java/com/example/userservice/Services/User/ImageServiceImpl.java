@@ -59,6 +59,23 @@ public class ImageServiceImpl implements IImageService {
         imagenRepository.save(image);
     }
 
+    @Override
+    public void uploadImage(MultipartFile imageFile) throws IOException {
+        // Téléchargez l'image sur le service de cloud
+        Map<String, Object> uploadResult = cloudImage.upload(imageFile);
+        BufferedImage bufferedImage = ImageIO.read(imageFile.getInputStream());
+
+        // Récupérez l'URL de l'image et l'ID de l'image à partir des résultats du téléchargement
+        String imageUrl = (String) uploadResult.get("url");
+        String imageId = (String) uploadResult.get("public_id");
+
+        // Créez une nouvelle instance d'image
+        Image image = new Image(imageFile.getOriginalFilename(), imageUrl, imageId);
+
+        // Sauvegardez l'image dans le repository
+        imagenRepository.save(image);
+    }
+
 
     @Override
     public void delete(int id) {

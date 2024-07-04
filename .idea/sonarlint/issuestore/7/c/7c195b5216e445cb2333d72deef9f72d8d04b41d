@@ -1,13 +1,17 @@
 
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ
 r
-java:S3655L"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(æëÊ§ùÿÿÿÿ8©‘ÆŠå1
+java:S3655]"PCall "Optional#isPresent()" or "!Optional#isEmpty()" before accessing the value.(æëÊ§ùÿÿÿÿ8©‘ÆŠå1
 c
 java:S1854+"ARemove this useless assignment to local variable "bufferedImage".(ŒÚšÍşÿÿÿÿ8—¬ßŞ÷1
 T
 java:S1481+"2Remove this unused "bufferedImage" local variable.(ŒÚšÍşÿÿÿÿ8™¬ßŞ÷1
+c
+java:S1854B"ARemove this useless assignment to local variable "bufferedImage".(ŒÚšÍşÿÿÿÿ8—‚Ü†ƒ2
+T
+java:S1481B"2Remove this unused "bufferedImage" local variable.(ŒÚšÍşÿÿÿÿ8˜‚Ü†ƒ2
 b
-java:S1128	"@Remove this unused import 'org.springframework.http.HttpStatus'.(íŸ¤Šúÿÿÿÿ8ê€áŞ÷1
+java:S1128	"@Remove this unused import 'org.springframework.http.HttpStatus'.(íŸ¤Šúÿÿÿÿ8õ‡ûƒ2
 f
 java:S1128
-"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ8ê€áŞ÷1
+"DRemove this unused import 'org.springframework.http.ResponseEntity'.(¶¯ø¦úÿÿÿÿ8õ‡ûƒ2

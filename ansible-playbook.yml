@@ -1,0 +1,12 @@
+- name: sample_book
+  hosts: server1
+  remote_user: root
+  become: true
+  tasks:
+    - name: Run nexus container
+      command: docker start nexus
+      ignore_errors: yes
+    - name: Run SonarQube container
+      command: docker start sonarqueb
+      ignore_errors: yes
+    
