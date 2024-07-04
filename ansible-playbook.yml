@@ -91,12 +91,12 @@
 #      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
 #      ignore_errors: yes
     - name: Publish JaCoCo coverage report
-      command: >
-        java -jar /var/lib/jenkins/workspace/notif/user-service/pom.xml
-        --execPattern '**/target/jacoco.exec' 
-        --classPattern '**/classes' 
-        --sourcePattern '**/src' 
-        --exclusionPattern '*/target/**/,**/*Test*,**/*_javassist/**'
+      command: [$class: 'JacocoPublisher',
+        execPattern: '**/target/jacoco.exec',
+        classPattern: '**/classes',
+        sourcePattern: '**/src',
+        exclusionPattern: '*/target/**/,**/*Test*,**/*_javassist/**'
+      ]
       args:
         chdir: /var/lib/jenkins/workspace/notif/user-service
       ignore_errors: yes
