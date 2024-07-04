@@ -15,6 +15,21 @@
   tasks:
     - name: Check connectivity
       command: echo "Ansible is working"
-    - name: Run nexus container
+    - name: Run Nexus container
       command: docker start nexus
+      ignore_errors: yes
+    - name: Run SonarQube container
+      command: docker start sonarqueb
+      ignore_errors: yes
+    - name: Run MySQL container
+      command: docker start mysqldb
+      ignore_errors: yes
+    - name: Run cAdvisor container
+      command: docker start cadvisor
+      ignore_errors: yes
+    - name: Run Prometheus container
+      command: docker start prometheus
+      ignore_errors: yes
+    - name: Run Grafana container
+      command: docker start grafana
       ignore_errors: yes
