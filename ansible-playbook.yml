@@ -91,13 +91,14 @@
 #      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
 #      ignore_errors: yes
 
-    - name: Build Docker Image Notif-service with Ansible
-      command: docker build -t user-service .
-      ignore_errors: yes
-    - name: Build Docker Image Discovery-service with Ansible
-      command: docker build -t discovery-service .
-      ignore_errors: yes
-    - name: Build Docker Image Gateway-service with Ansible
-      command: docker gateway-service .
+    - name: Change to user-service directory
+      command: chdir /var/lib/jenkins/workspace/notif/user-service
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/user-service
       ignore_errors: yes
 
+    - name: Build Docker image for user-service
+      command: docker build -t user-service .
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/user-service
+      ignore_errors: yes
