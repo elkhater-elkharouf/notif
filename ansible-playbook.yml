@@ -1,5 +1,5 @@
 - name: sample_book
-  hosts: root
+  hosts: localhost
   remote_user: root
   become: true
   tasks:
