@@ -90,13 +90,18 @@
 #    - name: Maven deplay with Nexus
 #      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
 #      ignore_errors: yes
+    - name: Generate JaCoCo coverage report
+      command: mvn jacoco:report
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/user-service
+
     - name: Start HTTP server for JaCoCo report
       ansible.builtin.command: python -m http.server 8080
       args:
         chdir: /var/lib/jenkins/workspace/notif/user-service/target/site/jacoco/jacoco-resources/index.html
       async: 60
       poll: 0
-    
+
     - name: Build Docker image for user-service
       command: docker build -t user-service .
       args:
