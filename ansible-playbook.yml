@@ -91,14 +91,23 @@
 #      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
 #      ignore_errors: yes
 
-    - name: Change to user-service directory
-      command: chdir /var/lib/jenkins/workspace/notif/user-service
-      args:
-        chdir: /var/lib/jenkins/workspace/notif/user-service
-      ignore_errors: yes
-
     - name: Build Docker image for user-service
       command: docker build -t user-service .
       args:
         chdir: /var/lib/jenkins/workspace/notif/user-service
       ignore_errors: yes
+    - name: Docker login
+      docker_login:
+        username: khaterkhrouf
+        password: Ka22204202ter
+      register: login_output
+
+    - name: Tag Docker image for user-service
+      command: docker tag user-service khaterkhrouf/user-service:latest
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/user-service
+
+    - name: Push Docker image for user-service
+      command: docker push khaterkhrouf/user-service:latest
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/user-service
