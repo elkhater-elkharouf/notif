@@ -33,6 +33,71 @@
     - name: Run Grafana container
       command: docker start grafana
       ignore_errors: yes
+
+    - name: maven Clean Notif-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml clean
+      ignore_errors: yes
+    - name: maven Clean Discovery-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/discovery-service/pom.xml clean
+      ignore_errors: yes
+    - name: maven Clean Gateway-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/gateway-service/pom.xml clean
+      ignore_errors: yes
+
+    - name: maven Compile Notif-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml compile
+      ignore_errors: yes
+    - name: maven Compile Discovery-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/discovery-service/pom.xml compile
+      ignore_errors: yes
+    - name: maven Compile Gateway-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/gateway-service/pom.xml compile
+      ignore_errors: yes
+
+
+    - name: Maven Test with JUnit / Mockito
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml test -DskipTests
+      ignore_errors: yes
+
+    - name: maven Package Notif-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml package
+      ignore_errors: yes
+
+    - name: maven Install Notif-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml install
+      ignore_errors: yes
+    - name: maven Install Discovery-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/discovery-service/pom.xml install
+      ignore_errors: yes
+    - name: maven Install Gateway-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/gateway-service/pom.xml install
+      ignore_errors: yes
+
+    - name: JaCoCo coverage report with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml jacoco:report
+      ignore_errors: yes
+
+    - name: Publish JaCoCo coverage report
+      shell: |
+        cd /var/lib/jenkins/workspace/notif/user-service
+        jacoco-cli report --classfiles '**/classes' --sourcefiles '**/src' --execfiles '**/target/jacoco.exec' --html ./jacoco-report --excludes '**/*Test*,**/*_javassist/**'
+      ignore_errors: yes
+
     - name: Maven Test with SonarQube
       command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar
       ignore_errors: yes
+
+    - name: Maven deplay with Nexus
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
+      ignore_errors: yes
+
+    - name: Build Docker Image Notif-service with Ansible
+      command: docker -f /var/lib/jenkins/workspace/notif/user-service/pom.xml build -t user-service .
+      ignore_errors: yes
+    - name: Build Docker Image Discovery-service with Ansible
+      command: docker -f /var/lib/jenkins/workspace/notif/discovery-service/pom.xml build -t discovery-service .
+      ignore_errors: yes
+    - name: Build Docker Image Gateway-service with Ansible
+      command: docker -f /var/lib/jenkins/workspace/notif/gateway-service/pom.xml build -t gateway-service .
+      ignore_errors: yes
+
