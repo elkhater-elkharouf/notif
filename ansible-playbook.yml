@@ -15,3 +15,6 @@
   tasks:
     - name: Check connectivity
       command: echo "Ansible is working"
+    - name: Run nexus container
+      command: docker start nexus
+      ignore_errors: yes
