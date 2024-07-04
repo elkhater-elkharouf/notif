@@ -98,8 +98,8 @@
       ignore_errors: yes
     - name: Docker login
       docker_login:
-        username: khaterkhrouf
-        password: Ka22204202ter
+        username: "{{ docker_username }}"
+        password: "{{ docker_password }}"
       register: login_output
 
     - name: Tag Docker image for user-service
