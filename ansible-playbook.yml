@@ -92,7 +92,7 @@
 #      ignore_errors: yes
     - name: Publish JaCoCo coverage report
       command: >
-        java -jar /var/lib/jenkins/workspace/notif/user-service
+        java -jar /var/lib/jenkins/workspace/notif/user-service/target
         --execPattern '**/target/jacoco.exec' 
         --classPattern '**/classes' 
         --sourcePattern '**/src' 
