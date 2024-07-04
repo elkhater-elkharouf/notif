@@ -33,3 +33,6 @@
     - name: Run Grafana container
       command: docker start grafana
       ignore_errors: yes
+    - name: Maven Test with SonarQube
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar
+      ignore_errors: yes
