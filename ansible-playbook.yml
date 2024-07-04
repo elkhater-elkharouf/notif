@@ -98,7 +98,7 @@
     - name: Start HTTP server for JaCoCo report
       ansible.builtin.command: python -m http.server 8080
       args:
-        chdir: /var/lib/jenkins/workspace/notif/user-service/target/site/jacoco/jacoco-resources/index.html
+        chdir: /var/lib/jenkins/workspace/notif/user-service/target/site/jacoco/jacoco-resources/
       async: 60
       poll: 0
 
