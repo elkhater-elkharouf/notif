@@ -34,9 +34,9 @@
 #      command: docker start grafana
 #      ignore_errors: yes
 #
-    - name: maven Clean Notif-service with Ansible
-      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml clean
-      ignore_errors: yes
+#    - name: maven Clean Notif-service with Ansible
+#      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml clean
+#      ignore_errors: yes
 #    - name: maven Clean Discovery-service with Ansible
 #      command: mvn -f /var/lib/jenkins/workspace/notif/discovery-service/pom.xml clean
 #      ignore_errors: yes
@@ -63,9 +63,9 @@
 #      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml package
 #      ignore_errors: yes
 #
-    - name: maven Install Notif-service with Ansible
-      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml install
-      ignore_errors: yes
+#    - name: maven Install Notif-service with Ansible
+#      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml install
+#      ignore_errors: yes
 #    - name: maven Install Discovery-service with Ansible
 #      command: mvn -f /var/lib/jenkins/workspace/notif/discovery-service/pom.xml install
 #      ignore_errors: yes
@@ -90,7 +90,12 @@
 #    - name: Maven deplay with Nexus
 #      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
 #      ignore_errors: yes
-
+    - name: Ensure JaCoCo CLI is installed
+      shell: |
+        if ! [ -f /path/to/jacococli.jar ]; then
+          echo "JaCoCo CLI not found!"
+          exit 1
+        fi
     - name: Run JaCoCo coverage report
       shell: |
         report target/jacoco.exec \
