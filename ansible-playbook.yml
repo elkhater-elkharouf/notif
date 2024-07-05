@@ -91,25 +91,18 @@
 #      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
 #      ignore_errors: yes
 
-    - name: Change to user-service directory
-      command: cd user-service
-      args:
-        chdir: /var/lib/jenkins/workspace/notif/user-service
-      ignore_errors: yes
-
     - name: Run JaCoCo coverage report
-      command: mvn jacoco:report
+      shell: |
+        java -jar /var/lib/jenkins/workspace/notif/user-service/target/user-service-0.0.1-SNAPSHOT.jar report target/jacoco.exec \
+        --classfiles classes \
+        --sourcefiles src \
+        --html target/jacoco-report \
+        --xml target/jacoco-report/jacoco.xml \
+        --csv target/jacoco-report/jacoco.csv \
+        --excludes **/target/**,**/*Test*,**/*_javassist/**
       args:
         chdir: /var/lib/jenkins/workspace/notif/user-service
-      ignore_errors: yes
 
-    - name: Publish JaCoCo report
-      command: |
-        mvn jacoco:report
-        mv target/site/jacoco /desired/location
-      args:
-        chdir: /var/lib/jenkins/workspace/notif/user-service
-      ignore_errors: yes
 
     - name: Generate JaCoCo coverage report
       command: mvn jacoco:report
