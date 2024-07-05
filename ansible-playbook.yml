@@ -90,27 +90,10 @@
 #    - name: Maven deplay with Nexus
 #      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
 #      ignore_errors: yes
-    - name: Check if JaCoCo CLI is installed
-      stat:
-        path: /opt/jacoco/jacococli.jar
-      register: jacoco_installed
-
-    - name: Download JaCoCo CLI
-      get_url:
-        url: https://repo1.maven.org/maven2/org/jacoco/org.jacoco.cli/0.8.8/org.jacoco.cli-0.8.8-nodeps.jar
-        dest: /opt/jacoco/jacococli.jar
-      when: not jacoco_installed.stat.exists
-
-    - name: Ensure JaCoCo CLI is installed
-      shell: |
-        if ! [ -f /opt/jacoco/jacococli.jar ]; then
-          echo "JaCoCo CLI not found!"
-          exit 1
-        fi
-
+  
     - name: Run JaCoCo coverage report
       shell: |
-        java -jar /opt/jacoco/jacococli.jar report target/jacoco.exec \
+        java report target/jacoco.exec \
         --classfiles classes \
         --sourcefiles src \
         --html target/jacoco-report \
