@@ -93,17 +93,17 @@
 
     - name: Run JaCoCo coverage report
       shell: |
-        java -jar /home/vagrant/jenkins-cli.jar report \
-        /var/lib/jenkins/workspace/notif/user-service/target/jacoco.exec \
-        --classfiles /var/lib/jenkins/workspace/notif/user-service/classes \
-        --sourcefiles /var/lib/jenkins/workspace/notif/user-service/src \
-        --html /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report \
-        --xml /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report/jacoco.xml \
-        --csv /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report/jacoco.csv \
-        --excludes "**/target/**,**/*Test*,**/*_javassist/**"
+        java -jar /home/vagrant/jenkins-cli.jar -s http://172.20.10.5:8080 report \
+          /var/lib/jenkins/workspace/notif/user-service/target/jacoco.exec \
+          --classfiles /var/lib/jenkins/workspace/notif/user-service/classes \
+          --sourcefiles /var/lib/jenkins/workspace/notif/user-service/src \
+          --html /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report \
+          --xml /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report/jacoco.xml \
+          --csv /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report/jacoco.csv \
+          --excludes "**/target/**,**/*Test*,**/*_javassist/**"
       args:
         chdir: /var/lib/jenkins/workspace/notif/user-service
-    
+
 
 
 
