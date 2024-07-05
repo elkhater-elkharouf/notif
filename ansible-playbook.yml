@@ -93,15 +93,16 @@
 
     - name: Run JaCoCo coverage report
       shell: |
-        java report /var/lib/jenkins/workspace/notif/user-service/target/jacoco.exec \
-        --classfiles classes \
-        --sourcefiles src \
-        --html target/jacoco-report \
-        --xml target/jacoco-report/jacoco.xml \
-        --csv target/jacoco-report/jacoco.csv \
-        --excludes **/target/**,**/*Test*,**/*_javassist/**
+        java -jar C:/Users/LENOVO/Downloads/jacoco-cli.jar report /var/lib/jenkins/workspace/notif/user-service/target/jacoco.exec \
+        --classfiles /var/lib/jenkins/workspace/notif/user-service/classes \
+        --sourcefiles /var/lib/jenkins/workspace/notif/user-service/src \
+        --html /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report \
+        --xml /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report/jacoco.xml \
+        --csv /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report/jacoco.csv \
+        --excludes "**/target/**,**/*Test*,**/*_javassist/**"
       args:
         chdir: /var/lib/jenkins/workspace/notif/user-service
+
 
 
     - name: Generate JaCoCo coverage report
