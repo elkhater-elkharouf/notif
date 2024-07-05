@@ -93,7 +93,7 @@
 
     - name: Run JaCoCo coverage report
       shell: |
-        java -jar /var/lib/jenkins/workspace/notif/user-service/target/user-service-0.0.1-SNAPSHOT.jar report target/jacoco.exec \
+        report target/jacoco.exec \
         --classfiles classes \
         --sourcefiles src \
         --html target/jacoco-report \
