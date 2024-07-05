@@ -93,7 +93,7 @@
 
     - name: Run JaCoCo coverage report
       shell: |
-        java -jar C:/Users/LENOVO/Downloads/jacoco-cli.jar report /var/lib/jenkins/workspace/notif/user-service/target/jacoco.exec \
+        java -jar /home/vagrant/jenkins-cli.jar report /var/lib/jenkins/workspace/notif/user-service/target/jacoco.exec \
         --classfiles /var/lib/jenkins/workspace/notif/user-service/classes \
         --sourcefiles /var/lib/jenkins/workspace/notif/user-service/src \
         --html /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report \
