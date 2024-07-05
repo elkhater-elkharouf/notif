@@ -91,19 +91,34 @@
 #      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
 #      ignore_errors: yes
 
-    - name: Run JaCoCo coverage report
-      shell: |
-        java -jar /home/vagrant/jenkins-cli.jar -s http://172.20.10.5:8080 report \
-          /var/lib/jenkins/workspace/notif/user-service/target/jacoco.exec \
-          --classfiles /var/lib/jenkins/workspace/notif/user-service/classes \
-          --sourcefiles /var/lib/jenkins/workspace/notif/user-service/src \
-          --html /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report \
-          --xml /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report/jacoco.xml \
-          --csv /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report/jacoco.csv \
-          --excludes "**/target/**,**/*Test*,**/*_javassist/**"
-      args:
-        chdir: /var/lib/jenkins/workspace/notif/user-service
-
+    - name: Create Jenkins job for JaCoCo coverage report
+      community.general.jenkins_job:
+        config:
+          project-type: pipeline
+          dsl: |
+            pipeline {
+                agent any
+                stages {
+                    stage('JaCoCo coverage report') {
+                        steps {
+                            dir('user-service') {
+                                step([$class: 'JacocoPublisher',
+                                      execPattern: '**/target/jacoco.exec',
+                                      classPattern: '**/classes',
+                                      sourcePattern: '**/src',
+                                      exclusionPattern: '*/target/**/,**/*Test*,**/*_javassist/**'
+                                ])
+                            }
+                        }
+                    }
+                }
+            }
+        folder: 'notif'  # Adjust if your job is in a specific folder
+        name: 'JaCoCo coverage report'  # Job name
+        user: admin
+        password: jenkins
+        url: http://172.20.10.5:8080
+        validate_certs: no
 
 
 
