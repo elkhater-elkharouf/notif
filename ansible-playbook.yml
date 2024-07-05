@@ -113,12 +113,9 @@
                     }
                 }
             }
-        folder: 'notif'  # Adjust if your job is in a specific folder
-        name: 'JaCoCo coverage report'  # Job name
-        user: admin
-        password: jenkins
+
         url: http://172.20.10.5:8080
-        validate_certs: no
+
 
 
 
