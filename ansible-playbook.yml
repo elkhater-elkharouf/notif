@@ -15,107 +15,77 @@
   tasks:
     - name: Check connectivity
       command: echo "Ansible is working"
-#    - name: Run Nexus container
-#      command: docker start nexus
-#      ignore_errors: yes
-#    - name: Run SonarQube container
-#      command: docker start sonarqueb
-#      ignore_errors: yes
-#    - name: Run MySQL container
-#      command: docker start mysqldb
-#      ignore_errors: yes
-#    - name: Run cAdvisor container
-#      command: docker start cadvisor
-#      ignore_errors: yes
-#    - name: Run Prometheus container
-#      command: docker start prometheus
-#      ignore_errors: yes
-#    - name: Run Grafana container
-#      command: docker start grafana
-#      ignore_errors: yes
-#
-#    - name: maven Clean Notif-service with Ansible
-#      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml clean
-#      ignore_errors: yes
-#    - name: maven Clean Discovery-service with Ansible
-#      command: mvn -f /var/lib/jenkins/workspace/notif/discovery-service/pom.xml clean
-#      ignore_errors: yes
-#    - name: maven Clean Gateway-service with Ansible
-#      command: mvn -f /var/lib/jenkins/workspace/notif/gateway-service/pom.xml clean
-#      ignore_errors: yes
-#
-#    - name: maven Compile Notif-service with Ansible
-#      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml compile
-#      ignore_errors: yes
-#    - name: maven Compile Discovery-service with Ansible
-#      command: mvn -f /var/lib/jenkins/workspace/notif/discovery-service/pom.xml compile
-#      ignore_errors: yes
-#    - name: maven Compile Gateway-service with Ansible
-#      command: mvn -f /var/lib/jenkins/workspace/notif/gateway-service/pom.xml compile
-#      ignore_errors: yes
-#
-#
-#    - name: Maven Test with JUnit / Mockito
-#      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml test -DskipTests
-#      ignore_errors: yes
-#
-#    - name: maven Package Notif-service with Ansible
-#      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml package
-#      ignore_errors: yes
-#
-#    - name: maven Install Notif-service with Ansible
-#      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml install
-#      ignore_errors: yes
-#    - name: maven Install Discovery-service with Ansible
-#      command: mvn -f /var/lib/jenkins/workspace/notif/discovery-service/pom.xml install
-#      ignore_errors: yes
-#    - name: maven Install Gateway-service with Ansible
-#      command: mvn -f /var/lib/jenkins/workspace/notif/gateway-service/pom.xml install
-#      ignore_errors: yes
-#
-#    - name: JaCoCo coverage report with Ansible
-#      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml jacoco:report
-#      ignore_errors: yes
-#
-#    - name: Publish JaCoCo coverage report
-#      shell: |
-#        cd /var/lib/jenkins/workspace/notif/user-service
-#        jacoco-cli report --classfiles '**/classes' --sourcefiles '**/src' --execfiles '**/target/jacoco.exec' --html ./jacoco-report --excludes '**/*Test*,**/*_javassist/**'
-#      ignore_errors: yes
-#
-#    - name: Maven Test with SonarQube
-#      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar
-#      ignore_errors: yes
-#
-#    - name: Maven deplay with Nexus
-#      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
-#      ignore_errors: yes
+    - name: Run Nexus container
+      command: docker start nexus
+      ignore_errors: yes
+    - name: Run SonarQube container
+      command: docker start sonarqueb
+      ignore_errors: yes
+    - name: Run MySQL container
+      command: docker start mysqldb
+      ignore_errors: yes
+    - name: Run cAdvisor container
+      command: docker start cadvisor
+      ignore_errors: yes
+    - name: Run Prometheus container
+      command: docker start prometheus
+      ignore_errors: yes
+    - name: Run Grafana container
+      command: docker start grafana
+      ignore_errors: yes
 
-    - name: Create Jenkins job for JaCoCo coverage report
-      community.general.jenkins_job:
-        config:
-          project-type: pipeline
-          dsl: |
-            pipeline {
-                agent any
-                stages {
-                    stage('JaCoCo coverage report') {
-                        steps {
-                            dir('user-service') {
-                                step([$class: 'JacocoPublisher',
-                                      execPattern: '**/target/jacoco.exec',
-                                      classPattern: '**/classes',
-                                      sourcePattern: '**/src',
-                                      exclusionPattern: '*/target/**/,**/*Test*,**/*_javassist/**'
-                                ])
-                            }
-                        }
-                    }
-                }
-            }
+    - name: maven Clean Notif-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml clean
+      ignore_errors: yes
+    - name: maven Clean Discovery-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/discovery-service/pom.xml clean
+      ignore_errors: yes
+    - name: maven Clean Gateway-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/gateway-service/pom.xml clean
+      ignore_errors: yes
 
-        name: 'JaCoCo coverage report'  # Job name
-        url: http://172.20.10.5:8080
+    - name: maven Compile Notif-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml compile
+      ignore_errors: yes
+    - name: maven Compile Discovery-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/discovery-service/pom.xml compile
+      ignore_errors: yes
+    - name: maven Compile Gateway-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/gateway-service/pom.xml compile
+      ignore_errors: yes
+
+
+    - name: Maven Test with JUnit / Mockito
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml test -DskipTests
+      ignore_errors: yes
+
+    - name: maven Package Notif-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml package
+      ignore_errors: yes
+
+    - name: maven Install Notif-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml install
+      ignore_errors: yes
+    - name: maven Install Discovery-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/discovery-service/pom.xml install
+      ignore_errors: yes
+    - name: maven Install Gateway-service with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/gateway-service/pom.xml install
+      ignore_errors: yes
+
+    - name: JaCoCo coverage report with Ansible
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml jacoco:report
+      ignore_errors: yes
+
+
+
+    - name: Maven Test with SonarQube
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar
+      ignore_errors: yes
+
+    - name: Maven Deploy with Nexus
+      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
+      ignore_errors: yes
 
 
 
@@ -132,23 +102,66 @@
       async: 60
       poll: 0
 
-#    - name: Build Docker image for user-service
-#      command: docker build -t user-service .
-#      args:
-#        chdir: /var/lib/jenkins/workspace/notif/user-service
-#      ignore_errors: yes
-#    - name: Docker login
-#      docker_login:
-#        username: khaterkhrouf
-#        password: Ka22204202ter
-#      register: login_output
-#
-#    - name: Tag Docker image for user-service
-#      command: docker tag user-service khaterkhrouf/user-service:latest
-#      args:
-#        chdir: /var/lib/jenkins/workspace/notif/user-service
-#
-#    - name: Push Docker image for user-service
-#      command: docker push khaterkhrouf/user-service:latest
-#      args:
-#        chdir: /var/lib/jenkins/workspace/notif/user-service
+    - name: Build Docker image for Notif-service
+      command: docker build -t user-service .
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/user-service
+      ignore_errors: yes
+    - name: Docker login
+      docker_login:
+        username: khaterkhrouf
+        password: Ka22204202ter
+      register: login_output
+
+    - name: Build Docker image for discovery-service
+      command: docker build -t user-service .
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/discovery-service
+      ignore_errors: yes
+    - name: Docker login
+      docker_login:
+        username: khaterkhrouf
+        password: Ka22204202ter
+      register: login_output
+
+    - name: Build Docker image for gateway-service
+      command: docker build -t user-service .
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/gateway-service
+      ignore_errors: yes
+    - name: Docker login
+      docker_login:
+        username: khaterkhrouf
+        password: Ka22204202ter
+      register: login_output
+
+
+    - name: Tag Docker image for Notif-service
+      command: docker tag user-service khaterkhrouf/user-service:latest
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/user-service
+
+    - name: Push Docker image for Notif-service
+      command: docker push khaterkhrouf/user-service:latest
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/user-service
+
+    - name: Tag Docker image for Discovery-service
+      command: docker tag user-service khaterkhrouf/discovery-service:latest
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/discovery-service
+
+    - name: Push Docker image for Discovery-service
+      command: docker push khaterkhrouf/discovery-service:latest
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/discovery-service
+
+    - name: Tag Docker image for Gateway-service
+      command: docker tag user-service khaterkhrouf/gateway-service:latest
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/gateway-service
+
+    - name: Push Docker image for Gateway-service
+      command: docker push khaterkhrouf/gateway-service:latest
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/gateway-service
