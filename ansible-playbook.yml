@@ -114,6 +114,7 @@
                 }
             }
 
+        name: 'JaCoCo coverage report'  # Job name
         url: http://172.20.10.5:8080
 
 
