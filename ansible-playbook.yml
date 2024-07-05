@@ -100,8 +100,7 @@
         --xml /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report/jacoco.xml \
         --csv /var/lib/jenkins/workspace/notif/user-service/target/jacoco-report/jacoco.csv \
         --excludes "**/target/**,**/*Test*,**/*_javassist/**"
-      args:
-        chdir: /var/lib/jenkins/workspace/notif/user-service
+
 
 
 
