@@ -90,6 +90,27 @@
 #    - name: Maven deplay with Nexus
 #      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
 #      ignore_errors: yes
+
+    - name: Change to user-service directory
+      command: cd user-service
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/user-service
+      ignore_errors: yes
+
+    - name: Run JaCoCo coverage report
+      command: mvn jacoco:report
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/user-service
+      ignore_errors: yes
+
+    - name: Publish JaCoCo report
+      command: |
+        mvn jacoco:report
+        mv target/site/jacoco /desired/location
+      args:
+        chdir: /var/lib/jenkins/workspace/notif/user-service
+      ignore_errors: yes
+
     - name: Generate JaCoCo coverage report
       command: mvn jacoco:report
       args:
