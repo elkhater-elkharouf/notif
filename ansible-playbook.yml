@@ -90,9 +90,15 @@
 #    - name: Maven deplay with Nexus
 #      command: mvn -f /var/lib/jenkins/workspace/notif/user-service/pom.xml deploy
 #      ignore_errors: yes
+    - name: Download JaCoCo CLI
+      get_url:
+        url: https://repo1.maven.org/maven2/org/jacoco/org.jacoco.cli/0.8.8/org.jacoco.cli-0.8.8-nodeps.jar
+        dest: /opt/jacoco/jacococli.jar
+      when: not ansible_local.jacoco_installed.stat.exists
+
     - name: Ensure JaCoCo CLI is installed
       shell: |
-        if ! [ -f /path/to/jacococli.jar ]; then
+        if ! [ -f /opt/jacoco/jacococli.jar ]; then
           echo "JaCoCo CLI not found!"
           exit 1
         fi
