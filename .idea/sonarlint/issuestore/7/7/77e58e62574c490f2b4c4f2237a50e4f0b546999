@@ -1,0 +1,24 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŸöÔÄÿÿÿÿÿ
+X	java:S125"<This block of commented-out lines of code should be removed.(¡çèª8­ÒŞ¥2
+f
+java:S1128"IRemove this unused import 'com.example.userservice.Entities.ChatMessage'.(Ó®îÕ8®ÒŞ¥2
+q
+java:S1128"URemove this unused import 'com.example.userservice.Repository.ChatMessageRepository'.(Å–øW8®ÒŞ¥2
+e
+java:S1128"HRemove this unused import 'com.fasterxml.jackson.databind.ObjectMapper'.(´‘¨™8®ÒŞ¥2
+I
+java:S1128"-Remove this unused import 'org.slf4j.Logger'.(íØ®68®ÒŞ¥2
+Q
+java:S1128"4Remove this unused import 'org.slf4j.LoggerFactory'.(–ÿÚŞ8®ÒŞ¥2
+u
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ8®ÒŞ¥2
+o
+java:S1128	"MRemove this unused import 'org.springframework.messaging.handler.annotation'.(ÈŸâ¶ÿÿÿÿÿ8®ÒŞ¥2
+r
+java:S1128
+"URemove this unused import 'org.springframework.messaging.simp.SimpMessagingTemplate'.(Şÿå8®ÒŞ¥2
+h
+java:S1128"FRemove this unused import 'org.springframework.stereotype.Controller'.(øŠ—Öùÿÿÿÿ8®ÒŞ¥2
+V
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8¯ÒŞ¥2

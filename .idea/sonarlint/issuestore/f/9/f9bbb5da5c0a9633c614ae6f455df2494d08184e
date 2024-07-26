@@ -1,0 +1,15 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ø†Ì¥
+]	java:S125"<This block of commented-out lines of code should be removed.(± ™Íøÿÿÿÿ8Ê²Ú¥Ž2
+s
+java:S1128"QRemove this unused import 'org.springframework.context.annotation.Configuration'.(¬²Úäþÿÿÿÿ8Ê²Ú¥Ž2
+y
+java:S1128"\Remove this unused import 'org.springframework.messaging.simp.config.MessageBrokerRegistry'.(ˆøí¡8Ê²Ú¥Ž2
+t
+java:S1128"WRemove this unused import 'org.springframework.scheduling.annotation.EnableScheduling'.(‹æ¬‹8Ê²Ú¥Ž2
+Œ
+java:S1128"jRemove this unused import 'org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker'.(ßðçåüÿÿÿÿ8Ê²Ú¥Ž2
+€
+java:S1128"cRemove this unused import 'org.springframework.web.socket.config.annotation.StompEndpointRegistry'.(ÛÃË´8Ë²Ú¥Ž2
+
+java:S1128"nRemove this unused import 'org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer'.(–åáÚøÿÿÿÿ8Ë²Ú¥Ž2

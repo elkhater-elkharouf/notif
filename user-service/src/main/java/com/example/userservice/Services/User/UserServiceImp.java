@@ -2,6 +2,10 @@ package com.example.userservice.Services.User;
 import org.slf4j.Logger;
 import com.example.userservice.Entities.*;
 import com.example.userservice.Repository.*;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.security.core.Authentication;
@@ -41,8 +45,39 @@ public class UserServiceImp  implements IUserService {
             return (User) authentication.getPrincipal();
 
         }
-        return null; // Aucun utilisateur connecté ou utilisateur non trouvé dans le contexte de sécurité
+        return null;
     }
+    @Override
+    @Transactional
+    public User addUserWithRole(User user, int roleId) {
+        Optional<Role> roleOptional = roleRepository.findById(roleId);
+        if (roleOptional.isPresent()) {
+            Role role = roleOptional.get();
+            user.setRole(role);
+
+            try {
+                // Generate verification token
+                String token = UUID.randomUUID().toString();
+                verificationTokenService.affectUserToken(user, token);
+
+                // Send email
+                emailUserService.sendHtmlMail(user);
+            } catch (Exception e) {
+                // Handle exceptions as needed
+                e.printStackTrace();
+            }
+
+            // Encode the user's password
+            String pwd = user.getPassword();
+            user.setPassword(passwordEncoder.encode(pwd));
+            user.setEnabled(false);
+
+            return userRepository.save(user);
+        } else {
+            throw new RuntimeException("Role not found with id: " + roleId);
+        }
+    }
+
     @Override
     public User addUser(User u) throws SQLException {
         String pwd = u.getPassword();
@@ -80,6 +115,12 @@ public class UserServiceImp  implements IUserService {
     }
 
     @Override
+    public Page<User> getAllUserspaginated(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.ASC, "idUser"));
+        return userRepository.findAll(pageable);
+    }
+
+    @Override
     public User getUser(String email) {
         return userRepository.findByEmail(email);
     }
@@ -98,9 +139,9 @@ public class UserServiceImp  implements IUserService {
         existingUser.setEnabled(user.isEnabled());
         existingUser.setFname(user.getFname());
         existingUser.setLname(user.getLname());
-        String pwd = existingUser.getPassword();
-        existingUser.setPassword(passwordEncoder.encode(pwd));
-        existingUser.setPassword(user.getPassword());
+       // String pwd = existingUser.getPassword();
+        //existingUser.setPassword(passwordEncoder.encode(pwd));
+        //existingUser.setPassword(user.getPassword());
 
         // Mettre à jour le rôle de l'utilisateur
         Role role = roleService.updateRole(user.getRole());
@@ -137,7 +178,11 @@ public class UserServiceImp  implements IUserService {
 
         return userRepository.findAll();
     }
-
+    @Override
+    public Set<User> getAlUsers() {
+        // Retourner tous les utilisateurs
+        return new HashSet<>(userRepository.findAll());
+    }
     @Override
     public boolean desActiverCompteUser(int idUser) {
         User user = userRepository.findById(idUser).orElse(null);
@@ -229,30 +274,50 @@ public class UserServiceImp  implements IUserService {
         User user = userRepository.findByEmail(email);
 
         if (user == null) {
-            return Response.status(Response.Status.NOT_FOUND).entity("Email not found!").build();
+            return Response.status(Response.Status.NOT_FOUND).entity("Email not found").build();
         }
+
+        verificationTokenService.deleteTokenForUser(user);
 
         try {
             String token = UUID.randomUUID().toString();
             verificationTokenService.affectUserToken(user, token);
             emailUserService.resetPasswordMail(user);
         } catch (MessagingException e) {
-            // Catching specific MessagingException and logging the error
-            // Log the exception here for better debugging
-            e.printStackTrace();  // Consider using a logger in real applications
-            throw new RuntimeException("Failed to send email", e);
+            // Log the exception
+            e.printStackTrace(); // Replace with logger
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("Failed to send email").build();
         } catch (Exception e) {
-            // Catch any other exceptions and log them
-            e.printStackTrace();  // Consider using a logger in real applications
-            throw new RuntimeException("An unexpected error occurred", e);
+            // Log the exception
+            e.printStackTrace(); // Replace with logger
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+                    .entity("An unexpected error occurred").build();
         }
 
         return Response.status(Response.Status.OK).entity("Password reset email has been sent").build();
     }
+    @Override
+    public boolean changePassword(int userId, String oldPassword, String newPassword, String retypeNewPassword) {
+        User user = userRepository.findById(userId).orElse(null);
 
+        if (user == null) {
+            throw new IllegalArgumentException("User not found");
+        }
 
+        if (!passwordEncoder.matches(oldPassword, user.getPassword())) {
+            throw new IllegalArgumentException("Old password is incorrect");
+        }
 
+        if (!newPassword.equals(retypeNewPassword)) {
+            throw new IllegalArgumentException("New password and retyped new password do not match");
+        }
 
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+
+        return true;
+    }
     @Override
     public Response resetPassword(String token, String NewPassword , String ConfirmPassword) {
         VerificationToken verificationToken = verificationTokenService.findByToken(token);
@@ -285,6 +350,11 @@ public class UserServiceImp  implements IUserService {
     }
 
     @Override
+    public List<User> getUsersByStatus(boolean enabled) {
+        return userRepository.findByEnabled(enabled);
+    }
+
+    @Override
     @Transactional
     public User annulerPrivilegeUser(int idUser, int idPrivilege) {
         User user = userRepository.findById(idUser).orElse(null);
@@ -309,6 +379,22 @@ public class UserServiceImp  implements IUserService {
         return userRepository.save(user);
     }
 
+    @Override
+    public Set<User> getUsersByRoleName(String roleName) {
+
+        List<Role> roles = roleRepository.findByRoleName(roleName);
+        Set<User> users = new HashSet<>();
+
+        for (Role role : roles) {
+            users.addAll(userRepository.findByRole(role));
+        }
+        return users;
+    }
+
+    @Override
+    public List<User> getUsersByDepartment(String department) {
+        return userRepository.findByDepartment(department);
+    }
 
 
     public int getEmailConfigurationIdForLoggedInUser(String email) {

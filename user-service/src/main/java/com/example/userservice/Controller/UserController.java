@@ -17,6 +17,7 @@ import com.example.userservice.Services.Role.IRoleService;
 import com.example.userservice.Services.User.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -58,6 +59,15 @@ public class UserController {
 
         return "bills hello from microservices user !";
 
+    }
+    @PostMapping("/add")
+    public ResponseEntity<User> addUser(@RequestBody User user, @RequestParam int roleId) {
+        try {
+            User createdUser = iUserService.addUserWithRole(user, roleId);
+            return ResponseEntity.ok(createdUser);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(404).body(null);
+        }
     }
     @PostMapping("/send")
     public void sendSms(@RequestPart("file") MultipartFile file, @RequestPart("messageTemplate") String messageTemplate) throws IOException {
@@ -109,7 +119,35 @@ public String sendEmailWithAttachment(@RequestBody EmailRequest emailRequest) th
         System.out.println(passwordResetModel);
         return iUserService.resetPassword(token , passwordResetModel.getNewPassword() , passwordResetModel.getConfirmPassword());
     }
+    @PostMapping("/changePassword/{id}")
+    public ResponseEntity<String> changePassword(
+            @PathVariable int id,
+            @RequestParam String oldPassword,
+            @RequestParam String newPassword,
+            @RequestParam String retypeNewPassword) {
 
+        try {
+            userService.changePassword(id, oldPassword, newPassword, retypeNewPassword);
+            return ResponseEntity.ok("Password changed successfully");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    @GetMapping("/AllUsersPaginated")
+    @ResponseBody
+    public Page<User> getAllUsers(
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "2") int size) {
+        return iUserService.getAllUserspaginated(page, size);
+    }
+
+    @GetMapping("/AllProjectPaginated")
+    @ResponseBody
+    public Page<Projet> getAllProject(
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "2") int size) {
+        return iProjetService.getAllProjectpaginated(page, size);
+    }
     @GetMapping("/AllUsers")
     @ResponseBody
 
@@ -160,8 +198,23 @@ public String sendEmailWithAttachment(@RequestBody EmailRequest emailRequest) th
         }
 
     }
-
-
+    @GetMapping("/getUserByStatus/{enabled}")
+    public List<User> getUsersByStatus(@PathVariable boolean enabled) {
+        return userService.getUsersByStatus(enabled);
+    }
+    @GetMapping("/getuserbyDep/{department}")
+    public List<User> getUsersByDepartment(@PathVariable String department) {
+        return userService.getUsersByDepartment(department);
+    }
+    @GetMapping("/getUserByRole")
+    public Set<User> getUsersByRole(@RequestParam(required = false) String roleName) {
+        if (roleName == null || roleName.isEmpty()) {
+            // Si aucun roleName n'est spécifié, retourner tous les utilisateurs
+            return iUserService.getAlUsers();
+        } else {
+            return iUserService.getUsersByRoleName(roleName);
+        }
+    }
 
     @DeleteMapping("/deleteUser/{id}")
     private void deleteUser(@PathVariable("id") int id)
@@ -189,7 +242,7 @@ public String sendEmailWithAttachment(@RequestBody EmailRequest emailRequest) th
         existingUser.setDepartment(user.getDepartment());
         existingUser.setEnabled(user.isEnabled());
         existingUser.setRole(user.getRole());
-        existingUser.setPassword(user.getPassword());
+        //existingUser.setPassword(user.getPassword());
         existingUser.setFname(user.getFname());
         existingUser.setLname(user.getLname());
 
@@ -458,7 +511,11 @@ public String sendEmailWithAttachment(@RequestBody EmailRequest emailRequest) th
     public Projet getProjetById(@PathVariable("id") int id){
         return   iProjetService.getProjetById(id);
     }
-
+    @GetMapping("/getProjectByUser/{idUser}")
+    @ResponseBody
+    public List<Projet> getProjectByUser(@PathVariable("idUser") int idUser){
+        return iProjetService.getProjectByUser(idUser);
+    }
 
     @DeleteMapping("/deleteProjet/{id}")
     private void deleteProjet(@PathVariable("id") int id)

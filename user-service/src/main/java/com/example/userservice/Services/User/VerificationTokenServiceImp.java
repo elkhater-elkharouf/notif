@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -44,6 +45,13 @@ public class VerificationTokenServiceImp implements VerificationTokenService{
         cal.add(Calendar.MINUTE,expiryTimeInMinute);
         return new Timestamp(cal.getTime().getTime());
     }
+    @Override
 
+    public void deleteTokenForUser(User user) {
+        VerificationToken token = verificationTokenRepository.findByUser(user);
+        if (token != null) {
+            verificationTokenRepository.delete(token);
+        }
+    }
 
 }

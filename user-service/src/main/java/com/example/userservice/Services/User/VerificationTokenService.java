@@ -11,4 +11,5 @@ public interface VerificationTokenService {
     public VerificationToken findByUser(User user);
 
     public void affectUserToken(User user , String token);
+    public void deleteTokenForUser(User user);
 }

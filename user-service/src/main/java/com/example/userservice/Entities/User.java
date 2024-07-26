@@ -28,7 +28,7 @@ private String numTel ;
     private String email ;
     private String Password ;
     private String department ;
-
+    private String fcmToken = "epC_KhE6nqOku-t7xsdKkw:APA91bFk84BwjOGu-Tow6ajHLoRhf62hYve-zoO9Sg5eLMPOGOowdbT0RWpaGX0pZ0MR5Z61LfbPz_D8Rt0VuMTzHCcWiBQO_yGlx6x3-iFbO2itdTU8m_S2LUoLN6BP1u2KYDltJ0Pp";
     private boolean enabled;
     @ManyToOne
     private Role role;

@@ -1,6 +1,6 @@
 
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¿Ç…£8ÛÄÍ‰å1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºé²ıÿÿÿÿ8ÜÄÍ‰å1
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºé²ıÿÿÿÿ8ÜÄÍ‰å1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8ŞÄÍ‰å1
-X	java:S125"<This block of commented-out lines of code should be removed.(‘µŠÈ8´Ÿ»Šå1
+b	java:S112!"FDefine and throw a dedicated exception instead of using a generic one.(¿Ç…£8€ööÜ‹2
+r	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºé²ıÿÿÿÿ8ööÜ‹2
+r	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºé²ıÿÿÿÿ8ööÜ‹2
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Õµûüüÿÿÿÿ8ööÜ‹2
+X	java:S125"<This block of commented-out lines of code should be removed.(‘µŠÈ8†ööÜ‹2
